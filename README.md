@@ -20,7 +20,7 @@ This is a simple game server manager for managing game servers on a Windows serv
 
 ## Installation
 
-1. Download the latest release from the	[releases page](
+1. Download the latest release from the [releases page](https://github.com/le3tspeak/ByteMaster/releases)
 2. Extract the contents of the zip file to a folder on your server
 3. Run `GameServerManager.exe` to start the program
 

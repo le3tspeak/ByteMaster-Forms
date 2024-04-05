@@ -289,6 +289,7 @@ partial class FormHome
         // 
         // progressBarRAMValheim
         // 
+        progressBarRAMValheim.BackColor = Color.Black;
         progressBarRAMValheim.ForeColor = Color.Firebrick;
         progressBarRAMValheim.ImeMode = ImeMode.NoControl;
         progressBarRAMValheim.Location = new Point(222, 32);
