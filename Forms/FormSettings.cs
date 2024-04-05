@@ -9,22 +9,59 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Game_Server_Manager.Properties;
+using GameManager = Game_Server_Manager.Properties.Settings;
 
 namespace Game_Server_Manager.Forms;
 public partial class FormSettings : Form
 {
+    // Variables
+    private readonly string downloadLink = Properties.Settings.Default.SteamCMDURL;
+    private readonly string downloadPath = Path.Combine(Properties.Settings.Default.SteamCMDPath, "steamcmd.zip");
+    private readonly string steamCMDzipPath = Path.Combine(Properties.Settings.Default.SteamCMDPath, "steamcmd.zip");
+    private readonly string steamCMDunzipPath = Properties.Settings.Default.SteamCMDPath;
+
     public FormSettings()
     {
         InitializeComponent();
-        // Load the settings
+        StartUp();
+
+        //Colors
+
+    }
+
+
+
+    // Startroutine
+    private void StartUp()
+    {
+        // Form Einstellungen
+        LoadFormSettings();
+        // Farb Einstellungen
+        LoadColorSettings();
+        // Lade Informationen
+        LoadInfos();
+        //Lade SteamCMD Informationen
+        SteamCMD();
+    }
+
+    // Laden der Einstellungen
+    private void LoadInfos()
+    {
         tbServerPath.Text = Properties.Settings.Default.ServerPath;
         tbSteamCMDPath.Text = Properties.Settings.Default.SteamCMDPath;
         lblVersion.Text = $"Version: {Properties.Settings.Default.Version}";
+    }
 
-        //Form
+    // Laden der Form Einstellungen
+    private void LoadFormSettings()
+    {
         ControlBox = false;
         DoubleBuffered = true;
-        //Colors
+    }
+
+    // Lade Farb Einstellungen
+    private void LoadColorSettings()
+    {
         BackColor = Properties.ColorTheme.Default.FormBG;
         btnSteamCMDUpdate.IconColor = Properties.ColorTheme.Default.IconSteam;
         btnSteamCMDUpdate.ForeColor = Properties.ColorTheme.Default.Text;
@@ -35,12 +72,6 @@ public partial class FormSettings : Form
         tbSteamCMDPath.BackColor = Properties.ColorTheme.Default.TextBoxBG;
         tbSteamCMDPath.ForeColor = Properties.ColorTheme.Default.TextBoxText;
     }
-
-    // Variables
-    private readonly string downloadLink = Properties.Settings.Default.SteamCMDURL;
-    private readonly string downloadPath = Path.Combine(Properties.Settings.Default.SteamCMDPath, "steamcmd.zip");
-    private readonly string steamCMDzipPath = Path.Combine(Properties.Settings.Default.SteamCMDPath, "steamcmd.zip");
-    private readonly string steamCMDunzipPath = Properties.Settings.Default.SteamCMDPath;
 
     // Test the Variables and show an error message if one or more are empty
     public static bool ValidateSettings(string downloadLink, string downloadPath, string steamCMDzipPath, string steamCMDunzipPath)
@@ -57,6 +88,19 @@ public partial class FormSettings : Form
     private static void ShowErrorMessage(string message)
     {
         MessageBox.Show(message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+    }
+
+    // Prüfe ob SteamCMD installiert ist
+    private void SteamCMD()
+    {
+        if (File.Exists(Path.Combine((GameManager.Default.SteamCMDPath), "steamerrorreporter.exe")))
+        {
+            btnSteamCMDUpdate.Text = "Update SteamCMD";
+        }
+        else
+        {
+            btnSteamCMDUpdate.Text = "Install SteamCMD";
+        }
     }
 
     // Update the SteamCMD Button

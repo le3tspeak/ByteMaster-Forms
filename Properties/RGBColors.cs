@@ -16,6 +16,7 @@ internal class RGBColors
         // Icons
         public static Color Icon = ColorTheme.Default.Icon;
         public static Color IconSteam = ColorTheme.Default.IconSteam;
+        public static Color IconValheim = ColorTheme.Default.IconValheim;
         // Mouse
         public static Color MouseDown = ColorTheme.Default.MouseDown;
         public static Color MouseHover = ColorTheme.Default.MouseHover;
@@ -36,7 +37,9 @@ internal class RGBColors
         public static Color TextBoxText = ColorTheme.Default.TextBoxText;
         // Loading
         public static Color Loading = ColorTheme.Default.Loading;
-        // Side Menu
+        // Side Menu Selected
+        public static Color SideMenuSelected = ColorTheme.Default.MenuSelected;
+
         public static Color color1 = Color.FromArgb(172, 126, 241);
         public static Color color2 = Color.FromArgb(249, 118, 176);
         public static Color color3 = Color.FromArgb(253, 138, 114);

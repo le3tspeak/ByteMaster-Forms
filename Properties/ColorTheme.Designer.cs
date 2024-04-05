@@ -37,7 +37,7 @@ namespace Game_Server_Manager.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("192, 0, 0")]
+        [global::System.Configuration.DefaultSettingValueAttribute("White")]
         public global::System.Drawing.Color Icon {
             get {
                 return ((global::System.Drawing.Color)(this["Icon"]));
@@ -61,7 +61,7 @@ namespace Game_Server_Manager.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("25, 5, 129")]
+        [global::System.Configuration.DefaultSettingValueAttribute("0, 0, 77")]
         public global::System.Drawing.Color MouseHover {
             get {
                 return ((global::System.Drawing.Color)(this["MouseHover"]));
@@ -233,6 +233,30 @@ namespace Game_Server_Manager.Properties {
         public global::System.Drawing.Color IconSteam {
             get {
                 return ((global::System.Drawing.Color)(this["IconSteam"]));
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("White")]
+        public global::System.Drawing.Color IconValheim {
+            get {
+                return ((global::System.Drawing.Color)(this["IconValheim"]));
+            }
+            set {
+                this["IconValheim"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("DimGray")]
+        public global::System.Drawing.Color MenuSelected {
+            get {
+                return ((global::System.Drawing.Color)(this["MenuSelected"]));
+            }
+            set {
+                this["MenuSelected"] = value;
             }
         }
     }

@@ -29,6 +29,8 @@ partial class FormHome
     private void InitializeComponent()
     {
         panelTopBar = new Panel();
+        lblSteamCMDInstalledINfo = new Label();
+        label4 = new Label();
         label3 = new Label();
         lblCpuNumberOfCoresInfo = new Label();
         label2 = new Label();
@@ -56,6 +58,8 @@ partial class FormHome
         // 
         // panelTopBar
         // 
+        panelTopBar.Controls.Add(lblSteamCMDInstalledINfo);
+        panelTopBar.Controls.Add(label4);
         panelTopBar.Controls.Add(label3);
         panelTopBar.Controls.Add(lblCpuNumberOfCoresInfo);
         panelTopBar.Controls.Add(label2);
@@ -67,6 +71,30 @@ partial class FormHome
         panelTopBar.Name = "panelTopBar";
         panelTopBar.Size = new Size(864, 83);
         panelTopBar.TabIndex = 0;
+        // 
+        // lblSteamCMDInstalledINfo
+        // 
+        lblSteamCMDInstalledINfo.AutoSize = true;
+        lblSteamCMDInstalledINfo.BackColor = Color.Transparent;
+        lblSteamCMDInstalledINfo.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+        lblSteamCMDInstalledINfo.ForeColor = Color.White;
+        lblSteamCMDInstalledINfo.Location = new Point(563, 0);
+        lblSteamCMDInstalledINfo.Name = "lblSteamCMDInstalledINfo";
+        lblSteamCMDInstalledINfo.Size = new Size(88, 17);
+        lblSteamCMDInstalledINfo.TabIndex = 9;
+        lblSteamCMDInstalledINfo.Text = "Not Installed";
+        // 
+        // label4
+        // 
+        label4.AutoSize = true;
+        label4.BackColor = Color.Transparent;
+        label4.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+        label4.ForeColor = Color.White;
+        label4.Location = new Point(477, 0);
+        label4.Name = "label4";
+        label4.Size = new Size(80, 17);
+        label4.TabIndex = 8;
+        label4.Text = "SteamCMD:";
         // 
         // label3
         // 
@@ -125,7 +153,6 @@ partial class FormHome
         lblRamUsageSystemInfo.Size = new Size(84, 17);
         lblRamUsageSystemInfo.TabIndex = 3;
         lblRamUsageSystemInfo.Text = "0 MB / 1 MB";
-        lblRamUsageSystemInfo.Click += lblRamUsageSystemInfo_Click;
         // 
         // lblRamUsageSystem
         // 
@@ -255,7 +282,7 @@ partial class FormHome
         panelServerUsage.Controls.Add(lblRAMUsageValheim);
         panelServerUsage.Controls.Add(lblCPUUsageInfo);
         panelServerUsage.Controls.Add(lblCPUUsage);
-        panelServerUsage.Location = new Point(488, 42);
+        panelServerUsage.Location = new Point(477, 42);
         panelServerUsage.Name = "panelServerUsage";
         panelServerUsage.Size = new Size(373, 55);
         panelServerUsage.TabIndex = 7;
@@ -366,4 +393,6 @@ partial class FormHome
     private Label label2;
     private Label lblCpuNumberOfCoresInfo;
     private Label label3;
+    private Label label4;
+    private Label lblSteamCMDInstalledINfo;
 }

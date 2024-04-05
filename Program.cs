@@ -17,14 +17,12 @@ internal static class Program
         Application.EnableVisualStyles();
 
         // Erstelle das Splash-Screen-Objekt
-        using (var splashForm = new Game_Server_Manager.Forms.FormSplashScreen())
-        {
-            // Load the Splash Screen
-            splashForm.ShowDialog();
+        using var splashForm = new Game_Server_Manager.Forms.FormSplashScreen();
+        // Load the Splash Screen
+        splashForm.ShowDialog();
 
-            // Load the Main Form
-            Application.Run(new FormByteMaster());
-        }
+        // Load the Main Form
+        Application.Run(new FormByteMaster());
     }
 
     // Exit the application

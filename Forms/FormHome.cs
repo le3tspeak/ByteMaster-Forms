@@ -24,15 +24,20 @@ public partial class FormHome : Form
         StartUp();
     }
 
+    // Startroutine
     private void StartUp()
     {
         // Timer Start
-        Timer();        
+        Timer();
+        // Lade Systeminformationen
         SystemInfo();
+        // Lade SteamCMD Informationen
+        SteamCMD();
         // Valheim
         ValheimUpdate();
     }
 
+    // Timer für die Aktualisierung der Informationen
     private void Timer()
     {
         // Timer 0.5 Sekunden
@@ -46,7 +51,7 @@ public partial class FormHome : Form
         timerLong.Tick += Timer_Tick_Long;
         timerLong.Start();
     }
-
+    // Eventhandler für die Timer
     private void Timer_Tick_Short(object sender, EventArgs e)
     {
 
@@ -57,6 +62,7 @@ public partial class FormHome : Form
         SystemInfo();
         ValheimUpdate();
     }
+
     //
     // Valheim
     //
@@ -64,7 +70,7 @@ public partial class FormHome : Form
     {
         var InstallDirValheim = Path.Combine(GameManager.Default.ServerPath, GameManager_Valheim.Default.ServerFolderName);
 
-        // Check Server Installed and Display Info
+        // Überprüfen, ob der Server installiert ist
         if (File.Exists(Path.Combine(InstallDirValheim, GameManager_Valheim.Default.ServerExe)))
         {
             lblServerValheimInstalledInfo.ForeColor = System.Drawing.Color.Green;
@@ -76,22 +82,21 @@ public partial class FormHome : Form
             lblServerValheimInstalledInfo.Text = "Not Installed";
         }
 
-        // Check Server Running and Display Info
         // Überprüfen, ob der Prozess läuft
         if (IsProcessRunning(GameManager_Valheim.Default.ProzessName))
         {
             lblServerValheimRunningInfo.ForeColor = System.Drawing.Color.Green;
-            // Server is Running
+            // Server läuft
             lblServerValheimRunningInfo.Text = "Der Prozess läuft.";
         }
         else
         {
             lblServerValheimRunningInfo.ForeColor = System.Drawing.Color.Red;
-            // Server is not Running
+            // Server läuft nicht
             lblServerValheimRunningInfo.Text = "Der Prozess läuft nicht.";
         }
 
-        // InstallDirValheim
+        // Installationspfad Valheim
         lblServerValheimPathInfo.Text = InstallDirValheim;
 
         // RAM-Verbrauch
@@ -106,18 +111,17 @@ public partial class FormHome : Form
     // Default
     //
 
-
-    // CPU Info
+    // Lade CPU-Informationen
     private void CpuInfo()
     {
-        // Get CPU information
+        // CPU Informationen ermitteln
         ManagementObjectSearcher searcher = new ManagementObjectSearcher("SELECT * FROM Win32_Processor");
         foreach (ManagementObject obj in searcher.Get())
         {
             var cpuName = obj["Name"].ToString();
             var cpuNumberOfCores = obj["NumberOfCores"].ToString();
 
-            // Display CPU information on the UI thread
+            // CPU Informationen auf dem UI-Thread anzeigen
             Invoke(new Action(() =>
             {
                 lblCpuNameInfo.Text = cpuName;
@@ -126,11 +130,10 @@ public partial class FormHome : Form
         }
     }
 
-    // Lade ComputerInfo
-
+    // Lade RAM-Informationen
     private void SystemInfo()
     {
-        // RAM nutzung des Systems
+        // RAM nutzung des Systems ermitteln
         var ramFree = new Microsoft.VisualBasic.Devices.ComputerInfo().AvailablePhysicalMemory / (1024 * 1024);
         var ramUsage = new Microsoft.VisualBasic.Devices.ComputerInfo().TotalPhysicalMemory / (1024 * 1024) - ramFree;
         var totalRAM = new Microsoft.VisualBasic.Devices.ComputerInfo().TotalPhysicalMemory / (1024 * 1024);
@@ -139,6 +142,7 @@ public partial class FormHome : Form
         lblRamUsageSystemInfo.Text = $"{ramUsage} MB / {totalRAM} MB  {totalRAMPercentage} %";
     }
 
+    // Überprüfen, ob der Prozess läuft
     private bool IsProcessRunning(string processName)
     {
         // Alle Prozesse auf dem System durchgehen
@@ -153,11 +157,24 @@ public partial class FormHome : Form
         return false; // Prozess nicht gefunden
     }
 
-    private void lblRamUsageSystemInfo_Click(object sender, EventArgs e)
+    // Prüfe ob SteamCMD installiert ist
+    private void SteamCMD()
     {
-
+        if (File.Exists(Path.Combine((GameManager.Default.SteamCMDPath), "steamerrorreporter.exe")))
+        {
+            // SteamCMD vorhanden
+            lblSteamCMDInstalledINfo.ForeColor = System.Drawing.Color.Green;
+            lblSteamCMDInstalledINfo.Text = "Installed";
+        }
+        else
+        {
+            // SteamCMD nicht vorhanden
+            lblSteamCMDInstalledINfo.ForeColor = System.Drawing.Color.Red;
+            lblSteamCMDInstalledINfo.Text = "Not Installed";
+        }
     }
 
+    // Lade CPU-Informationen beim Laden des Formulars (Async)
     private async void FormHome_LoadAsync(object sender, EventArgs e)
     {
         await Task.Run(CpuInfo);

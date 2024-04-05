@@ -6,13 +6,13 @@
       <Value Profile="(Default)">White</Value>
     </Setting>
     <Setting Name="Icon" Type="System.Drawing.Color" Scope="User">
-      <Value Profile="(Default)">192, 0, 0</Value>
+      <Value Profile="(Default)">White</Value>
     </Setting>
     <Setting Name="MouseDown" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">18, 0, 22</Value>
     </Setting>
     <Setting Name="MouseHover" Type="System.Drawing.Color" Scope="User">
-      <Value Profile="(Default)">25, 5, 129</Value>
+      <Value Profile="(Default)">0, 0, 77</Value>
     </Setting>
     <Setting Name="FormBG" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">Black</Value>
@@ -55,6 +55,12 @@
     </Setting>
     <Setting Name="IconSteam" Type="System.Drawing.Color" Scope="Application">
       <Value Profile="(Default)">ControlDark</Value>
+    </Setting>
+    <Setting Name="IconValheim" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">White</Value>
+    </Setting>
+    <Setting Name="MenuSelected" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">DimGray</Value>
     </Setting>
   </Settings>
 </SettingsFile>

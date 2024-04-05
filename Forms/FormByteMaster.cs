@@ -16,8 +16,21 @@ public partial class FormByteMaster : Form
     public FormByteMaster()
     {
         InitializeComponent();
+        StartUp();
+    }
 
-        // Form Settings
+    // Startroutine
+    private void StartUp()
+    {
+        // Form Einstellungen
+        LoadFormSettings();
+        // Farb Einstellungen
+        LoadColorSettings();
+    }
+
+    // Laden der Form Einstellungen
+    private void LoadFormSettings()
+    {
         Text = string.Empty;
         ControlBox = false;
         DoubleBuffered = true;
@@ -25,15 +38,19 @@ public partial class FormByteMaster : Form
         leftBorderBtn = new Panel();
         leftBorderBtn.Size = new Size(7, 60);
         panelMenu.Controls.Add(leftBorderBtn);
+    }
 
-        // Colors Settings
+    // Lade Farb Einstellungen
+    private void LoadColorSettings()
+    {
+        // Form
         BackColor = RGBColors.Default.FormBG;
         panelMenu.BackColor = RGBColors.Default.FormBG;
         panelShadow.BackColor = RGBColors.Default.FormBG;
         panelDesktop.BackColor = RGBColors.Default.FormBG;
         panelTitelBar.BackColor = RGBColors.Default.FormBG;
         btnHome.BackColor = RGBColors.Default.FormBG;
-
+        // Buttons
         btnValheim.BackColor = RGBColors.Default.FormBG;
         btnValheim.IconColor = RGBColors.Default.Icon;
         btnValheim.FlatAppearance.MouseDownBackColor = RGBColors.Default.MouseDown;
@@ -42,15 +59,7 @@ public partial class FormByteMaster : Form
         btnSettings.IconColor = RGBColors.Default.Icon;
         btnSettings.FlatAppearance.MouseDownBackColor = RGBColors.Default.MouseDown;
         btnSettings.FlatAppearance.MouseOverBackColor = RGBColors.Default.MouseHover;
-
     }
-
-    // Drag Form
-    [DllImport("user32.dll", EntryPoint = "ReleaseCapture")]
-    private extern static void ReleaseCapture();
-
-    [DllImport("user32.dll", EntryPoint = "SendMessage")]
-    private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
 
     // Methods
     private void ActivateButton(object senderBtn, Color color)
@@ -80,7 +89,6 @@ public partial class FormByteMaster : Form
     // Disable button
     private void DisableButton()
     {
-
         if (currentBtn != null)
         {
             currentBtn.BackColor = RGBColors.Default.FormBG;
@@ -112,13 +120,6 @@ public partial class FormByteMaster : Form
         lblTitleChildForm.Text = childForm.Text;
     }
 
-    // Drag Form from panelTitleBar
-    private void panelTitleBar_MouseDown(object sender, MouseEventArgs e)
-    {
-        ReleaseCapture();
-        SendMessage(this.Handle, 0x112, 0xf012, 0);
-    }
-
     // Button Home
     private void btnHome_Click(object sender, EventArgs e)
     {
@@ -139,17 +140,10 @@ public partial class FormByteMaster : Form
         lblTitleChildForm.Text = "Home";
     }
 
-    // Button Dashboard
-    private void btnDashboard_Click(object sender, EventArgs e)
-    {
-        ActivateButton(sender, RGBColors.Default.color1);
-        OpenChildForm(new Forms.FormEnshrouded());
-    }
-
     // Button Valheim
     private void btnValheim_Click(object sender, EventArgs e)
     {
-        ActivateButton(sender, RGBColors.Default.color2);
+        ActivateButton(sender, RGBColors.Default.SideMenuSelected);
         OpenChildForm(new Forms.FormValheim());
     }
 
@@ -179,6 +173,25 @@ public partial class FormByteMaster : Form
     private void btnControlboxMinimize_Click(object sender, EventArgs e)
     {
         // Minimize App 
-        this.WindowState = FormWindowState.Minimized;
+        WindowState = FormWindowState.Minimized;
     }
+
+
+    //
+    // Drag Form
+    //
+
+    [DllImport("user32.dll", EntryPoint = "ReleaseCapture")]
+    private static extern void ReleaseCapture();
+
+    [DllImport("user32.dll", EntryPoint = "SendMessage")]
+    private static extern void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
+
+    // Drag Form from panelTitleBar
+    private void panelTitleBar_MouseDown(object sender, MouseEventArgs e)
+    {
+        ReleaseCapture();
+        SendMessage(this.Handle, 0x112, 0xf012, 0);
+    }
+
 }

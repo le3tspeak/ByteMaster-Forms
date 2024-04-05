@@ -91,6 +91,9 @@ partial class FormByteMaster
         panelLogo.Controls.Add(btnHome);
         resources.ApplyResources(panelLogo, "panelLogo");
         panelLogo.Name = "panelLogo";
+        panelLogo.Click += btnHome_Click;
+        panelLogo.DoubleClick += btnHome_Click;
+        panelLogo.MouseDown += panelTitleBar_MouseDown;
         // 
         // btnHome
         // 
@@ -99,6 +102,7 @@ partial class FormByteMaster
         btnHome.Name = "btnHome";
         btnHome.TabStop = false;
         btnHome.Click += btnHome_Click;
+        btnHome.DoubleClick += btnHome_Click;
         // 
         // panelTitelBar
         // 
@@ -144,6 +148,7 @@ partial class FormByteMaster
         resources.ApplyResources(lblTitleChildForm, "lblTitleChildForm");
         lblTitleChildForm.ForeColor = Color.Gainsboro;
         lblTitleChildForm.Name = "lblTitleChildForm";
+        lblTitleChildForm.MouseDown += panelTitleBar_MouseDown;
         // 
         // iconCurrentChildForm
         // 
@@ -156,6 +161,7 @@ partial class FormByteMaster
         iconCurrentChildForm.IconSize = 45;
         iconCurrentChildForm.Name = "iconCurrentChildForm";
         iconCurrentChildForm.TabStop = false;
+        iconCurrentChildForm.MouseDown += panelTitleBar_MouseDown;
         // 
         // panelShadow
         // 
@@ -189,6 +195,7 @@ partial class FormByteMaster
         panelLogo.ResumeLayout(false);
         ((System.ComponentModel.ISupportInitialize)btnHome).EndInit();
         panelTitelBar.ResumeLayout(false);
+        panelTitelBar.PerformLayout();
         ((System.ComponentModel.ISupportInitialize)iconCurrentChildForm).EndInit();
         ResumeLayout(false);
     }
