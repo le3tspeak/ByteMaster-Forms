@@ -37,6 +37,8 @@ partial class FormSettings
         btnSetServerPath = new FontAwesome.Sharp.IconButton();
         btnSetStemCMDPath = new FontAwesome.Sharp.IconButton();
         btnSteamCMDUninstall = new FontAwesome.Sharp.IconButton();
+        lblSteamCMDLatUpdate = new Label();
+        lblSteamCMDLatUpdateInfo = new Label();
         SuspendLayout();
         // 
         // lblServersPath
@@ -174,12 +176,36 @@ partial class FormSettings
         btnSteamCMDUninstall.UseVisualStyleBackColor = false;
         btnSteamCMDUninstall.Click += btnSteamCMDInstall_Click;
         // 
+        // lblSteamCMDLatUpdate
+        // 
+        lblSteamCMDLatUpdate.AutoSize = true;
+        lblSteamCMDLatUpdate.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+        lblSteamCMDLatUpdate.ForeColor = Color.White;
+        lblSteamCMDLatUpdate.Location = new Point(31, 271);
+        lblSteamCMDLatUpdate.Name = "lblSteamCMDLatUpdate";
+        lblSteamCMDLatUpdate.Size = new Size(95, 21);
+        lblSteamCMDLatUpdate.TabIndex = 11;
+        lblSteamCMDLatUpdate.Text = "SteamCMD";
+        // 
+        // lblSteamCMDLatUpdateInfo
+        // 
+        lblSteamCMDLatUpdateInfo.AutoSize = true;
+        lblSteamCMDLatUpdateInfo.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+        lblSteamCMDLatUpdateInfo.ForeColor = Color.White;
+        lblSteamCMDLatUpdateInfo.Location = new Point(77, 296);
+        lblSteamCMDLatUpdateInfo.Name = "lblSteamCMDLatUpdateInfo";
+        lblSteamCMDLatUpdateInfo.Size = new Size(108, 17);
+        lblSteamCMDLatUpdateInfo.TabIndex = 12;
+        lblSteamCMDLatUpdateInfo.Text = "22.04.2024 14:03";
+        // 
         // FormSettings
         // 
         AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
         BackColor = Color.Black;
         ClientSize = new Size(880, 530);
+        Controls.Add(lblSteamCMDLatUpdateInfo);
+        Controls.Add(lblSteamCMDLatUpdate);
         Controls.Add(btnSteamCMDUninstall);
         Controls.Add(btnSetStemCMDPath);
         Controls.Add(btnSetServerPath);
@@ -207,4 +233,6 @@ partial class FormSettings
     private FontAwesome.Sharp.IconButton btnSetServerPath;
     private FontAwesome.Sharp.IconButton btnSetStemCMDPath;
     private FontAwesome.Sharp.IconButton btnSteamCMDUninstall;
+    private Label lblSteamCMDLatUpdate;
+    private Label lblSteamCMDLatUpdateInfo;
 }

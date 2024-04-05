@@ -101,6 +101,9 @@ public partial class FormSettings : Form
     // Prüfe ob SteamCMD installiert ist
     private void SteamCMD()
     {
+        // Load the SteamCMD Information
+        lblSteamCMDLatUpdateInfo.Text = $"Last Update: {GameManager.Default.SteamCMDLastUpdate}";
+
         if (File.Exists(Path.Combine((GameManager.Default.SteamCMDPath), "steamerrorreporter.exe")))
         {
             btnSteamCMDInstall.Text = "Update SteamCMD";
@@ -154,6 +157,10 @@ public partial class FormSettings : Form
             FormSteamCMD formSteamCMD = new FormSteamCMD();
             formSteamCMD.StartSteamCMD("+quit");
             formSteamCMD.ShowDialog();
+
+            // Update the SteamCMD Date
+            lblSteamCMDLatUpdateInfo.Text = $"Last Update: {DateTime.Now}";
+            GameManager.Default.SteamCMDLastUpdate = DateTime.Now;
 
             // Check if the SteamCMD is installed
             SteamCMD();

@@ -64,5 +64,16 @@ namespace Game_Server_Manager.Properties {
                 return ((string)(this["SteamCMDURL"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.DateTime SteamCMDLastUpdate {
+            get {
+                return ((global::System.DateTime)(this["SteamCMDLastUpdate"]));
+            }
+            set {
+                this["SteamCMDLastUpdate"] = value;
+            }
+        }
     }
 }
