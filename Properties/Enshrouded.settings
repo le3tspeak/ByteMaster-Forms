@@ -1,0 +1,78 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Game_Server_Manager.Properties" GeneratedClassName="Enshrouded">
+  <Profiles />
+  <Settings>
+    <Setting Name="ServerFolderName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">valheim_server</Value>
+    </Setting>
+    <Setting Name="SteamAppID" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">896660</Value>
+    </Setting>
+    <Setting Name="ServerExe" Type="System.String" Scope="User">
+      <Value Profile="(Default)">ensh.exe</Value>
+    </Setting>
+    <Setting Name="GameName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Valheim</Value>
+    </Setting>
+    <Setting Name="ServerUsingBat" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="ServerName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">ValheimServer</Value>
+    </Setting>
+    <Setting Name="ServerPort" Type="System.String" Scope="User">
+      <Value Profile="(Default)">2456</Value>
+    </Setting>
+    <Setting Name="ServerWorld" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Dedicated</Value>
+    </Setting>
+    <Setting Name="ServerPassword" Type="System.String" Scope="User">
+      <Value Profile="(Default)">secret</Value>
+    </Setting>
+    <Setting Name="ServerSaveDir" Type="System.String" Scope="User">
+      <Value Profile="(Default)">save_game</Value>
+    </Setting>
+    <Setting Name="ServerPublic" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="ServerSaveInterval" Type="System.String" Scope="User">
+      <Value Profile="(Default)">1800</Value>
+    </Setting>
+    <Setting Name="ServerBackups" Type="System.String" Scope="User">
+      <Value Profile="(Default)">4</Value>
+    </Setting>
+    <Setting Name="ServerCrossplay" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="BATEXEName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">valheim_server</Value>
+    </Setting>
+    <Setting Name="BATAppID" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">892970</Value>
+    </Setting>
+    <Setting Name="BATName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">start_server.bat</Value>
+    </Setting>
+    <Setting Name="ProzessName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">enshrouded_server</Value>
+    </Setting>
+    <Setting Name="ServerLogFile" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="ServerLogFileName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">valheim_server_log.txt</Value>
+    </Setting>
+    <Setting Name="ServerPreset" Type="System.String" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="ServerPresetTrackbar" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">4</Value>
+    </Setting>
+    <Setting Name="ServerBackupShort" Type="System.String" Scope="User">
+      <Value Profile="(Default)">7200</Value>
+    </Setting>
+    <Setting Name="ServerBackupLong" Type="System.String" Scope="User">
+      <Value Profile="(Default)">43200</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

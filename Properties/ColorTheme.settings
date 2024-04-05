@@ -1,0 +1,60 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Game_Server_Manager.Properties" GeneratedClassName="ColorTheme">
+  <Profiles />
+  <Settings>
+    <Setting Name="Text" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">White</Value>
+    </Setting>
+    <Setting Name="Icon" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">192, 0, 0</Value>
+    </Setting>
+    <Setting Name="MouseDown" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">18, 0, 22</Value>
+    </Setting>
+    <Setting Name="MouseHover" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">25, 5, 129</Value>
+    </Setting>
+    <Setting Name="FormBG" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">Black</Value>
+    </Setting>
+    <Setting Name="FormBGPopup" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">21, 5, 21</Value>
+    </Setting>
+    <Setting Name="HomeBTN" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">12, 190, 228</Value>
+    </Setting>
+    <Setting Name="ExitBTN" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">243, 0, 0</Value>
+    </Setting>
+    <Setting Name="Confirm" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">77, 224, 16</Value>
+    </Setting>
+    <Setting Name="Cancel" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">243, 0, 0</Value>
+    </Setting>
+    <Setting Name="MenuActive" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">35, 0, 45</Value>
+    </Setting>
+    <Setting Name="TextBoxBG" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">White</Value>
+    </Setting>
+    <Setting Name="TextBoxText" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">Black</Value>
+    </Setting>
+    <Setting Name="Loading" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">Cyan</Value>
+    </Setting>
+    <Setting Name="FormBGPopupTopBar" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">DarkBlue</Value>
+    </Setting>
+    <Setting Name="ExitBTNConfirm" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">White</Value>
+    </Setting>
+    <Setting Name="ExitBTNCancel" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">White</Value>
+    </Setting>
+    <Setting Name="IconSteam" Type="System.Drawing.Color" Scope="Application">
+      <Value Profile="(Default)">ControlDark</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
