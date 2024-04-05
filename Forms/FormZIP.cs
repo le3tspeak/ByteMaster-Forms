@@ -9,13 +9,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GameManager = Game_Server_Manager.Properties.Settings;
 
 namespace Game_Server_Manager.Forms;
+
 public partial class FormZIP : Form
 {
     public FormZIP()
     {
         InitializeComponent();
+        //Form
+        ControlBox = false;
+        DoubleBuffered = true;
+        BackColor = Properties.ColorTheme.Default.FormBGPopup;
     }
 
     // Fields

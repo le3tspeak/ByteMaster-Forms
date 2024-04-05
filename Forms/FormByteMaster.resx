@@ -404,7 +404,7 @@
     <value>Segoe UI, 9.75pt, style=Bold</value>
   </data>
   <data name="lblSteamCMDInstalledInfo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>794, 44</value>
+    <value>787, 44</value>
   </data>
   <data name="lblSteamCMDInstalledInfo.Size" type="System.Drawing.Size, System.Drawing">
     <value>88, 17</value>
@@ -434,7 +434,7 @@
     <value>Segoe UI, 9.75pt, style=Bold</value>
   </data>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>708, 44</value>
+    <value>701, 44</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
     <value>80, 17</value>

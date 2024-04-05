@@ -193,7 +193,7 @@ namespace Game_Server_Manager.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0, 0, 77")]
+        [global::System.Configuration.DefaultSettingValueAttribute("65, 65, 65")]
         public global::System.Drawing.Color FormBGPopupTopBar {
             get {
                 return ((global::System.Drawing.Color)(this["FormBGPopupTopBar"]));
@@ -262,7 +262,7 @@ namespace Game_Server_Manager.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("42, 42, 42")]
+        [global::System.Configuration.DefaultSettingValueAttribute("38, 38, 38")]
         public global::System.Drawing.Color FormBGChild {
             get {
                 return ((global::System.Drawing.Color)(this["FormBGChild"]));

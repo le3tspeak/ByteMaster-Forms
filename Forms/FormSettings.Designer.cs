@@ -29,13 +29,14 @@ partial class FormSettings
     private void InitializeComponent()
     {
         lblServersPath = new Label();
-        btnSteamCMDUpdate = new FontAwesome.Sharp.IconButton();
+        btnSteamCMDInstall = new FontAwesome.Sharp.IconButton();
         tbServerPath = new TextBox();
         tbSteamCMDPath = new TextBox();
         lblSteamCMDPath = new Label();
         lblVersion = new Label();
         btnSetServerPath = new FontAwesome.Sharp.IconButton();
         btnSetStemCMDPath = new FontAwesome.Sharp.IconButton();
+        btnSteamCMDUninstall = new FontAwesome.Sharp.IconButton();
         SuspendLayout();
         // 
         // lblServersPath
@@ -49,26 +50,27 @@ partial class FormSettings
         lblServersPath.TabIndex = 0;
         lblServersPath.Text = "Location of game servers";
         // 
-        // btnSteamCMDUpdate
+        // btnSteamCMDInstall
         // 
-        btnSteamCMDUpdate.AutoSize = true;
-        btnSteamCMDUpdate.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-        btnSteamCMDUpdate.BackColor = Color.Transparent;
-        btnSteamCMDUpdate.BackgroundImageLayout = ImageLayout.Zoom;
-        btnSteamCMDUpdate.FlatStyle = FlatStyle.Popup;
-        btnSteamCMDUpdate.ForeColor = Color.White;
-        btnSteamCMDUpdate.IconChar = FontAwesome.Sharp.IconChar.Steam;
-        btnSteamCMDUpdate.IconColor = Color.White;
-        btnSteamCMDUpdate.IconFont = FontAwesome.Sharp.IconFont.Auto;
-        btnSteamCMDUpdate.ImageAlign = ContentAlignment.MiddleLeft;
-        btnSteamCMDUpdate.Location = new Point(31, 430);
-        btnSteamCMDUpdate.Name = "btnSteamCMDUpdate";
-        btnSteamCMDUpdate.Size = new Size(169, 54);
-        btnSteamCMDUpdate.TabIndex = 1;
-        btnSteamCMDUpdate.Text = "Update Steam CMD";
-        btnSteamCMDUpdate.TextImageRelation = TextImageRelation.ImageBeforeText;
-        btnSteamCMDUpdate.UseVisualStyleBackColor = false;
-        btnSteamCMDUpdate.Click += btnSteamCMDUpdate_Click;
+        btnSteamCMDInstall.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+        btnSteamCMDInstall.BackColor = Color.Transparent;
+        btnSteamCMDInstall.BackgroundImageLayout = ImageLayout.Zoom;
+        btnSteamCMDInstall.FlatAppearance.BorderSize = 0;
+        btnSteamCMDInstall.FlatStyle = FlatStyle.Flat;
+        btnSteamCMDInstall.ForeColor = Color.White;
+        btnSteamCMDInstall.IconChar = FontAwesome.Sharp.IconChar.Steam;
+        btnSteamCMDInstall.IconColor = Color.White;
+        btnSteamCMDInstall.IconFont = FontAwesome.Sharp.IconFont.Auto;
+        btnSteamCMDInstall.IconSize = 45;
+        btnSteamCMDInstall.ImageAlign = ContentAlignment.MiddleLeft;
+        btnSteamCMDInstall.Location = new Point(31, 365);
+        btnSteamCMDInstall.Name = "btnSteamCMDInstall";
+        btnSteamCMDInstall.Size = new Size(175, 50);
+        btnSteamCMDInstall.TabIndex = 1;
+        btnSteamCMDInstall.Text = "Update Steam CMD";
+        btnSteamCMDInstall.TextImageRelation = TextImageRelation.ImageBeforeText;
+        btnSteamCMDInstall.UseVisualStyleBackColor = false;
+        btnSteamCMDInstall.Click += btnSteamCMDUpdate_Click;
         // 
         // tbServerPath
         // 
@@ -146,19 +148,41 @@ partial class FormSettings
         btnSetStemCMDPath.UseVisualStyleBackColor = false;
         btnSetStemCMDPath.Click += btnSetStemCMDPath_Click;
         // 
+        // btnSteamCMDUninstall
+        // 
+        btnSteamCMDUninstall.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+        btnSteamCMDUninstall.BackColor = Color.Transparent;
+        btnSteamCMDUninstall.BackgroundImageLayout = ImageLayout.Zoom;
+        btnSteamCMDUninstall.FlatAppearance.BorderSize = 0;
+        btnSteamCMDUninstall.FlatStyle = FlatStyle.Flat;
+        btnSteamCMDUninstall.ForeColor = Color.White;
+        btnSteamCMDUninstall.IconChar = FontAwesome.Sharp.IconChar.Steam;
+        btnSteamCMDUninstall.IconColor = Color.White;
+        btnSteamCMDUninstall.IconFont = FontAwesome.Sharp.IconFont.Auto;
+        btnSteamCMDUninstall.IconSize = 45;
+        btnSteamCMDUninstall.Location = new Point(31, 425);
+        btnSteamCMDUninstall.Name = "btnSteamCMDUninstall";
+        btnSteamCMDUninstall.Size = new Size(175, 50);
+        btnSteamCMDUninstall.TabIndex = 10;
+        btnSteamCMDUninstall.Text = "Uninstall Steam CMD";
+        btnSteamCMDUninstall.TextImageRelation = TextImageRelation.ImageBeforeText;
+        btnSteamCMDUninstall.UseVisualStyleBackColor = false;
+        btnSteamCMDUninstall.Click += btnSteamCMDInstall_Click;
+        // 
         // FormSettings
         // 
         AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
         BackColor = Color.Black;
         ClientSize = new Size(864, 513);
+        Controls.Add(btnSteamCMDUninstall);
         Controls.Add(btnSetStemCMDPath);
         Controls.Add(btnSetServerPath);
         Controls.Add(lblVersion);
         Controls.Add(lblSteamCMDPath);
         Controls.Add(tbSteamCMDPath);
         Controls.Add(tbServerPath);
-        Controls.Add(btnSteamCMDUpdate);
+        Controls.Add(btnSteamCMDInstall);
         Controls.Add(lblServersPath);
         FormBorderStyle = FormBorderStyle.None;
         Name = "FormSettings";
@@ -170,11 +194,12 @@ partial class FormSettings
     #endregion
 
     private Label lblServersPath;
-    private FontAwesome.Sharp.IconButton btnSteamCMDUpdate;
+    private FontAwesome.Sharp.IconButton btnSteamCMDInstall;
     private TextBox tbServerPath;
     private TextBox tbSteamCMDPath;
     private Label lblSteamCMDPath;
     private Label lblVersion;
     private FontAwesome.Sharp.IconButton btnSetServerPath;
     private FontAwesome.Sharp.IconButton btnSetStemCMDPath;
+    private FontAwesome.Sharp.IconButton btnSteamCMDUninstall;
 }

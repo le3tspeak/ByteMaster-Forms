@@ -45,7 +45,7 @@
       <Value Profile="(Default)">Cyan</Value>
     </Setting>
     <Setting Name="FormBGPopupTopBar" Type="System.Drawing.Color" Scope="User">
-      <Value Profile="(Default)">0, 0, 77</Value>
+      <Value Profile="(Default)">65, 65, 65</Value>
     </Setting>
     <Setting Name="ExitBTNConfirm" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">White</Value>
@@ -63,7 +63,7 @@
       <Value Profile="(Default)">DimGray</Value>
     </Setting>
     <Setting Name="FormBGChild" Type="System.Drawing.Color" Scope="User">
-      <Value Profile="(Default)">42, 42, 42</Value>
+      <Value Profile="(Default)">38, 38, 38</Value>
     </Setting>
   </Settings>
 </SettingsFile>

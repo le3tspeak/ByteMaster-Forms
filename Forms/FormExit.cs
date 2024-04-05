@@ -25,7 +25,6 @@ public partial class FormExit : Form
         DoubleBuffered = true;
         StartPosition = FormStartPosition.CenterParent;
         lblTextTopBar.TextAlign = ContentAlignment.MiddleCenter;
-        lblTextTopBar.Font = new Font("Segoe UI", 10, FontStyle.Regular);
         lblTextTopBar.Text = "Are you sure you want to exit?";
         // Colors Settigns
         BackColor = RGBColors.Default.FormBGPopup;

@@ -40,7 +40,7 @@ partial class FormZIP
         // progressBar
         // 
         progressBar.BackColor = Color.Black;
-        progressBar.Location = new Point(25, 74);
+        progressBar.Location = new Point(25, 52);
         progressBar.Name = "progressBar";
         progressBar.Size = new Size(747, 23);
         progressBar.Step = 5;
@@ -49,7 +49,7 @@ partial class FormZIP
         // lblZIPPathInfo
         // 
         lblZIPPathInfo.AutoSize = true;
-        lblZIPPathInfo.Location = new Point(62, 19);
+        lblZIPPathInfo.Location = new Point(62, 9);
         lblZIPPathInfo.MaximumSize = new Size(700, 0);
         lblZIPPathInfo.Name = "lblZIPPathInfo";
         lblZIPPathInfo.Size = new Size(53, 15);
@@ -59,7 +59,7 @@ partial class FormZIP
         // lblZIPPath
         // 
         lblZIPPath.AutoSize = true;
-        lblZIPPath.Location = new Point(25, 19);
+        lblZIPPath.Location = new Point(25, 9);
         lblZIPPath.Name = "lblZIPPath";
         lblZIPPath.Size = new Size(28, 15);
         lblZIPPath.TabIndex = 15;
@@ -68,7 +68,7 @@ partial class FormZIP
         // lblStatusInfo
         // 
         lblStatusInfo.AutoSize = true;
-        lblStatusInfo.Location = new Point(73, 47);
+        lblStatusInfo.Location = new Point(73, 28);
         lblStatusInfo.Name = "lblStatusInfo";
         lblStatusInfo.Size = new Size(22, 15);
         lblStatusInfo.TabIndex = 18;
@@ -77,7 +77,7 @@ partial class FormZIP
         // lblStatus
         // 
         lblStatus.AutoSize = true;
-        lblStatus.Location = new Point(25, 47);
+        lblStatus.Location = new Point(25, 28);
         lblStatus.Name = "lblStatus";
         lblStatus.Size = new Size(42, 15);
         lblStatus.TabIndex = 17;
@@ -86,7 +86,7 @@ partial class FormZIP
         // lblFilesInfo
         // 
         lblFilesInfo.AutoSize = true;
-        lblFilesInfo.Location = new Point(25, 113);
+        lblFilesInfo.Location = new Point(25, 81);
         lblFilesInfo.Name = "lblFilesInfo";
         lblFilesInfo.Size = new Size(93, 15);
         lblFilesInfo.TabIndex = 20;
@@ -95,7 +95,7 @@ partial class FormZIP
         // lblPercent
         // 
         lblPercent.AutoSize = true;
-        lblPercent.Location = new Point(749, 47);
+        lblPercent.Location = new Point(749, 28);
         lblPercent.Name = "lblPercent";
         lblPercent.Size = new Size(23, 15);
         lblPercent.TabIndex = 21;
@@ -106,7 +106,7 @@ partial class FormZIP
         AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
         BackColor = Color.Black;
-        ClientSize = new Size(800, 154);
+        ClientSize = new Size(800, 107);
         Controls.Add(lblPercent);
         Controls.Add(lblFilesInfo);
         Controls.Add(lblStatusInfo);

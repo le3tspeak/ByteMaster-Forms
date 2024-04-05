@@ -7,14 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GameManager = Game_Server_Manager.Properties.Settings;
 using AltoHttp;
 
 namespace Game_Server_Manager.Forms;
+
 public partial class FormDownloader : Form
 {
     public FormDownloader()
     {
         InitializeComponent();
+        BackColor = Properties.ColorTheme.Default.FormBGPopup;
     }
 
     // Fields

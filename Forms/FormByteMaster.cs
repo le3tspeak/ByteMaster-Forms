@@ -99,6 +99,7 @@ public partial class FormByteMaster : Form
     private void Timer_Tick_Long(object sender, EventArgs e)
     {
         SystemInfo();
+        SteamCMD();
     }
 
     // Methods

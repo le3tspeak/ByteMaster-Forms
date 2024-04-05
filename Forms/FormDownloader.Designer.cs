@@ -55,9 +55,10 @@ partial class FormDownloader
         btnResume.IconChar = FontAwesome.Sharp.IconChar.PlayCircle;
         btnResume.IconColor = Color.White;
         btnResume.IconFont = FontAwesome.Sharp.IconFont.Auto;
-        btnResume.Location = new Point(659, 119);
+        btnResume.IconSize = 35;
+        btnResume.Location = new Point(675, 89);
         btnResume.Name = "btnResume";
-        btnResume.Size = new Size(54, 54);
+        btnResume.Size = new Size(40, 40);
         btnResume.TabIndex = 0;
         btnResume.UseVisualStyleBackColor = false;
         btnResume.Visible = false;
@@ -66,7 +67,7 @@ partial class FormDownloader
         // lblURL
         // 
         lblURL.AutoSize = true;
-        lblURL.Location = new Point(26, 18);
+        lblURL.Location = new Point(15, 9);
         lblURL.Name = "lblURL";
         lblURL.Size = new Size(31, 15);
         lblURL.TabIndex = 1;
@@ -75,7 +76,7 @@ partial class FormDownloader
         // lblStatus
         // 
         lblStatus.AutoSize = true;
-        lblStatus.Location = new Point(26, 46);
+        lblStatus.Location = new Point(15, 35);
         lblStatus.Name = "lblStatus";
         lblStatus.Size = new Size(42, 15);
         lblStatus.TabIndex = 3;
@@ -84,7 +85,7 @@ partial class FormDownloader
         // lblStatusInfo
         // 
         lblStatusInfo.AutoSize = true;
-        lblStatusInfo.Location = new Point(74, 46);
+        lblStatusInfo.Location = new Point(63, 35);
         lblStatusInfo.Name = "lblStatusInfo";
         lblStatusInfo.Size = new Size(22, 15);
         lblStatusInfo.TabIndex = 4;
@@ -93,16 +94,16 @@ partial class FormDownloader
         // progressBar
         // 
         progressBar.BackColor = Color.Black;
-        progressBar.Location = new Point(26, 73);
+        progressBar.Location = new Point(15, 60);
         progressBar.Name = "progressBar";
-        progressBar.Size = new Size(747, 23);
+        progressBar.Size = new Size(762, 23);
         progressBar.Step = 5;
         progressBar.TabIndex = 5;
         // 
         // lblPercent
         // 
         lblPercent.AutoSize = true;
-        lblPercent.Location = new Point(750, 46);
+        lblPercent.Location = new Point(754, 35);
         lblPercent.Name = "lblPercent";
         lblPercent.Size = new Size(23, 15);
         lblPercent.TabIndex = 6;
@@ -117,9 +118,10 @@ partial class FormDownloader
         btnPause.IconChar = FontAwesome.Sharp.IconChar.PauseCircle;
         btnPause.IconColor = Color.White;
         btnPause.IconFont = FontAwesome.Sharp.IconFont.Auto;
-        btnPause.Location = new Point(659, 119);
+        btnPause.IconSize = 35;
+        btnPause.Location = new Point(675, 89);
         btnPause.Name = "btnPause";
-        btnPause.Size = new Size(54, 54);
+        btnPause.Size = new Size(40, 40);
         btnPause.TabIndex = 7;
         btnPause.UseVisualStyleBackColor = false;
         btnPause.Click += btnPause_Click;
@@ -130,7 +132,7 @@ partial class FormDownloader
         btnStart.IconChar = FontAwesome.Sharp.IconChar.None;
         btnStart.IconColor = Color.Black;
         btnStart.IconFont = FontAwesome.Sharp.IconFont.Auto;
-        btnStart.Location = new Point(204, 135);
+        btnStart.Location = new Point(548, 98);
         btnStart.Name = "btnStart";
         btnStart.Size = new Size(121, 23);
         btnStart.TabIndex = 8;
@@ -142,7 +144,7 @@ partial class FormDownloader
         // lblDownloaded
         // 
         lblDownloaded.AutoSize = true;
-        lblDownloaded.Location = new Point(26, 116);
+        lblDownloaded.Location = new Point(15, 98);
         lblDownloaded.Name = "lblDownloaded";
         lblDownloaded.Size = new Size(77, 15);
         lblDownloaded.TabIndex = 9;
@@ -151,7 +153,7 @@ partial class FormDownloader
         // lblSpeed
         // 
         lblSpeed.AutoSize = true;
-        lblSpeed.Location = new Point(392, 116);
+        lblSpeed.Location = new Point(381, 98);
         lblSpeed.Name = "lblSpeed";
         lblSpeed.Size = new Size(45, 15);
         lblSpeed.TabIndex = 10;
@@ -160,7 +162,7 @@ partial class FormDownloader
         // lblDownloadedMB
         // 
         lblDownloadedMB.AutoSize = true;
-        lblDownloadedMB.Location = new Point(109, 116);
+        lblDownloadedMB.Location = new Point(98, 98);
         lblDownloadedMB.Name = "lblDownloadedMB";
         lblDownloadedMB.Size = new Size(34, 15);
         lblDownloadedMB.TabIndex = 11;
@@ -169,7 +171,7 @@ partial class FormDownloader
         // lblSpeedStatus
         // 
         lblSpeedStatus.AutoSize = true;
-        lblSpeedStatus.Location = new Point(450, 116);
+        lblSpeedStatus.Location = new Point(439, 98);
         lblSpeedStatus.Name = "lblSpeedStatus";
         lblSpeedStatus.Size = new Size(44, 15);
         lblSpeedStatus.TabIndex = 12;
@@ -184,9 +186,10 @@ partial class FormDownloader
         btnAbort.IconChar = FontAwesome.Sharp.IconChar.XmarkCircle;
         btnAbort.IconColor = Color.White;
         btnAbort.IconFont = FontAwesome.Sharp.IconFont.Auto;
-        btnAbort.Location = new Point(719, 119);
+        btnAbort.IconSize = 35;
+        btnAbort.Location = new Point(735, 89);
         btnAbort.Name = "btnAbort";
-        btnAbort.Size = new Size(54, 54);
+        btnAbort.Size = new Size(40, 40);
         btnAbort.TabIndex = 13;
         btnAbort.UseVisualStyleBackColor = false;
         btnAbort.Click += btnAbort_Click;
@@ -194,7 +197,7 @@ partial class FormDownloader
         // lblURLInfo
         // 
         lblURLInfo.AutoSize = true;
-        lblURLInfo.Location = new Point(63, 18);
+        lblURLInfo.Location = new Point(52, 9);
         lblURLInfo.MaximumSize = new Size(700, 0);
         lblURLInfo.Name = "lblURLInfo";
         lblURLInfo.Size = new Size(47, 15);
@@ -206,7 +209,7 @@ partial class FormDownloader
         AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
         BackColor = Color.Black;
-        ClientSize = new Size(800, 185);
+        ClientSize = new Size(792, 136);
         Controls.Add(lblURLInfo);
         Controls.Add(btnAbort);
         Controls.Add(lblSpeedStatus);

@@ -37,6 +37,8 @@ partial class FormSteamCMD
         lblSteamArgumentsInfo = new Label();
         lblSteamCMDPath = new Label();
         panel3 = new Panel();
+        panel5 = new Panel();
+        panel4 = new Panel();
         panel1.SuspendLayout();
         panel2.SuspendLayout();
         panel3.SuspendLayout();
@@ -46,14 +48,14 @@ partial class FormSteamCMD
         // 
         tbConsole.BackColor = Color.Black;
         tbConsole.BorderStyle = BorderStyle.None;
-        tbConsole.Dock = DockStyle.Fill;
         tbConsole.ForeColor = Color.White;
-        tbConsole.Location = new Point(0, 0);
+        tbConsole.Location = new Point(12, 0);
+        tbConsole.Margin = new Padding(10);
         tbConsole.Multiline = true;
         tbConsole.Name = "tbConsole";
         tbConsole.ReadOnly = true;
         tbConsole.ScrollBars = ScrollBars.Horizontal;
-        tbConsole.Size = new Size(800, 75);
+        tbConsole.Size = new Size(778, 75);
         tbConsole.TabIndex = 0;
         // 
         // lblSteamCMDPathInfo
@@ -132,12 +134,30 @@ partial class FormSteamCMD
         // panel3
         // 
         panel3.BackColor = Color.Transparent;
+        panel3.Controls.Add(panel5);
+        panel3.Controls.Add(panel4);
         panel3.Controls.Add(tbConsole);
         panel3.Dock = DockStyle.Fill;
         panel3.Location = new Point(0, 35);
         panel3.Name = "panel3";
         panel3.Size = new Size(800, 75);
         panel3.TabIndex = 4;
+        // 
+        // panel5
+        // 
+        panel5.Dock = DockStyle.Right;
+        panel5.Location = new Point(790, 0);
+        panel5.Name = "panel5";
+        panel5.Size = new Size(10, 75);
+        panel5.TabIndex = 2;
+        // 
+        // panel4
+        // 
+        panel4.Dock = DockStyle.Left;
+        panel4.Location = new Point(0, 0);
+        panel4.Name = "panel4";
+        panel4.Size = new Size(10, 75);
+        panel4.TabIndex = 1;
         // 
         // FormSteamCMD
         // 
@@ -174,4 +194,6 @@ partial class FormSteamCMD
     private Label lblSteamCMDPath;
     private Label lblSteamArguments;
     private Label lblSteamArgumentsInfo;
+    private Panel panel5;
+    private Panel panel4;
 }
