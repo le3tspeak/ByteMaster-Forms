@@ -290,10 +290,10 @@
     <value>Bottom</value>
   </data>
   <data name="panelShadow.Location" type="System.Drawing.Point, System.Drawing">
-    <value>45, 60</value>
+    <value>291, 60</value>
   </data>
   <data name="panelShadow.Size" type="System.Drawing.Size, System.Drawing">
-    <value>835, 10</value>
+    <value>589, 10</value>
   </data>
   <data name="panelShadow.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
@@ -427,34 +427,34 @@
   <data name="&gt;&gt;lblSteamCMDInstalledInfo.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
+  <data name="lblSteamCMDInstalled.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="label4.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="lblSteamCMDInstalled.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9.75pt, style=Bold</value>
   </data>
-  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="lblSteamCMDInstalled.Location" type="System.Drawing.Point, System.Drawing">
     <value>701, 44</value>
   </data>
-  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="lblSteamCMDInstalled.Size" type="System.Drawing.Size, System.Drawing">
     <value>80, 17</value>
   </data>
-  <data name="label4.TabIndex" type="System.Int32, mscorlib">
+  <data name="lblSteamCMDInstalled.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
   </data>
-  <data name="label4.Text" xml:space="preserve">
+  <data name="lblSteamCMDInstalled.Text" xml:space="preserve">
     <value>SteamCMD:</value>
   </data>
-  <data name="&gt;&gt;label4.Name" xml:space="preserve">
-    <value>label4</value>
+  <data name="&gt;&gt;lblSteamCMDInstalled.Name" xml:space="preserve">
+    <value>lblSteamCMDInstalled</value>
   </data>
-  <data name="&gt;&gt;label4.Type" xml:space="preserve">
+  <data name="&gt;&gt;lblSteamCMDInstalled.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
+  <data name="&gt;&gt;lblSteamCMDInstalled.Parent" xml:space="preserve">
     <value>panelTitelBar</value>
   </data>
-  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;lblSteamCMDInstalled.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
   <data name="btnControlboxMinimize.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
@@ -526,17 +526,17 @@
   <data name="&gt;&gt;btnControlboxExit.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="lblTitleChildForm.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="lblTitleChildForm.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
   </data>
   <data name="lblTitleChildForm.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 14.25pt, style=Bold</value>
   </data>
   <data name="lblTitleChildForm.Location" type="System.Drawing.Point, System.Drawing">
-    <value>51, 22</value>
+    <value>45, 0</value>
   </data>
   <data name="lblTitleChildForm.Size" type="System.Drawing.Size, System.Drawing">
-    <value>66, 25</value>
+    <value>246, 70</value>
   </data>
   <data name="lblTitleChildForm.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>

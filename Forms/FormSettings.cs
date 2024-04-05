@@ -61,11 +61,20 @@ public partial class FormSettings : Form
     // Lade Farb Einstellungen
     private void LoadColorSettings()
     {
+        // Form
         BackColor = ColorTheme.Default.FormBG;
+        // Buttons
         btnSteamCMDInstall.IconColor = ColorTheme.Default.IconSteam;
         btnSteamCMDInstall.ForeColor = ColorTheme.Default.Text;
+        btnSteamCMDInstall.BackColor = ColorTheme.Default.ButtonBG;
         btnSteamCMDInstall.FlatAppearance.MouseDownBackColor = ColorTheme.Default.MouseDown;
         btnSteamCMDInstall.FlatAppearance.MouseOverBackColor = ColorTheme.Default.MouseHover;
+        btnSteamCMDUninstall.IconColor = ColorTheme.Default.IconSteam;
+        btnSteamCMDUninstall.ForeColor = ColorTheme.Default.Text;
+        btnSteamCMDUninstall.BackColor = ColorTheme.Default.ButtonBG;
+        btnSteamCMDUninstall.FlatAppearance.MouseDownBackColor = ColorTheme.Default.MouseDown;
+        btnSteamCMDUninstall.FlatAppearance.MouseOverBackColor = ColorTheme.Default.MouseHover;
+        // Textboxen
         tbServerPath.BackColor = ColorTheme.Default.TextBoxBG;
         tbServerPath.ForeColor = ColorTheme.Default.TextBoxText;
         tbSteamCMDPath.BackColor = ColorTheme.Default.TextBoxBG;

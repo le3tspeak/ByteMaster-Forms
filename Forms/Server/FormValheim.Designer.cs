@@ -102,7 +102,7 @@ partial class FormValheim
         panelTopBar.Dock = DockStyle.Top;
         panelTopBar.Location = new Point(0, 0);
         panelTopBar.Name = "panelTopBar";
-        panelTopBar.Size = new Size(864, 84);
+        panelTopBar.Size = new Size(880, 84);
         panelTopBar.TabIndex = 0;
         // 
         // lblServerPathInfo
@@ -260,7 +260,7 @@ partial class FormValheim
         btnInstallServer.IconFont = FontAwesome.Sharp.IconFont.Auto;
         btnInstallServer.IconSize = 30;
         btnInstallServer.ImageAlign = ContentAlignment.MiddleLeft;
-        btnInstallServer.Location = new Point(8, 397);
+        btnInstallServer.Location = new Point(13, 433);
         btnInstallServer.Name = "btnInstallServer";
         btnInstallServer.Size = new Size(160, 40);
         btnInstallServer.TabIndex = 1;
@@ -280,7 +280,7 @@ partial class FormValheim
         btnStartServer.IconColor = Color.White;
         btnStartServer.IconFont = FontAwesome.Sharp.IconFont.Auto;
         btnStartServer.IconSize = 30;
-        btnStartServer.Location = new Point(174, 397);
+        btnStartServer.Location = new Point(179, 433);
         btnStartServer.Name = "btnStartServer";
         btnStartServer.Size = new Size(160, 40);
         btnStartServer.TabIndex = 2;
@@ -300,7 +300,7 @@ partial class FormValheim
         btnStopServer.IconColor = Color.White;
         btnStopServer.IconFont = FontAwesome.Sharp.IconFont.Auto;
         btnStopServer.IconSize = 30;
-        btnStopServer.Location = new Point(174, 440);
+        btnStopServer.Location = new Point(179, 476);
         btnStopServer.Name = "btnStopServer";
         btnStopServer.Size = new Size(160, 40);
         btnStopServer.TabIndex = 3;
@@ -321,7 +321,7 @@ partial class FormValheim
         btnOpenLogFile.IconFont = FontAwesome.Sharp.IconFont.Auto;
         btnOpenLogFile.IconSize = 30;
         btnOpenLogFile.ImageAlign = ContentAlignment.MiddleLeft;
-        btnOpenLogFile.Location = new Point(340, 397);
+        btnOpenLogFile.Location = new Point(345, 433);
         btnOpenLogFile.Name = "btnOpenLogFile";
         btnOpenLogFile.Size = new Size(160, 40);
         btnOpenLogFile.TabIndex = 4;
@@ -341,7 +341,7 @@ partial class FormValheim
         btnOpenServerDir.IconFont = FontAwesome.Sharp.IconFont.Auto;
         btnOpenServerDir.IconSize = 30;
         btnOpenServerDir.ImageAlign = ContentAlignment.MiddleLeft;
-        btnOpenServerDir.Location = new Point(340, 440);
+        btnOpenServerDir.Location = new Point(345, 476);
         btnOpenServerDir.Name = "btnOpenServerDir";
         btnOpenServerDir.Size = new Size(160, 40);
         btnOpenServerDir.TabIndex = 5;
@@ -361,7 +361,7 @@ partial class FormValheim
         btnUninstallServer.IconFont = FontAwesome.Sharp.IconFont.Auto;
         btnUninstallServer.IconSize = 30;
         btnUninstallServer.ImageAlign = ContentAlignment.MiddleLeft;
-        btnUninstallServer.Location = new Point(8, 440);
+        btnUninstallServer.Location = new Point(13, 476);
         btnUninstallServer.Name = "btnUninstallServer";
         btnUninstallServer.Size = new Size(160, 40);
         btnUninstallServer.TabIndex = 6;
@@ -408,7 +408,7 @@ partial class FormValheim
         panelServerSettings.Dock = DockStyle.Top;
         panelServerSettings.Location = new Point(0, 84);
         panelServerSettings.Name = "panelServerSettings";
-        panelServerSettings.Size = new Size(864, 307);
+        panelServerSettings.Size = new Size(880, 307);
         panelServerSettings.TabIndex = 8;
         // 
         // lblPresetHammer
@@ -416,7 +416,7 @@ partial class FormValheim
         lblPresetHammer.BackColor = Color.Transparent;
         lblPresetHammer.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
         lblPresetHammer.ForeColor = Color.White;
-        lblPresetHammer.Location = new Point(730, 72);
+        lblPresetHammer.Location = new Point(756, 64);
         lblPresetHammer.Name = "lblPresetHammer";
         lblPresetHammer.Size = new Size(70, 23);
         lblPresetHammer.TabIndex = 50;
@@ -428,7 +428,7 @@ partial class FormValheim
         lblPresetImmersive.BackColor = Color.Transparent;
         lblPresetImmersive.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
         lblPresetImmersive.ForeColor = Color.White;
-        lblPresetImmersive.Location = new Point(730, 105);
+        lblPresetImmersive.Location = new Point(756, 97);
         lblPresetImmersive.Name = "lblPresetImmersive";
         lblPresetImmersive.Size = new Size(90, 23);
         lblPresetImmersive.TabIndex = 49;
@@ -440,7 +440,7 @@ partial class FormValheim
         lblPresetHardcore.BackColor = Color.Transparent;
         lblPresetHardcore.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
         lblPresetHardcore.ForeColor = Color.White;
-        lblPresetHardcore.Location = new Point(730, 138);
+        lblPresetHardcore.Location = new Point(756, 130);
         lblPresetHardcore.Name = "lblPresetHardcore";
         lblPresetHardcore.Size = new Size(70, 23);
         lblPresetHardcore.TabIndex = 48;
@@ -452,7 +452,7 @@ partial class FormValheim
         lblPresetHard.BackColor = Color.Transparent;
         lblPresetHard.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
         lblPresetHard.ForeColor = Color.White;
-        lblPresetHard.Location = new Point(730, 171);
+        lblPresetHard.Location = new Point(756, 163);
         lblPresetHard.Name = "lblPresetHard";
         lblPresetHard.Size = new Size(52, 23);
         lblPresetHard.TabIndex = 47;
@@ -464,7 +464,7 @@ partial class FormValheim
         lblPresetNormal.BackColor = Color.Transparent;
         lblPresetNormal.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
         lblPresetNormal.ForeColor = Color.White;
-        lblPresetNormal.Location = new Point(730, 203);
+        lblPresetNormal.Location = new Point(756, 195);
         lblPresetNormal.Name = "lblPresetNormal";
         lblPresetNormal.Size = new Size(70, 23);
         lblPresetNormal.TabIndex = 46;
@@ -476,7 +476,7 @@ partial class FormValheim
         lblPresetEasy.BackColor = Color.Transparent;
         lblPresetEasy.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
         lblPresetEasy.ForeColor = Color.White;
-        lblPresetEasy.Location = new Point(730, 236);
+        lblPresetEasy.Location = new Point(756, 228);
         lblPresetEasy.Name = "lblPresetEasy";
         lblPresetEasy.Size = new Size(52, 23);
         lblPresetEasy.TabIndex = 45;
@@ -488,7 +488,7 @@ partial class FormValheim
         lblPresetCasual.BackColor = Color.Transparent;
         lblPresetCasual.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
         lblPresetCasual.ForeColor = Color.White;
-        lblPresetCasual.Location = new Point(730, 269);
+        lblPresetCasual.Location = new Point(756, 261);
         lblPresetCasual.Name = "lblPresetCasual";
         lblPresetCasual.Size = new Size(52, 23);
         lblPresetCasual.TabIndex = 44;
@@ -498,7 +498,7 @@ partial class FormValheim
         // trackBarPreset
         // 
         trackBarPreset.LargeChange = 1;
-        trackBarPreset.Location = new Point(701, 70);
+        trackBarPreset.Location = new Point(727, 62);
         trackBarPreset.Maximum = 7;
         trackBarPreset.Minimum = 1;
         trackBarPreset.Name = "trackBarPreset";
@@ -514,7 +514,7 @@ partial class FormValheim
         cbLogFile.BackColor = Color.Transparent;
         cbLogFile.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
         cbLogFile.ForeColor = Color.White;
-        cbLogFile.Location = new Point(566, 90);
+        cbLogFile.Location = new Point(580, 107);
         cbLogFile.Name = "cbLogFile";
         cbLogFile.Size = new Size(76, 21);
         cbLogFile.TabIndex = 36;
@@ -528,7 +528,7 @@ partial class FormValheim
         cbPublic.BackColor = Color.Transparent;
         cbPublic.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
         cbPublic.ForeColor = Color.White;
-        cbPublic.Location = new Point(566, 65);
+        cbPublic.Location = new Point(580, 82);
         cbPublic.Name = "cbPublic";
         cbPublic.Size = new Size(65, 21);
         cbPublic.TabIndex = 35;
@@ -542,7 +542,7 @@ partial class FormValheim
         cbCrossplay.BackColor = Color.Transparent;
         cbCrossplay.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
         cbCrossplay.ForeColor = Color.White;
-        cbCrossplay.Location = new Point(566, 40);
+        cbCrossplay.Location = new Point(580, 57);
         cbCrossplay.Name = "cbCrossplay";
         cbCrossplay.Size = new Size(86, 21);
         cbCrossplay.TabIndex = 34;
@@ -555,7 +555,7 @@ partial class FormValheim
         lblPreset.BackColor = Color.Transparent;
         lblPreset.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
         lblPreset.ForeColor = Color.White;
-        lblPreset.Location = new Point(701, 38);
+        lblPreset.Location = new Point(727, 30);
         lblPreset.Name = "lblPreset";
         lblPreset.Size = new Size(92, 23);
         lblPreset.TabIndex = 35;
@@ -564,7 +564,7 @@ partial class FormValheim
         // 
         // tbBackupLongInfo
         // 
-        tbBackupLongInfo.Location = new Point(381, 165);
+        tbBackupLongInfo.Location = new Point(381, 178);
         tbBackupLongInfo.Name = "tbBackupLongInfo";
         tbBackupLongInfo.PlaceholderText = "43200";
         tbBackupLongInfo.Size = new Size(147, 23);
@@ -576,7 +576,7 @@ partial class FormValheim
         label2.BackColor = Color.Transparent;
         label2.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
         label2.ForeColor = Color.White;
-        label2.Location = new Point(267, 165);
+        label2.Location = new Point(267, 178);
         label2.Name = "label2";
         label2.Size = new Size(108, 23);
         label2.TabIndex = 33;
@@ -585,7 +585,7 @@ partial class FormValheim
         // 
         // tbBackupShortInfo
         // 
-        tbBackupShortInfo.Location = new Point(381, 140);
+        tbBackupShortInfo.Location = new Point(381, 153);
         tbBackupShortInfo.Name = "tbBackupShortInfo";
         tbBackupShortInfo.PlaceholderText = "7200";
         tbBackupShortInfo.Size = new Size(147, 23);
@@ -597,7 +597,7 @@ partial class FormValheim
         blblBackupShort.BackColor = Color.Transparent;
         blblBackupShort.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
         blblBackupShort.ForeColor = Color.White;
-        blblBackupShort.Location = new Point(267, 140);
+        blblBackupShort.Location = new Point(267, 153);
         blblBackupShort.Name = "blblBackupShort";
         blblBackupShort.Size = new Size(108, 23);
         blblBackupShort.TabIndex = 31;
@@ -606,7 +606,7 @@ partial class FormValheim
         // 
         // tbServerSaveIntervalInfo
         // 
-        tbServerSaveIntervalInfo.Location = new Point(381, 115);
+        tbServerSaveIntervalInfo.Location = new Point(381, 128);
         tbServerSaveIntervalInfo.Name = "tbServerSaveIntervalInfo";
         tbServerSaveIntervalInfo.PlaceholderText = "1800";
         tbServerSaveIntervalInfo.Size = new Size(147, 23);
@@ -618,7 +618,7 @@ partial class FormValheim
         lblServerSaveInterval.BackColor = Color.Transparent;
         lblServerSaveInterval.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
         lblServerSaveInterval.ForeColor = Color.White;
-        lblServerSaveInterval.Location = new Point(267, 115);
+        lblServerSaveInterval.Location = new Point(267, 128);
         lblServerSaveInterval.Name = "lblServerSaveInterval";
         lblServerSaveInterval.Size = new Size(108, 23);
         lblServerSaveInterval.TabIndex = 25;
@@ -627,7 +627,7 @@ partial class FormValheim
         // 
         // tbServerSaveDirInfo
         // 
-        tbServerSaveDirInfo.Location = new Point(381, 90);
+        tbServerSaveDirInfo.Location = new Point(381, 103);
         tbServerSaveDirInfo.Name = "tbServerSaveDirInfo";
         tbServerSaveDirInfo.PlaceholderText = "save_game";
         tbServerSaveDirInfo.Size = new Size(147, 23);
@@ -639,7 +639,7 @@ partial class FormValheim
         lblServerSaveDir.BackColor = Color.Transparent;
         lblServerSaveDir.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
         lblServerSaveDir.ForeColor = Color.White;
-        lblServerSaveDir.Location = new Point(267, 90);
+        lblServerSaveDir.Location = new Point(267, 103);
         lblServerSaveDir.Name = "lblServerSaveDir";
         lblServerSaveDir.Size = new Size(108, 23);
         lblServerSaveDir.TabIndex = 23;
@@ -648,7 +648,7 @@ partial class FormValheim
         // 
         // tbServerBackupsInfo
         // 
-        tbServerBackupsInfo.Location = new Point(381, 65);
+        tbServerBackupsInfo.Location = new Point(381, 78);
         tbServerBackupsInfo.Name = "tbServerBackupsInfo";
         tbServerBackupsInfo.PlaceholderText = "4";
         tbServerBackupsInfo.Size = new Size(147, 23);
@@ -660,7 +660,7 @@ partial class FormValheim
         lblServerBackups.BackColor = Color.Transparent;
         lblServerBackups.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
         lblServerBackups.ForeColor = Color.White;
-        lblServerBackups.Location = new Point(267, 65);
+        lblServerBackups.Location = new Point(267, 78);
         lblServerBackups.Name = "lblServerBackups";
         lblServerBackups.Size = new Size(108, 23);
         lblServerBackups.TabIndex = 21;
@@ -669,7 +669,7 @@ partial class FormValheim
         // 
         // tbServerWorldInfo
         // 
-        tbServerWorldInfo.Location = new Point(381, 40);
+        tbServerWorldInfo.Location = new Point(381, 53);
         tbServerWorldInfo.Name = "tbServerWorldInfo";
         tbServerWorldInfo.PlaceholderText = "Default";
         tbServerWorldInfo.Size = new Size(147, 23);
@@ -681,7 +681,7 @@ partial class FormValheim
         lblServerWorld.BackColor = Color.Transparent;
         lblServerWorld.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
         lblServerWorld.ForeColor = Color.White;
-        lblServerWorld.Location = new Point(267, 40);
+        lblServerWorld.Location = new Point(267, 53);
         lblServerWorld.Name = "lblServerWorld";
         lblServerWorld.Size = new Size(108, 23);
         lblServerWorld.TabIndex = 19;
@@ -690,7 +690,7 @@ partial class FormValheim
         // 
         // tbServerPortInfo
         // 
-        tbServerPortInfo.Location = new Point(98, 115);
+        tbServerPortInfo.Location = new Point(98, 128);
         tbServerPortInfo.Name = "tbServerPortInfo";
         tbServerPortInfo.PlaceholderText = "12345";
         tbServerPortInfo.Size = new Size(147, 23);
@@ -700,7 +700,7 @@ partial class FormValheim
         // tbServerIPInfo
         // 
         tbServerIPInfo.Enabled = false;
-        tbServerIPInfo.Location = new Point(98, 90);
+        tbServerIPInfo.Location = new Point(98, 103);
         tbServerIPInfo.Name = "tbServerIPInfo";
         tbServerIPInfo.PlaceholderText = "127.0.0.1";
         tbServerIPInfo.ReadOnly = true;
@@ -709,7 +709,7 @@ partial class FormValheim
         // 
         // tbServerPasswordInfo
         // 
-        tbServerPasswordInfo.Location = new Point(98, 65);
+        tbServerPasswordInfo.Location = new Point(98, 78);
         tbServerPasswordInfo.Name = "tbServerPasswordInfo";
         tbServerPasswordInfo.PlaceholderText = "Secret";
         tbServerPasswordInfo.Size = new Size(147, 23);
@@ -718,7 +718,7 @@ partial class FormValheim
         // 
         // tbServerNameInfo
         // 
-        tbServerNameInfo.Location = new Point(98, 40);
+        tbServerNameInfo.Location = new Point(98, 53);
         tbServerNameInfo.Name = "tbServerNameInfo";
         tbServerNameInfo.PlaceholderText = "HeftiKuss";
         tbServerNameInfo.Size = new Size(147, 23);
@@ -730,7 +730,7 @@ partial class FormValheim
         lblServerPort.BackColor = Color.Transparent;
         lblServerPort.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
         lblServerPort.ForeColor = Color.White;
-        lblServerPort.Location = new Point(13, 115);
+        lblServerPort.Location = new Point(13, 128);
         lblServerPort.Name = "lblServerPort";
         lblServerPort.Size = new Size(78, 23);
         lblServerPort.TabIndex = 13;
@@ -742,7 +742,7 @@ partial class FormValheim
         lblServerIP.BackColor = Color.Transparent;
         lblServerIP.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
         lblServerIP.ForeColor = Color.White;
-        lblServerIP.Location = new Point(14, 90);
+        lblServerIP.Location = new Point(14, 103);
         lblServerIP.Name = "lblServerIP";
         lblServerIP.Size = new Size(78, 23);
         lblServerIP.TabIndex = 11;
@@ -754,7 +754,7 @@ partial class FormValheim
         lblServerPassword.BackColor = Color.Transparent;
         lblServerPassword.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
         lblServerPassword.ForeColor = Color.White;
-        lblServerPassword.Location = new Point(14, 65);
+        lblServerPassword.Location = new Point(14, 78);
         lblServerPassword.Name = "lblServerPassword";
         lblServerPassword.Size = new Size(78, 23);
         lblServerPassword.TabIndex = 8;
@@ -766,7 +766,7 @@ partial class FormValheim
         lblServerName.BackColor = Color.Transparent;
         lblServerName.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
         lblServerName.ForeColor = Color.White;
-        lblServerName.Location = new Point(14, 40);
+        lblServerName.Location = new Point(14, 53);
         lblServerName.Name = "lblServerName";
         lblServerName.Size = new Size(78, 23);
         lblServerName.TabIndex = 6;
@@ -780,7 +780,7 @@ partial class FormValheim
         panelServerSettingsTop.Dock = DockStyle.Top;
         panelServerSettingsTop.Location = new Point(0, 0);
         panelServerSettingsTop.Name = "panelServerSettingsTop";
-        panelServerSettingsTop.Size = new Size(864, 30);
+        panelServerSettingsTop.Size = new Size(880, 30);
         panelServerSettingsTop.TabIndex = 10;
         // 
         // label3
@@ -791,7 +791,7 @@ partial class FormValheim
         label3.ForeColor = Color.White;
         label3.Location = new Point(0, 0);
         label3.Name = "label3";
-        label3.Size = new Size(864, 30);
+        label3.Size = new Size(880, 30);
         label3.TabIndex = 0;
         label3.Text = "Server Settings";
         label3.TextAlign = ContentAlignment.MiddleCenter;
@@ -813,7 +813,7 @@ partial class FormValheim
         AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
         BackColor = Color.Black;
-        ClientSize = new Size(864, 491);
+        ClientSize = new Size(880, 530);
         Controls.Add(panelServerSettings);
         Controls.Add(btnUninstallServer);
         Controls.Add(btnOpenServerDir);
@@ -823,6 +823,7 @@ partial class FormValheim
         Controls.Add(btnInstallServer);
         Controls.Add(panelTopBar);
         DoubleBuffered = true;
+        FormBorderStyle = FormBorderStyle.None;
         Name = "FormValheim";
         ShowInTaskbar = false;
         Text = "Valheim";

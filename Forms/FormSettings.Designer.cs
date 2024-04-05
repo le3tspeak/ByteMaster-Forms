@@ -42,11 +42,11 @@ partial class FormSettings
         // lblServersPath
         // 
         lblServersPath.AutoSize = true;
-        lblServersPath.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+        lblServersPath.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
         lblServersPath.ForeColor = Color.White;
         lblServersPath.Location = new Point(12, 9);
         lblServersPath.Name = "lblServersPath";
-        lblServersPath.Size = new Size(184, 21);
+        lblServersPath.Size = new Size(201, 21);
         lblServersPath.TabIndex = 0;
         lblServersPath.Text = "Location of game servers";
         // 
@@ -57,15 +57,16 @@ partial class FormSettings
         btnSteamCMDInstall.BackgroundImageLayout = ImageLayout.Zoom;
         btnSteamCMDInstall.FlatAppearance.BorderSize = 0;
         btnSteamCMDInstall.FlatStyle = FlatStyle.Flat;
+        btnSteamCMDInstall.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
         btnSteamCMDInstall.ForeColor = Color.White;
         btnSteamCMDInstall.IconChar = FontAwesome.Sharp.IconChar.Steam;
         btnSteamCMDInstall.IconColor = Color.White;
         btnSteamCMDInstall.IconFont = FontAwesome.Sharp.IconFont.Auto;
         btnSteamCMDInstall.IconSize = 45;
         btnSteamCMDInstall.ImageAlign = ContentAlignment.MiddleLeft;
-        btnSteamCMDInstall.Location = new Point(31, 365);
+        btnSteamCMDInstall.Location = new Point(12, 408);
         btnSteamCMDInstall.Name = "btnSteamCMDInstall";
-        btnSteamCMDInstall.Size = new Size(175, 50);
+        btnSteamCMDInstall.Size = new Size(199, 50);
         btnSteamCMDInstall.TabIndex = 1;
         btnSteamCMDInstall.Text = "Update Steam CMD";
         btnSteamCMDInstall.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -95,11 +96,11 @@ partial class FormSettings
         // lblSteamCMDPath
         // 
         lblSteamCMDPath.AutoSize = true;
-        lblSteamCMDPath.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+        lblSteamCMDPath.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
         lblSteamCMDPath.ForeColor = Color.White;
         lblSteamCMDPath.Location = new Point(12, 74);
         lblSteamCMDPath.Name = "lblSteamCMDPath";
-        lblSteamCMDPath.Size = new Size(147, 21);
+        lblSteamCMDPath.Size = new Size(162, 21);
         lblSteamCMDPath.TabIndex = 6;
         lblSteamCMDPath.Text = "SteamCMD location";
         // 
@@ -107,10 +108,11 @@ partial class FormSettings
         // 
         lblVersion.AutoSize = true;
         lblVersion.BackColor = Color.Transparent;
+        lblVersion.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
         lblVersion.ForeColor = Color.White;
-        lblVersion.Location = new Point(786, 489);
+        lblVersion.Location = new Point(788, 504);
         lblVersion.Name = "lblVersion";
-        lblVersion.Size = new Size(66, 15);
+        lblVersion.Size = new Size(80, 17);
         lblVersion.TabIndex = 7;
         lblVersion.Text = "Version: 0.1";
         // 
@@ -118,13 +120,14 @@ partial class FormSettings
         // 
         btnSetServerPath.BackColor = Color.Transparent;
         btnSetServerPath.BackgroundImageLayout = ImageLayout.Zoom;
+        btnSetServerPath.FlatAppearance.BorderSize = 0;
         btnSetServerPath.FlatStyle = FlatStyle.Popup;
         btnSetServerPath.ForeColor = Color.White;
         btnSetServerPath.IconChar = FontAwesome.Sharp.IconChar.FolderTree;
         btnSetServerPath.IconColor = Color.White;
         btnSetServerPath.IconFont = FontAwesome.Sharp.IconFont.Auto;
         btnSetServerPath.IconSize = 15;
-        btnSetServerPath.Location = new Point(803, 32);
+        btnSetServerPath.Location = new Point(813, 32);
         btnSetServerPath.Name = "btnSetServerPath";
         btnSetServerPath.Size = new Size(49, 23);
         btnSetServerPath.TabIndex = 8;
@@ -135,13 +138,14 @@ partial class FormSettings
         // 
         btnSetStemCMDPath.BackColor = Color.Transparent;
         btnSetStemCMDPath.BackgroundImageLayout = ImageLayout.Zoom;
+        btnSetStemCMDPath.FlatAppearance.BorderSize = 0;
         btnSetStemCMDPath.FlatStyle = FlatStyle.Popup;
         btnSetStemCMDPath.ForeColor = Color.White;
         btnSetStemCMDPath.IconChar = FontAwesome.Sharp.IconChar.FolderTree;
         btnSetStemCMDPath.IconColor = Color.White;
         btnSetStemCMDPath.IconFont = FontAwesome.Sharp.IconFont.Auto;
         btnSetStemCMDPath.IconSize = 15;
-        btnSetStemCMDPath.Location = new Point(803, 97);
+        btnSetStemCMDPath.Location = new Point(813, 98);
         btnSetStemCMDPath.Name = "btnSetStemCMDPath";
         btnSetStemCMDPath.Size = new Size(49, 23);
         btnSetStemCMDPath.TabIndex = 9;
@@ -155,14 +159,15 @@ partial class FormSettings
         btnSteamCMDUninstall.BackgroundImageLayout = ImageLayout.Zoom;
         btnSteamCMDUninstall.FlatAppearance.BorderSize = 0;
         btnSteamCMDUninstall.FlatStyle = FlatStyle.Flat;
+        btnSteamCMDUninstall.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
         btnSteamCMDUninstall.ForeColor = Color.White;
         btnSteamCMDUninstall.IconChar = FontAwesome.Sharp.IconChar.Steam;
         btnSteamCMDUninstall.IconColor = Color.White;
         btnSteamCMDUninstall.IconFont = FontAwesome.Sharp.IconFont.Auto;
         btnSteamCMDUninstall.IconSize = 45;
-        btnSteamCMDUninstall.Location = new Point(31, 425);
+        btnSteamCMDUninstall.Location = new Point(12, 468);
         btnSteamCMDUninstall.Name = "btnSteamCMDUninstall";
-        btnSteamCMDUninstall.Size = new Size(175, 50);
+        btnSteamCMDUninstall.Size = new Size(199, 50);
         btnSteamCMDUninstall.TabIndex = 10;
         btnSteamCMDUninstall.Text = "Uninstall Steam CMD";
         btnSteamCMDUninstall.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -174,7 +179,7 @@ partial class FormSettings
         AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
         BackColor = Color.Black;
-        ClientSize = new Size(864, 513);
+        ClientSize = new Size(880, 530);
         Controls.Add(btnSteamCMDUninstall);
         Controls.Add(btnSetStemCMDPath);
         Controls.Add(btnSetServerPath);

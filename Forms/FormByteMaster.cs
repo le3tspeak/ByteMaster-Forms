@@ -102,6 +102,20 @@ public partial class FormByteMaster : Form
         SteamCMD();
     }
 
+    // Drag Form
+    [DllImport("user32.dll", EntryPoint = "ReleaseCapture")]
+    private static extern void ReleaseCapture();
+
+    [DllImport("user32.dll", EntryPoint = "SendMessage")]
+    private static extern void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
+
+    // Drag Form from panelTitleBar
+    private void panelTitleBar_MouseDown(object sender, MouseEventArgs e)
+    {
+        ReleaseCapture();
+        SendMessage(this.Handle, 0x112, 0xf012, 0);
+    }
+
     // Methods
 
     // Lade RAM-Informationen
@@ -117,32 +131,22 @@ public partial class FormByteMaster : Form
         lblRamUsageSystemInfo.Text = $"{ramUsage:F2} GB / {totalRAM:F0} GB  {totalRAMPercentage:F2} %";
     }
 
-
-
-
-
-
-
-
-
-
     // Prüfe ob SteamCMD installiert ist
     private void SteamCMD()
     {
         if (File.Exists(Path.Combine((GameManager.Default.SteamCMDPath), "steamerrorreporter.exe")))
         {
             // SteamCMD vorhanden
-            lblSteamCMDInstalledInfo.ForeColor = System.Drawing.Color.Green;
+            lblSteamCMDInstalledInfo.ForeColor = Color.Green;
             lblSteamCMDInstalledInfo.Text = "Installed";
         }
         else
         {
             // SteamCMD nicht vorhanden
-            lblSteamCMDInstalledInfo.ForeColor = System.Drawing.Color.Red;
+            lblSteamCMDInstalledInfo.ForeColor = Color.Red;
             lblSteamCMDInstalledInfo.Text = "Not Installed";
         }
     }
-
 
     private void ActivateButton(object senderBtn, Color color)
     {
@@ -209,7 +213,7 @@ public partial class FormByteMaster : Form
         if (currentChildForm != null)
             currentChildForm.Close();
         Reset();
-        OpenChildForm(new Forms.FormHome());
+        OpenChildForm(new FormHome());
         lblTitleChildForm.Text = "Home";
     }
 
@@ -226,14 +230,14 @@ public partial class FormByteMaster : Form
     private void btnValheim_Click(object sender, EventArgs e)
     {
         ActivateButton(sender, RGBColors.Default.SideMenuSelected);
-        OpenChildForm(new Forms.FormValheim());
+        OpenChildForm(new FormValheim());
     }
 
     // Button Settings
     private void btnSettings_Click(object sender, EventArgs e)
     {
         ActivateButton(sender, RGBColors.Default.color6);
-        OpenChildForm(new Forms.FormSettings());
+        OpenChildForm(new FormSettings());
     }
 
     private void btnControlboxExit_MouseEnter(object sender, EventArgs e)
@@ -258,21 +262,13 @@ public partial class FormByteMaster : Form
         WindowState = FormWindowState.Minimized;
     }
 
-
-    //
-    // Drag Form
-    //
-
-    [DllImport("user32.dll", EntryPoint = "ReleaseCapture")]
-    private static extern void ReleaseCapture();
-
-    [DllImport("user32.dll", EntryPoint = "SendMessage")]
-    private static extern void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
-
-    // Drag Form from panelTitleBar
-    private void panelTitleBar_MouseDown(object sender, MouseEventArgs e)
+    private void lblSteamCMDInstalled_Click(object sender, EventArgs e)
     {
-        ReleaseCapture();
-        SendMessage(this.Handle, 0x112, 0xf012, 0);
+        OpenChildForm(new FormSettings());
+    }
+
+    private void lblSteamCMDInstalledInfo_Click(object sender, EventArgs e)
+    {
+        OpenChildForm(new FormSettings());
     }
 }

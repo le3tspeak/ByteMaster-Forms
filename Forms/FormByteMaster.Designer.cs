@@ -41,7 +41,7 @@ partial class FormByteMaster
         lblRamUsageSystem = new Label();
         lblCpuNameInfo = new Label();
         lblSteamCMDInstalledInfo = new Label();
-        label4 = new Label();
+        lblSteamCMDInstalled = new Label();
         btnControlboxMinimize = new FontAwesome.Sharp.IconButton();
         btnControlboxExit = new FontAwesome.Sharp.IconButton();
         lblTitleChildForm = new Label();
@@ -56,7 +56,7 @@ partial class FormByteMaster
         // 
         // panelMenu
         // 
-        panelMenu.BackColor = Color.FromArgb(18, 0, 22);
+        panelMenu.BackColor = Color.FromArgb(38, 38, 38);
         panelMenu.Controls.Add(btnSettings);
         panelMenu.Controls.Add(btnValheim);
         panelMenu.Controls.Add(panelLogo);
@@ -65,7 +65,7 @@ partial class FormByteMaster
         // 
         // btnSettings
         // 
-        btnSettings.BackColor = Color.FromArgb(18, 0, 22);
+        btnSettings.BackColor = Color.FromArgb(38, 38, 38);
         resources.ApplyResources(btnSettings, "btnSettings");
         btnSettings.FlatAppearance.BorderSize = 0;
         btnSettings.FlatAppearance.MouseDownBackColor = Color.FromArgb(18, 0, 22);
@@ -79,7 +79,7 @@ partial class FormByteMaster
         // 
         // btnValheim
         // 
-        btnValheim.BackColor = Color.FromArgb(18, 0, 22);
+        btnValheim.BackColor = Color.FromArgb(38, 38, 38);
         resources.ApplyResources(btnValheim, "btnValheim");
         btnValheim.FlatAppearance.BorderSize = 0;
         btnValheim.FlatAppearance.MouseDownBackColor = Color.FromArgb(18, 0, 22);
@@ -102,6 +102,7 @@ partial class FormByteMaster
         // 
         // btnHome
         // 
+        btnHome.BackColor = Color.FromArgb(38, 38, 38);
         resources.ApplyResources(btnHome, "btnHome");
         btnHome.Image = Properties.Resources.LogoNoBackground;
         btnHome.Name = "btnHome";
@@ -111,13 +112,13 @@ partial class FormByteMaster
         // 
         // panelTitelBar
         // 
-        panelTitelBar.BackColor = Color.FromArgb(18, 0, 22);
+        panelTitelBar.BackColor = Color.FromArgb(38, 38, 38);
         panelTitelBar.Controls.Add(panelShadow);
         panelTitelBar.Controls.Add(lblRamUsageSystemInfo);
         panelTitelBar.Controls.Add(lblRamUsageSystem);
         panelTitelBar.Controls.Add(lblCpuNameInfo);
         panelTitelBar.Controls.Add(lblSteamCMDInstalledInfo);
-        panelTitelBar.Controls.Add(label4);
+        panelTitelBar.Controls.Add(lblSteamCMDInstalled);
         panelTitelBar.Controls.Add(btnControlboxMinimize);
         panelTitelBar.Controls.Add(btnControlboxExit);
         panelTitelBar.Controls.Add(lblTitleChildForm);
@@ -160,15 +161,17 @@ partial class FormByteMaster
         lblSteamCMDInstalledInfo.BackColor = Color.Transparent;
         lblSteamCMDInstalledInfo.ForeColor = Color.White;
         lblSteamCMDInstalledInfo.Name = "lblSteamCMDInstalledInfo";
+        lblSteamCMDInstalledInfo.Click += lblSteamCMDInstalledInfo_Click;
         lblSteamCMDInstalledInfo.MouseDown += panelTitleBar_MouseDown;
         // 
-        // label4
+        // lblSteamCMDInstalled
         // 
-        resources.ApplyResources(label4, "label4");
-        label4.BackColor = Color.Transparent;
-        label4.ForeColor = Color.White;
-        label4.Name = "label4";
-        label4.MouseDown += panelTitleBar_MouseDown;
+        resources.ApplyResources(lblSteamCMDInstalled, "lblSteamCMDInstalled");
+        lblSteamCMDInstalled.BackColor = Color.Transparent;
+        lblSteamCMDInstalled.ForeColor = Color.White;
+        lblSteamCMDInstalled.Name = "lblSteamCMDInstalled";
+        lblSteamCMDInstalled.Click += lblSteamCMDInstalled_Click;
+        lblSteamCMDInstalled.MouseDown += panelTitleBar_MouseDown;
         // 
         // btnControlboxMinimize
         // 
@@ -207,7 +210,7 @@ partial class FormByteMaster
         // 
         // iconCurrentChildForm
         // 
-        iconCurrentChildForm.BackColor = Color.FromArgb(18, 0, 22);
+        iconCurrentChildForm.BackColor = Color.FromArgb(38, 38, 38);
         resources.ApplyResources(iconCurrentChildForm, "iconCurrentChildForm");
         iconCurrentChildForm.ForeColor = Color.FromArgb(12, 190, 228);
         iconCurrentChildForm.IconChar = FontAwesome.Sharp.IconChar.HomeUser;
@@ -220,7 +223,7 @@ partial class FormByteMaster
         // 
         // panelDesktop
         // 
-        panelDesktop.BackColor = Color.FromArgb(18, 0, 22);
+        panelDesktop.BackColor = Color.Black;
         resources.ApplyResources(panelDesktop, "panelDesktop");
         panelDesktop.Name = "panelDesktop";
         // 
@@ -228,7 +231,7 @@ partial class FormByteMaster
         // 
         resources.ApplyResources(this, "$this");
         AutoScaleMode = AutoScaleMode.Font;
-        BackColor = Color.FromArgb(18, 0, 22);
+        BackColor = Color.FromArgb(38, 38, 38);
         ControlBox = false;
         Controls.Add(panelDesktop);
         Controls.Add(panelTitelBar);
@@ -273,7 +276,7 @@ partial class FormByteMaster
     private Label lblServerInstalledInfo;
     private Label lblServerInstalled;
     private Label lblSteamCMDInstalledInfo;
-    private Label label4;
+    private Label lblSteamCMDInstalled;
     private Label lblCpuNameInfo;
     private Label lblRamUsageSystemInfo;
     private Label lblRamUsageSystem;

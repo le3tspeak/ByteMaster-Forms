@@ -271,5 +271,29 @@ namespace Game_Server_Manager.Properties {
                 this["FormBGChild"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("38, 38, 38")]
+        public global::System.Drawing.Color ButtonBG {
+            get {
+                return ((global::System.Drawing.Color)(this["ButtonBG"]));
+            }
+            set {
+                this["ButtonBG"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("192, 0, 0")]
+        public global::System.Drawing.Color IconDisabled {
+            get {
+                return ((global::System.Drawing.Color)(this["IconDisabled"]));
+            }
+            set {
+                this["IconDisabled"] = value;
+            }
+        }
     }
 }

@@ -65,5 +65,11 @@
     <Setting Name="FormBGChild" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">38, 38, 38</Value>
     </Setting>
+    <Setting Name="ButtonBG" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">38, 38, 38</Value>
+    </Setting>
+    <Setting Name="IconDisabled" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">192, 0, 0</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
