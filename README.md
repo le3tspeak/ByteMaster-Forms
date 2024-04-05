@@ -23,3 +23,7 @@ This is a simple game server manager for managing game servers on a Windows serv
 1. Download the latest release from the	[releases page](
 2. Extract the contents of the zip file to a folder on your server
 3. Run `GameServerManager.exe` to start the program
+
+## Images
+
+![Plot](Resources/MainWindow.png)
