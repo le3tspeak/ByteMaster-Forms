@@ -22,6 +22,7 @@ internal class RGBColors
         public static Color MouseHover = ColorTheme.Default.MouseHover;
         // Form
         public static Color FormBG = ColorTheme.Default.FormBG;
+        public static Color FormBGChild = ColorTheme.Default.FormBGChild;
         public static Color FormBGPopup = ColorTheme.Default.FormBGPopup;
         public static Color FormBGPopupTopBar = ColorTheme.Default.FormBGPopupTopBar;
         // Buttons

@@ -49,7 +49,7 @@ namespace Game_Server_Manager.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("18, 0, 22")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Transparent")]
         public global::System.Drawing.Color MouseDown {
             get {
                 return ((global::System.Drawing.Color)(this["MouseDown"]));
@@ -73,7 +73,7 @@ namespace Game_Server_Manager.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Black")]
+        [global::System.Configuration.DefaultSettingValueAttribute("38, 38, 38")]
         public global::System.Drawing.Color FormBG {
             get {
                 return ((global::System.Drawing.Color)(this["FormBG"]));
@@ -85,7 +85,7 @@ namespace Game_Server_Manager.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("21, 5, 21")]
+        [global::System.Configuration.DefaultSettingValueAttribute("50, 50, 50")]
         public global::System.Drawing.Color FormBGPopup {
             get {
                 return ((global::System.Drawing.Color)(this["FormBGPopup"]));
@@ -193,7 +193,7 @@ namespace Game_Server_Manager.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("DarkBlue")]
+        [global::System.Configuration.DefaultSettingValueAttribute("0, 0, 77")]
         public global::System.Drawing.Color FormBGPopupTopBar {
             get {
                 return ((global::System.Drawing.Color)(this["FormBGPopupTopBar"]));
@@ -257,6 +257,18 @@ namespace Game_Server_Manager.Properties {
             }
             set {
                 this["MenuSelected"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("42, 42, 42")]
+        public global::System.Drawing.Color FormBGChild {
+            get {
+                return ((global::System.Drawing.Color)(this["FormBGChild"]));
+            }
+            set {
+                this["FormBGChild"] = value;
             }
         }
     }

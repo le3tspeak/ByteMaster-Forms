@@ -28,15 +28,6 @@ partial class FormHome
     /// </summary>
     private void InitializeComponent()
     {
-        panelTopBar = new Panel();
-        lblSteamCMDInstalledINfo = new Label();
-        label4 = new Label();
-        label3 = new Label();
-        lblCpuNumberOfCoresInfo = new Label();
-        label2 = new Label();
-        lblCpuNameInfo = new Label();
-        lblRamUsageSystemInfo = new Label();
-        lblRamUsageSystem = new Label();
         label1 = new Label();
         panelValheimBar = new Panel();
         lblServerValheimPathInfo = new Label();
@@ -51,120 +42,9 @@ partial class FormHome
         lblRAMUsageValheim = new Label();
         lblCPUUsageInfo = new Label();
         lblCPUUsage = new Label();
-        panelTopBar.SuspendLayout();
         panelValheimBar.SuspendLayout();
         panelServerUsage.SuspendLayout();
         SuspendLayout();
-        // 
-        // panelTopBar
-        // 
-        panelTopBar.Controls.Add(lblSteamCMDInstalledINfo);
-        panelTopBar.Controls.Add(label4);
-        panelTopBar.Controls.Add(label3);
-        panelTopBar.Controls.Add(lblCpuNumberOfCoresInfo);
-        panelTopBar.Controls.Add(label2);
-        panelTopBar.Controls.Add(lblCpuNameInfo);
-        panelTopBar.Controls.Add(lblRamUsageSystemInfo);
-        panelTopBar.Controls.Add(lblRamUsageSystem);
-        panelTopBar.Dock = DockStyle.Top;
-        panelTopBar.Location = new Point(0, 0);
-        panelTopBar.Name = "panelTopBar";
-        panelTopBar.Size = new Size(864, 83);
-        panelTopBar.TabIndex = 0;
-        // 
-        // lblSteamCMDInstalledINfo
-        // 
-        lblSteamCMDInstalledINfo.AutoSize = true;
-        lblSteamCMDInstalledINfo.BackColor = Color.Transparent;
-        lblSteamCMDInstalledINfo.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
-        lblSteamCMDInstalledINfo.ForeColor = Color.White;
-        lblSteamCMDInstalledINfo.Location = new Point(563, 0);
-        lblSteamCMDInstalledINfo.Name = "lblSteamCMDInstalledINfo";
-        lblSteamCMDInstalledINfo.Size = new Size(88, 17);
-        lblSteamCMDInstalledINfo.TabIndex = 9;
-        lblSteamCMDInstalledINfo.Text = "Not Installed";
-        // 
-        // label4
-        // 
-        label4.AutoSize = true;
-        label4.BackColor = Color.Transparent;
-        label4.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
-        label4.ForeColor = Color.White;
-        label4.Location = new Point(477, 0);
-        label4.Name = "label4";
-        label4.Size = new Size(80, 17);
-        label4.TabIndex = 8;
-        label4.Text = "SteamCMD:";
-        // 
-        // label3
-        // 
-        label3.AutoSize = true;
-        label3.BackColor = Color.Transparent;
-        label3.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
-        label3.ForeColor = Color.White;
-        label3.Location = new Point(5, 21);
-        label3.Name = "label3";
-        label3.Size = new Size(46, 17);
-        label3.TabIndex = 7;
-        label3.Text = "Cores:";
-        // 
-        // lblCpuNumberOfCoresInfo
-        // 
-        lblCpuNumberOfCoresInfo.AutoSize = true;
-        lblCpuNumberOfCoresInfo.BackColor = Color.Transparent;
-        lblCpuNumberOfCoresInfo.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
-        lblCpuNumberOfCoresInfo.ForeColor = Color.White;
-        lblCpuNumberOfCoresInfo.Location = new Point(57, 21);
-        lblCpuNumberOfCoresInfo.Name = "lblCpuNumberOfCoresInfo";
-        lblCpuNumberOfCoresInfo.Size = new Size(0, 17);
-        lblCpuNumberOfCoresInfo.TabIndex = 6;
-        // 
-        // label2
-        // 
-        label2.AutoSize = true;
-        label2.BackColor = Color.Transparent;
-        label2.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
-        label2.ForeColor = Color.White;
-        label2.Location = new Point(14, 0);
-        label2.Name = "label2";
-        label2.Size = new Size(37, 17);
-        label2.TabIndex = 5;
-        label2.Text = "CPU:";
-        // 
-        // lblCpuNameInfo
-        // 
-        lblCpuNameInfo.AutoSize = true;
-        lblCpuNameInfo.BackColor = Color.Transparent;
-        lblCpuNameInfo.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
-        lblCpuNameInfo.ForeColor = Color.White;
-        lblCpuNameInfo.Location = new Point(57, 0);
-        lblCpuNameInfo.Name = "lblCpuNameInfo";
-        lblCpuNameInfo.Size = new Size(0, 17);
-        lblCpuNameInfo.TabIndex = 4;
-        // 
-        // lblRamUsageSystemInfo
-        // 
-        lblRamUsageSystemInfo.AutoSize = true;
-        lblRamUsageSystemInfo.BackColor = Color.Transparent;
-        lblRamUsageSystemInfo.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
-        lblRamUsageSystemInfo.ForeColor = Color.White;
-        lblRamUsageSystemInfo.Location = new Point(57, 44);
-        lblRamUsageSystemInfo.Name = "lblRamUsageSystemInfo";
-        lblRamUsageSystemInfo.Size = new Size(84, 17);
-        lblRamUsageSystemInfo.TabIndex = 3;
-        lblRamUsageSystemInfo.Text = "0 MB / 1 MB";
-        // 
-        // lblRamUsageSystem
-        // 
-        lblRamUsageSystem.AutoSize = true;
-        lblRamUsageSystem.BackColor = Color.Transparent;
-        lblRamUsageSystem.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
-        lblRamUsageSystem.ForeColor = Color.White;
-        lblRamUsageSystem.Location = new Point(10, 44);
-        lblRamUsageSystem.Name = "lblRamUsageSystem";
-        lblRamUsageSystem.Size = new Size(41, 17);
-        lblRamUsageSystem.TabIndex = 2;
-        lblRamUsageSystem.Text = "RAM:";
         // 
         // label1
         // 
@@ -192,7 +72,7 @@ partial class FormHome
         panelValheimBar.Controls.Add(lblServerInstalledValheim);
         panelValheimBar.Controls.Add(panelServerUsage);
         panelValheimBar.Dock = DockStyle.Top;
-        panelValheimBar.Location = new Point(0, 83);
+        panelValheimBar.Location = new Point(0, 0);
         panelValheimBar.Name = "panelValheimBar";
         panelValheimBar.Size = new Size(864, 105);
         panelValheimBar.TabIndex = 1;
@@ -359,12 +239,8 @@ partial class FormHome
         BackColor = Color.Black;
         ClientSize = new Size(864, 491);
         Controls.Add(panelValheimBar);
-        Controls.Add(panelTopBar);
         Name = "FormHome";
-        Text = "Dashbord";
-        Load += FormHome_LoadAsync;
-        panelTopBar.ResumeLayout(false);
-        panelTopBar.PerformLayout();
+        Text = "Home";
         panelValheimBar.ResumeLayout(false);
         panelValheimBar.PerformLayout();
         panelServerUsage.ResumeLayout(false);
@@ -373,7 +249,6 @@ partial class FormHome
     }
 
     #endregion
-    private Panel panelTopBar;
     private Label label1;
     private Panel panelValheimBar;
     private Label lblServerValheimPathInfo;
@@ -388,12 +263,4 @@ partial class FormHome
     private Label lblServerValheimRunningInfo;
     private Label lblServerValheimInstalledInfo;
     private Label lblServerInstalledValheim;
-    private Label lblRamUsageSystemInfo;
-    private Label lblRamUsageSystem;
-    private Label lblCpuNameInfo;
-    private Label label2;
-    private Label lblCpuNumberOfCoresInfo;
-    private Label label3;
-    private Label label4;
-    private Label lblSteamCMDInstalledINfo;
 }

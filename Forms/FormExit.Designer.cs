@@ -44,13 +44,14 @@ partial class FormExit
         btnExitYes.FlatAppearance.MouseDownBackColor = Color.FromArgb(18, 0, 22);
         btnExitYes.FlatAppearance.MouseOverBackColor = Color.FromArgb(21, 5, 21);
         btnExitYes.FlatStyle = FlatStyle.Flat;
+        btnExitYes.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
         btnExitYes.ForeColor = Color.FromArgb(255, 255, 255);
         btnExitYes.IconChar = FontAwesome.Sharp.IconChar.Check;
         btnExitYes.IconColor = Color.FromArgb(255, 255, 255);
         btnExitYes.IconFont = FontAwesome.Sharp.IconFont.Auto;
         btnExitYes.Location = new Point(126, 36);
         btnExitYes.Name = "btnExitYes";
-        btnExitYes.Size = new Size(54, 73);
+        btnExitYes.Size = new Size(54, 75);
         btnExitYes.TabIndex = 0;
         btnExitYes.Text = "Yes";
         btnExitYes.TextAlign = ContentAlignment.BottomCenter;
@@ -69,13 +70,14 @@ partial class FormExit
         btnExitNo.FlatAppearance.MouseDownBackColor = Color.FromArgb(18, 0, 22);
         btnExitNo.FlatAppearance.MouseOverBackColor = Color.FromArgb(21, 5, 21);
         btnExitNo.FlatStyle = FlatStyle.Flat;
+        btnExitNo.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
         btnExitNo.ForeColor = Color.FromArgb(255, 255, 255);
         btnExitNo.IconChar = FontAwesome.Sharp.IconChar.XmarkCircle;
         btnExitNo.IconColor = Color.FromArgb(255, 255, 255);
         btnExitNo.IconFont = FontAwesome.Sharp.IconFont.Auto;
         btnExitNo.Location = new Point(26, 36);
         btnExitNo.Name = "btnExitNo";
-        btnExitNo.Size = new Size(54, 73);
+        btnExitNo.Size = new Size(54, 75);
         btnExitNo.TabIndex = 1;
         btnExitNo.Text = "No";
         btnExitNo.TextAlign = ContentAlignment.BottomCenter;
@@ -98,7 +100,7 @@ partial class FormExit
         // 
         lblTextTopBar.BackColor = Color.Gray;
         lblTextTopBar.Dock = DockStyle.Fill;
-        lblTextTopBar.Font = new Font("Segoe UI", 10F);
+        lblTextTopBar.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
         lblTextTopBar.ForeColor = Color.White;
         lblTextTopBar.Location = new Point(0, 0);
         lblTextTopBar.Name = "lblTextTopBar";

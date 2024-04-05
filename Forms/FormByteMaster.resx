@@ -284,7 +284,178 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;panelMenu.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="panelShadow.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="panelShadow.Location" type="System.Drawing.Point, System.Drawing">
+    <value>45, 60</value>
+  </data>
+  <data name="panelShadow.Size" type="System.Drawing.Size, System.Drawing">
+    <value>835, 10</value>
+  </data>
+  <data name="panelShadow.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="&gt;&gt;panelShadow.Name" xml:space="preserve">
+    <value>panelShadow</value>
+  </data>
+  <data name="&gt;&gt;panelShadow.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panelShadow.Parent" xml:space="preserve">
+    <value>panelTitelBar</value>
+  </data>
+  <data name="&gt;&gt;panelShadow.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblRamUsageSystemInfo.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblRamUsageSystemInfo.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9.75pt, style=Bold</value>
+  </data>
+  <data name="lblRamUsageSystemInfo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>464, 44</value>
+  </data>
+  <data name="lblRamUsageSystemInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>84, 17</value>
+  </data>
+  <data name="lblRamUsageSystemInfo.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="lblRamUsageSystemInfo.Text" xml:space="preserve">
+    <value>0 MB / 1 MB</value>
+  </data>
+  <data name="&gt;&gt;lblRamUsageSystemInfo.Name" xml:space="preserve">
+    <value>lblRamUsageSystemInfo</value>
+  </data>
+  <data name="&gt;&gt;lblRamUsageSystemInfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblRamUsageSystemInfo.Parent" xml:space="preserve">
+    <value>panelTitelBar</value>
+  </data>
+  <data name="&gt;&gt;lblRamUsageSystemInfo.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lblRamUsageSystem.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblRamUsageSystem.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9.75pt, style=Bold</value>
+  </data>
+  <data name="lblRamUsageSystem.Location" type="System.Drawing.Point, System.Drawing">
+    <value>417, 44</value>
+  </data>
+  <data name="lblRamUsageSystem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>41, 17</value>
+  </data>
+  <data name="lblRamUsageSystem.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="lblRamUsageSystem.Text" xml:space="preserve">
+    <value>RAM:</value>
+  </data>
+  <data name="&gt;&gt;lblRamUsageSystem.Name" xml:space="preserve">
+    <value>lblRamUsageSystem</value>
+  </data>
+  <data name="&gt;&gt;lblRamUsageSystem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblRamUsageSystem.Parent" xml:space="preserve">
+    <value>panelTitelBar</value>
+  </data>
+  <data name="&gt;&gt;lblRamUsageSystem.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="lblCpuNameInfo.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblCpuNameInfo.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9.75pt, style=Bold</value>
+  </data>
+  <data name="lblCpuNameInfo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>94, 43</value>
+  </data>
+  <data name="lblCpuNameInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 17</value>
+  </data>
+  <data name="lblCpuNameInfo.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;lblCpuNameInfo.Name" xml:space="preserve">
+    <value>lblCpuNameInfo</value>
+  </data>
+  <data name="&gt;&gt;lblCpuNameInfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblCpuNameInfo.Parent" xml:space="preserve">
+    <value>panelTitelBar</value>
+  </data>
+  <data name="&gt;&gt;lblCpuNameInfo.ZOrder" xml:space="preserve">
     <value>3</value>
+  </data>
+  <data name="lblSteamCMDInstalledInfo.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblSteamCMDInstalledInfo.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9.75pt, style=Bold</value>
+  </data>
+  <data name="lblSteamCMDInstalledInfo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>794, 44</value>
+  </data>
+  <data name="lblSteamCMDInstalledInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>88, 17</value>
+  </data>
+  <data name="lblSteamCMDInstalledInfo.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="lblSteamCMDInstalledInfo.Text" xml:space="preserve">
+    <value>Not Installed</value>
+  </data>
+  <data name="&gt;&gt;lblSteamCMDInstalledInfo.Name" xml:space="preserve">
+    <value>lblSteamCMDInstalledInfo</value>
+  </data>
+  <data name="&gt;&gt;lblSteamCMDInstalledInfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblSteamCMDInstalledInfo.Parent" xml:space="preserve">
+    <value>panelTitelBar</value>
+  </data>
+  <data name="&gt;&gt;lblSteamCMDInstalledInfo.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label4.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9.75pt, style=Bold</value>
+  </data>
+  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>708, 44</value>
+  </data>
+  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 17</value>
+  </data>
+  <data name="label4.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>SteamCMD:</value>
+  </data>
+  <data name="&gt;&gt;label4.Name" xml:space="preserve">
+    <value>label4</value>
+  </data>
+  <data name="&gt;&gt;label4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
+    <value>panelTitelBar</value>
+  </data>
+  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
   <data name="btnControlboxMinimize.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -317,7 +488,7 @@
     <value>panelTitelBar</value>
   </data>
   <data name="&gt;&gt;btnControlboxMinimize.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>6</value>
   </data>
   <data name="btnControlboxExit.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -353,7 +524,7 @@
     <value>panelTitelBar</value>
   </data>
   <data name="&gt;&gt;btnControlboxExit.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>7</value>
   </data>
   <data name="lblTitleChildForm.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -362,7 +533,7 @@
     <value>Segoe UI, 14.25pt, style=Bold</value>
   </data>
   <data name="lblTitleChildForm.Location" type="System.Drawing.Point, System.Drawing">
-    <value>51, 17</value>
+    <value>51, 22</value>
   </data>
   <data name="lblTitleChildForm.Size" type="System.Drawing.Size, System.Drawing">
     <value>66, 25</value>
@@ -386,7 +557,7 @@
     <value>panelTitelBar</value>
   </data>
   <data name="&gt;&gt;lblTitleChildForm.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>8</value>
   </data>
   <data name="iconCurrentChildForm.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Left</value>
@@ -398,7 +569,7 @@
     <value>0, 10, 0, 0</value>
   </data>
   <data name="iconCurrentChildForm.Size" type="System.Drawing.Size, System.Drawing">
-    <value>45, 60</value>
+    <value>45, 70</value>
   </data>
   <data name="iconCurrentChildForm.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>Zoom</value>
@@ -416,7 +587,7 @@
     <value>panelTitelBar</value>
   </data>
   <data name="&gt;&gt;iconCurrentChildForm.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>9</value>
   </data>
   <data name="panelTitelBar.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -425,7 +596,7 @@
     <value>220, 0</value>
   </data>
   <data name="panelTitelBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>880, 60</value>
+    <value>880, 70</value>
   </data>
   <data name="panelTitelBar.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -440,30 +611,6 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;panelTitelBar.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="panelShadow.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="panelShadow.Location" type="System.Drawing.Point, System.Drawing">
-    <value>220, 60</value>
-  </data>
-  <data name="panelShadow.Size" type="System.Drawing.Size, System.Drawing">
-    <value>880, 10</value>
-  </data>
-  <data name="panelShadow.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;panelShadow.Name" xml:space="preserve">
-    <value>panelShadow</value>
-  </data>
-  <data name="&gt;&gt;panelShadow.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panelShadow.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;panelShadow.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="panelDesktop.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">

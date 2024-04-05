@@ -1,8 +1,12 @@
 using System.Drawing.Text;
+using System.Management;
 using System.Runtime.InteropServices;
 using FontAwesome.Sharp;
 using Game_Server_Manager.Forms;
 using Game_Server_Manager.Properties;
+using Timer = System.Windows.Forms.Timer;
+using GameManager = Game_Server_Manager.Properties.Settings;
+using GameManager_Valheim = Game_Server_Manager.Properties.Valheim;
 
 namespace Game_Server_Manager;
 
@@ -22,10 +26,17 @@ public partial class FormByteMaster : Form
     // Startroutine
     private void StartUp()
     {
+        OpenChildForm(new Forms.FormHome());
+        // System Informationen
+        SystemInfo();
+        // Timer Start
+        Timer();
         // Form Einstellungen
         LoadFormSettings();
         // Farb Einstellungen
         LoadColorSettings();
+        // Lade SteamCMD Informationen
+        SteamCMD();
     }
 
     // Laden der Form Einstellungen
@@ -38,6 +49,7 @@ public partial class FormByteMaster : Form
         leftBorderBtn = new Panel();
         leftBorderBtn.Size = new Size(7, 60);
         panelMenu.Controls.Add(leftBorderBtn);
+        lblTitleChildForm.Text = "Home";
     }
 
     // Lade Farb Einstellungen
@@ -59,9 +71,78 @@ public partial class FormByteMaster : Form
         btnSettings.IconColor = RGBColors.Default.Icon;
         btnSettings.FlatAppearance.MouseDownBackColor = RGBColors.Default.MouseDown;
         btnSettings.FlatAppearance.MouseOverBackColor = RGBColors.Default.MouseHover;
+        // Text
+        lblTitleChildForm.ForeColor = RGBColors.Default.Text;
+    }
+
+    // Timer für die Aktualisierung der Informationen
+    private void Timer()
+    {
+        // Timer 0.5 Sekunden
+        Timer timerShort = new Timer();
+        timerShort.Interval = 500;
+        timerShort.Tick += Timer_Tick_Short;
+        timerShort.Start();
+        // Timer 2 Sekunden
+        Timer timerLong = new Timer();
+        timerLong.Interval = 2000;
+        timerLong.Tick += Timer_Tick_Long;
+        timerLong.Start();
+    }
+
+    // Eventhandler für die Timer
+    private void Timer_Tick_Short(object sender, EventArgs e)
+    {
+
+    }
+
+    private void Timer_Tick_Long(object sender, EventArgs e)
+    {
+        SystemInfo();
     }
 
     // Methods
+
+    // Lade RAM-Informationen
+    private void SystemInfo()
+    {
+        // RAM-Nutzung des Systems ermitteln
+        var ramFree = (double)new Microsoft.VisualBasic.Devices.ComputerInfo().AvailablePhysicalMemory / (1024 * 1024 * 1024);
+        var ramUsage = (double)new Microsoft.VisualBasic.Devices.ComputerInfo().TotalPhysicalMemory / (1024 * 1024 * 1024) - ramFree;
+        var totalRAM = (double)new Microsoft.VisualBasic.Devices.ComputerInfo().TotalPhysicalMemory / (1024 * 1024 * 1024);
+        var totalRAMPercentage = (float)(100f * ramFree / totalRAM);
+        totalRAMPercentage = (float)Math.Round(totalRAMPercentage, 2);
+        // Formatierung für die Ausgabe
+        lblRamUsageSystemInfo.Text = $"{ramUsage:F2} GB / {totalRAM:F0} GB  {totalRAMPercentage:F2} %";
+    }
+
+
+
+
+
+
+
+
+
+
+    // Prüfe ob SteamCMD installiert ist
+    private void SteamCMD()
+    {
+        if (File.Exists(Path.Combine((GameManager.Default.SteamCMDPath), "steamerrorreporter.exe")))
+        {
+            // SteamCMD vorhanden
+            lblSteamCMDInstalledInfo.ForeColor = System.Drawing.Color.Green;
+            lblSteamCMDInstalledInfo.Text = "Installed";
+        }
+        else
+        {
+            // SteamCMD nicht vorhanden
+            lblSteamCMDInstalledInfo.ForeColor = System.Drawing.Color.Red;
+            lblSteamCMDInstalledInfo.Text = "Not Installed";
+        }
+    }
+
+
     private void ActivateButton(object senderBtn, Color color)
     {
         if (senderBtn != null)
@@ -128,6 +209,7 @@ public partial class FormByteMaster : Form
             currentChildForm.Close();
         Reset();
         OpenChildForm(new Forms.FormHome());
+        lblTitleChildForm.Text = "Home";
     }
 
     // Reset
@@ -137,7 +219,6 @@ public partial class FormByteMaster : Form
         leftBorderBtn.Visible = false;
         iconCurrentChildForm.IconChar = IconChar.HomeUser;
         iconCurrentChildForm.IconColor = RGBColors.Default.HomeBTN;
-        lblTitleChildForm.Text = "Home";
     }
 
     // Button Valheim
@@ -193,5 +274,4 @@ public partial class FormByteMaster : Form
         ReleaseCapture();
         SendMessage(this.Handle, 0x112, 0xf012, 0);
     }
-
 }

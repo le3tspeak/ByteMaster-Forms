@@ -14,6 +14,7 @@ using GameManager_Enshrouded = Game_Server_Manager.Properties.Enshrouded;
 using System.Diagnostics;
 using System.Windows.Controls;
 using System.Management;
+using Game_Server_Manager.Properties;
 
 namespace Game_Server_Manager.Forms;
 public partial class FormHome : Form
@@ -29,12 +30,27 @@ public partial class FormHome : Form
     {
         // Timer Start
         Timer();
-        // Lade Systeminformationen
-        SystemInfo();
-        // Lade SteamCMD Informationen
-        SteamCMD();
+        // Form Einstellungen
+        LoadFormSettings();
+        // Farb Einstellungen
+        LoadColorSettings();
         // Valheim
         ValheimUpdate();
+    }
+
+    // Lade Form Einstellungen
+    private void LoadFormSettings()
+    {
+        Text = string.Empty;
+        ControlBox = false;
+        DoubleBuffered = true;
+    }
+
+    // Lade Farb Einstellungen
+    private void LoadColorSettings()
+    {
+        // Form
+        BackColor = RGBColors.Default.FormBGChild;
     }
 
     // Timer für die Aktualisierung der Informationen
@@ -59,7 +75,6 @@ public partial class FormHome : Form
 
     private void Timer_Tick_Long(object sender, EventArgs e)
     {
-        SystemInfo();
         ValheimUpdate();
     }
 
@@ -100,7 +115,7 @@ public partial class FormHome : Form
         lblServerValheimPathInfo.Text = InstallDirValheim;
 
         // RAM-Verbrauch
-        (string infoText, int progressBarValue) ramUsageInfo = Worker.RAMUsage.UpdateShort(GameManager_Valheim.Default.ProzessName);
+        (string infoText, int progressBarValue) ramUsageInfo = Worker.RAMUsage.UpdateShortGB(GameManager_Valheim.Default.ProzessName);
         if (ramUsageInfo.infoText != lblRAMUsageInfoValheim.Text || ramUsageInfo.progressBarValue != progressBarRAMValheim.Value)
         {
             lblRAMUsageInfoValheim.Text = ramUsageInfo.infoText;
@@ -110,37 +125,6 @@ public partial class FormHome : Form
     //
     // Default
     //
-
-    // Lade CPU-Informationen
-    private void CpuInfo()
-    {
-        // CPU Informationen ermitteln
-        ManagementObjectSearcher searcher = new ManagementObjectSearcher("SELECT * FROM Win32_Processor");
-        foreach (ManagementObject obj in searcher.Get())
-        {
-            var cpuName = obj["Name"].ToString();
-            var cpuNumberOfCores = obj["NumberOfCores"].ToString();
-
-            // CPU Informationen auf dem UI-Thread anzeigen
-            Invoke(new Action(() =>
-            {
-                lblCpuNameInfo.Text = cpuName;
-                lblCpuNumberOfCoresInfo.Text = cpuNumberOfCores;
-            }));
-        }
-    }
-
-    // Lade RAM-Informationen
-    private void SystemInfo()
-    {
-        // RAM nutzung des Systems ermitteln
-        var ramFree = new Microsoft.VisualBasic.Devices.ComputerInfo().AvailablePhysicalMemory / (1024 * 1024);
-        var ramUsage = new Microsoft.VisualBasic.Devices.ComputerInfo().TotalPhysicalMemory / (1024 * 1024) - ramFree;
-        var totalRAM = new Microsoft.VisualBasic.Devices.ComputerInfo().TotalPhysicalMemory / (1024 * 1024);
-        var totalRAMPercentage = (float)(100f * ramFree / totalRAM);
-        totalRAMPercentage = (float)Math.Round(totalRAMPercentage, 2);
-        lblRamUsageSystemInfo.Text = $"{ramUsage} MB / {totalRAM} MB  {totalRAMPercentage} %";
-    }
 
     // Überprüfen, ob der Prozess läuft
     private bool IsProcessRunning(string processName)
@@ -155,28 +139,5 @@ public partial class FormHome : Form
             }
         }
         return false; // Prozess nicht gefunden
-    }
-
-    // Prüfe ob SteamCMD installiert ist
-    private void SteamCMD()
-    {
-        if (File.Exists(Path.Combine((GameManager.Default.SteamCMDPath), "steamerrorreporter.exe")))
-        {
-            // SteamCMD vorhanden
-            lblSteamCMDInstalledINfo.ForeColor = System.Drawing.Color.Green;
-            lblSteamCMDInstalledINfo.Text = "Installed";
-        }
-        else
-        {
-            // SteamCMD nicht vorhanden
-            lblSteamCMDInstalledINfo.ForeColor = System.Drawing.Color.Red;
-            lblSteamCMDInstalledINfo.Text = "Not Installed";
-        }
-    }
-
-    // Lade CPU-Informationen beim Laden des Formulars (Async)
-    private async void FormHome_LoadAsync(object sender, EventArgs e)
-    {
-        await Task.Run(CpuInfo);
     }
 }

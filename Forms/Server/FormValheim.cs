@@ -307,7 +307,7 @@ public partial class FormValheim : Form
     // Methode für die Aktualisierung der RAM-Informationen
     private void UpdateRAMInfo()
     {
-        (var ramUsageInfoText, var progressBarValue) = Worker.RAMUsage.Update(ProzessName);
+        (var ramUsageInfoText, var progressBarValue) = Worker.RAMUsage.UpdateShortGB(ProzessName);
         lblRAMUsageInfo.Text = ramUsageInfoText;
         progressBarRAM.Value = progressBarValue;
     }

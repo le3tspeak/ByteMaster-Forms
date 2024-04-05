@@ -36,11 +36,16 @@ partial class FormByteMaster
         panelLogo = new Panel();
         btnHome = new PictureBox();
         panelTitelBar = new Panel();
+        panelShadow = new Panel();
+        lblRamUsageSystemInfo = new Label();
+        lblRamUsageSystem = new Label();
+        lblCpuNameInfo = new Label();
+        lblSteamCMDInstalledInfo = new Label();
+        label4 = new Label();
         btnControlboxMinimize = new FontAwesome.Sharp.IconButton();
         btnControlboxExit = new FontAwesome.Sharp.IconButton();
         lblTitleChildForm = new Label();
         iconCurrentChildForm = new FontAwesome.Sharp.IconPictureBox();
-        panelShadow = new Panel();
         panelDesktop = new Panel();
         panelMenu.SuspendLayout();
         panelLogo.SuspendLayout();
@@ -107,6 +112,12 @@ partial class FormByteMaster
         // panelTitelBar
         // 
         panelTitelBar.BackColor = Color.FromArgb(18, 0, 22);
+        panelTitelBar.Controls.Add(panelShadow);
+        panelTitelBar.Controls.Add(lblRamUsageSystemInfo);
+        panelTitelBar.Controls.Add(lblRamUsageSystem);
+        panelTitelBar.Controls.Add(lblCpuNameInfo);
+        panelTitelBar.Controls.Add(lblSteamCMDInstalledInfo);
+        panelTitelBar.Controls.Add(label4);
         panelTitelBar.Controls.Add(btnControlboxMinimize);
         panelTitelBar.Controls.Add(btnControlboxExit);
         panelTitelBar.Controls.Add(lblTitleChildForm);
@@ -114,6 +125,50 @@ partial class FormByteMaster
         resources.ApplyResources(panelTitelBar, "panelTitelBar");
         panelTitelBar.Name = "panelTitelBar";
         panelTitelBar.MouseDown += panelTitleBar_MouseDown;
+        // 
+        // panelShadow
+        // 
+        resources.ApplyResources(panelShadow, "panelShadow");
+        panelShadow.Name = "panelShadow";
+        // 
+        // lblRamUsageSystemInfo
+        // 
+        resources.ApplyResources(lblRamUsageSystemInfo, "lblRamUsageSystemInfo");
+        lblRamUsageSystemInfo.BackColor = Color.Transparent;
+        lblRamUsageSystemInfo.ForeColor = Color.White;
+        lblRamUsageSystemInfo.Name = "lblRamUsageSystemInfo";
+        lblRamUsageSystemInfo.MouseDown += panelTitleBar_MouseDown;
+        // 
+        // lblRamUsageSystem
+        // 
+        resources.ApplyResources(lblRamUsageSystem, "lblRamUsageSystem");
+        lblRamUsageSystem.BackColor = Color.Transparent;
+        lblRamUsageSystem.ForeColor = Color.White;
+        lblRamUsageSystem.Name = "lblRamUsageSystem";
+        lblRamUsageSystem.MouseDown += panelTitleBar_MouseDown;
+        // 
+        // lblCpuNameInfo
+        // 
+        resources.ApplyResources(lblCpuNameInfo, "lblCpuNameInfo");
+        lblCpuNameInfo.BackColor = Color.Transparent;
+        lblCpuNameInfo.ForeColor = Color.White;
+        lblCpuNameInfo.Name = "lblCpuNameInfo";
+        // 
+        // lblSteamCMDInstalledInfo
+        // 
+        resources.ApplyResources(lblSteamCMDInstalledInfo, "lblSteamCMDInstalledInfo");
+        lblSteamCMDInstalledInfo.BackColor = Color.Transparent;
+        lblSteamCMDInstalledInfo.ForeColor = Color.White;
+        lblSteamCMDInstalledInfo.Name = "lblSteamCMDInstalledInfo";
+        lblSteamCMDInstalledInfo.MouseDown += panelTitleBar_MouseDown;
+        // 
+        // label4
+        // 
+        resources.ApplyResources(label4, "label4");
+        label4.BackColor = Color.Transparent;
+        label4.ForeColor = Color.White;
+        label4.Name = "label4";
+        label4.MouseDown += panelTitleBar_MouseDown;
         // 
         // btnControlboxMinimize
         // 
@@ -146,7 +201,7 @@ partial class FormByteMaster
         // lblTitleChildForm
         // 
         resources.ApplyResources(lblTitleChildForm, "lblTitleChildForm");
-        lblTitleChildForm.ForeColor = Color.Gainsboro;
+        lblTitleChildForm.ForeColor = Color.White;
         lblTitleChildForm.Name = "lblTitleChildForm";
         lblTitleChildForm.MouseDown += panelTitleBar_MouseDown;
         // 
@@ -163,12 +218,6 @@ partial class FormByteMaster
         iconCurrentChildForm.TabStop = false;
         iconCurrentChildForm.MouseDown += panelTitleBar_MouseDown;
         // 
-        // panelShadow
-        // 
-        panelShadow.BackColor = Color.FromArgb(18, 0, 22);
-        resources.ApplyResources(panelShadow, "panelShadow");
-        panelShadow.Name = "panelShadow";
-        // 
         // panelDesktop
         // 
         panelDesktop.BackColor = Color.FromArgb(18, 0, 22);
@@ -182,7 +231,6 @@ partial class FormByteMaster
         BackColor = Color.FromArgb(18, 0, 22);
         ControlBox = false;
         Controls.Add(panelDesktop);
-        Controls.Add(panelShadow);
         Controls.Add(panelTitelBar);
         Controls.Add(panelMenu);
         ForeColor = SystemColors.ButtonHighlight;
@@ -190,7 +238,6 @@ partial class FormByteMaster
         MaximizeBox = false;
         MinimizeBox = false;
         Name = "FormByteMaster";
-        Load += btnHome_Click;
         panelMenu.ResumeLayout(false);
         panelLogo.ResumeLayout(false);
         ((System.ComponentModel.ISupportInitialize)btnHome).EndInit();
@@ -209,7 +256,6 @@ partial class FormByteMaster
     private Panel panelTitelBar;
     private FontAwesome.Sharp.IconPictureBox iconCurrentChildForm;
     private Label lblTitleChildForm;
-    private Panel panelShadow;
     private Panel panelDesktop;
     private FontAwesome.Sharp.IconButton btnControlboxExit;
     private FontAwesome.Sharp.IconButton btnControlboxMinimize;
@@ -226,4 +272,10 @@ partial class FormByteMaster
     private Label lblServerRunningInfo;
     private Label lblServerInstalledInfo;
     private Label lblServerInstalled;
+    private Label lblSteamCMDInstalledInfo;
+    private Label label4;
+    private Label lblCpuNameInfo;
+    private Label lblRamUsageSystemInfo;
+    private Label lblRamUsageSystem;
+    private Panel panelShadow;
 }
