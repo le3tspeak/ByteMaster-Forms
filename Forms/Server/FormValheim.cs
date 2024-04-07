@@ -97,40 +97,31 @@ public partial class FormValheim : Form
     // Lade Farb Einstellungen
     private void LoadColorSettings()
     {
-
         // Form
         BackColor = ColorTheme.Default.FormBG;
         // Buttons
-        btnInstallServer.IconColor = ColorTheme.Default.IconValheim;
         btnInstallServer.ForeColor = ColorTheme.Default.Text;
-        btnInstallServer.BackColor = ColorTheme.Default.ButtonBG;
         btnInstallServer.IconColor = ColorTheme.Default.Icon;
         btnInstallServer.FlatAppearance.MouseDownBackColor = ColorTheme.Default.MouseDown;
         btnInstallServer.FlatAppearance.MouseOverBackColor = ColorTheme.Default.MouseHover;
-        btnUninstallServer.IconColor = ColorTheme.Default.Icon;
         btnUninstallServer.ForeColor = ColorTheme.Default.Text;
-        btnUninstallServer.BackColor = ColorTheme.Default.ButtonBG;
         btnUninstallServer.IconColor = ColorTheme.Default.Icon;
         btnUninstallServer.FlatAppearance.MouseDownBackColor = ColorTheme.Default.MouseDown;
         btnUninstallServer.FlatAppearance.MouseOverBackColor = ColorTheme.Default.MouseHover;
-        btnStartServer.IconColor = ColorTheme.Default.IconValheim;
+        btnStartServer.IconColor = ColorTheme.Default.Icon;
         btnStartServer.ForeColor = ColorTheme.Default.Text;
-        btnStartServer.BackColor = ColorTheme.Default.ButtonBG;
         btnStartServer.FlatAppearance.MouseDownBackColor = ColorTheme.Default.MouseDown;
         btnStartServer.FlatAppearance.MouseOverBackColor = ColorTheme.Default.MouseHover;
-        btnStopServer.IconColor = ColorTheme.Default.IconValheim;
+        btnStopServer.IconColor = ColorTheme.Default.Icon;
         btnStopServer.ForeColor = ColorTheme.Default.Text;
-        btnStopServer.BackColor = ColorTheme.Default.ButtonBG;
         btnStopServer.FlatAppearance.MouseDownBackColor = ColorTheme.Default.MouseDown;
         btnStopServer.FlatAppearance.MouseOverBackColor = ColorTheme.Default.MouseHover;
-        btnOpenLogFile.IconColor = ColorTheme.Default.IconValheim;
+        btnOpenLogFile.IconColor = ColorTheme.Default.Icon;
         btnOpenLogFile.ForeColor = ColorTheme.Default.Text;
-        btnOpenLogFile.BackColor = ColorTheme.Default.ButtonBG;
         btnOpenLogFile.FlatAppearance.MouseDownBackColor = ColorTheme.Default.MouseDown;
         btnOpenLogFile.FlatAppearance.MouseOverBackColor = ColorTheme.Default.MouseHover;
-        btnOpenServerDir.IconColor = ColorTheme.Default.IconValheim;
+        btnOpenServerDir.IconColor = ColorTheme.Default.Icon;
         btnOpenServerDir.ForeColor = ColorTheme.Default.Text;
-        btnOpenServerDir.BackColor = ColorTheme.Default.ButtonBG;
         btnOpenServerDir.FlatAppearance.MouseDownBackColor = ColorTheme.Default.MouseDown;
         btnOpenServerDir.FlatAppearance.MouseOverBackColor = ColorTheme.Default.MouseHover;
         // Textboxen

@@ -87,13 +87,48 @@ public partial class FormEnshrouded : Form
 
     private void LoadColorSettings()
     {
-
         // Form
         BackColor = ColorTheme.Default.FormBG;
         // Buttons
-
+        btnInstallServer.IconColor = ColorTheme.Default.Icon;
+        btnInstallServer.ForeColor = ColorTheme.Default.Text;
+        btnInstallServer.FlatAppearance.MouseDownBackColor = ColorTheme.Default.MouseDown;
+        btnInstallServer.FlatAppearance.MouseOverBackColor = ColorTheme.Default.MouseHover;
+        btnUninstallServer.IconColor = ColorTheme.Default.Icon;
+        btnUninstallServer.ForeColor = ColorTheme.Default.Text;
+        btnUninstallServer.FlatAppearance.MouseDownBackColor = ColorTheme.Default.MouseDown;
+        btnUninstallServer.FlatAppearance.MouseOverBackColor = ColorTheme.Default.MouseHover;
+        btnStartServer.IconColor = ColorTheme.Default.Icon;
+        btnStartServer.ForeColor = ColorTheme.Default.Text;
+        btnStartServer.FlatAppearance.MouseDownBackColor = ColorTheme.Default.MouseDown;
+        btnStartServer.FlatAppearance.MouseOverBackColor = ColorTheme.Default.MouseHover;
+        btnStopServer.IconColor = ColorTheme.Default.Icon;
+        btnStopServer.ForeColor = ColorTheme.Default.Text;
+        btnStopServer.FlatAppearance.MouseDownBackColor = ColorTheme.Default.MouseDown;
+        btnStopServer.FlatAppearance.MouseOverBackColor = ColorTheme.Default.MouseHover;
+        btnOpenLogFolder.IconColor = ColorTheme.Default.Icon;
+        btnOpenLogFolder.ForeColor = ColorTheme.Default.Text;
+        btnOpenLogFolder.FlatAppearance.MouseDownBackColor = ColorTheme.Default.MouseDown;
+        btnOpenLogFolder.FlatAppearance.MouseOverBackColor = ColorTheme.Default.MouseHover;
+        btnOpenServerDir.IconColor = ColorTheme.Default.Icon;
+        btnOpenServerDir.ForeColor = ColorTheme.Default.Text;
+        btnOpenServerDir.FlatAppearance.MouseDownBackColor = ColorTheme.Default.MouseDown;
+        btnOpenServerDir.FlatAppearance.MouseOverBackColor = ColorTheme.Default.MouseHover;
         // Textboxen
-
+        tbServerNameInfo.BackColor = ColorTheme.Default.TextBoxBG;
+        tbServerNameInfo.ForeColor = ColorTheme.Default.TextBoxText;
+        tbServerPasswordInfo.BackColor = ColorTheme.Default.TextBoxBG;
+        tbServerPasswordInfo.ForeColor = ColorTheme.Default.TextBoxText;
+        tbServerPortInfo.BackColor = ColorTheme.Default.TextBoxBG;
+        tbServerPortInfo.ForeColor = ColorTheme.Default.TextBoxText;
+        tbServerQueryPortInfo.BackColor = ColorTheme.Default.TextBoxBG;
+        tbServerQueryPortInfo.ForeColor = ColorTheme.Default.TextBoxText;
+        tbServerSaveDirInfo.BackColor = ColorTheme.Default.TextBoxBG;
+        tbServerSaveDirInfo.ForeColor = ColorTheme.Default.TextBoxText;
+        tbServerLogDirInfo.BackColor = ColorTheme.Default.TextBoxBG;
+        tbServerLogDirInfo.ForeColor = ColorTheme.Default.TextBoxText;
+        tbServerSlotsInfo.BackColor = ColorTheme.Default.TextBoxBG;
+        tbServerSlotsInfo.ForeColor = ColorTheme.Default.TextBoxText;
     }
     private void LoadSettings()
     {
