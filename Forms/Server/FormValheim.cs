@@ -586,48 +586,144 @@ public partial class FormValheim : Form
 
     private void tbServerPasswordInfo_TextChanged(object sender, EventArgs e)
     {
+        // Prüfe ob das Passwort Leerzeichen enthält
+        if (tbServerPasswordInfo.Text.Contains(" "))
+        {
+            MessageBox.Show("The password must not contain any spaces!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            tbServerPasswordInfo.Text = "";
+            return;
+        }
         ServerPassword = tbServerPasswordInfo.Text;
         GameManager.Default.Save();
     }
 
     private void tbServerPortInfo_TextChanged(object sender, EventArgs e)
     {
+        // Prüfe ob der Port eine Zahl ist
+        if (!int.TryParse(tbServerPortInfo.Text, out _))
+        {
+            MessageBox.Show("The port must be a number!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            tbServerPortInfo.Text = "";
+            return;
+        }
+
         ServerPort = tbServerPortInfo.Text;
         GameManager.Default.Save();
     }
 
     private void tbServerWorldInfo_TextChanged(object sender, EventArgs e)
     {
+        // Prüfe auf Leerzeichen
+        if (tbServerWorldInfo.Text.Contains(" "))
+        {
+            MessageBox.Show("The world name must not contain any spaces!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            tbServerWorldInfo.Text = "";
+            return;
+        }
+
         ServerWorld = tbServerWorldInfo.Text;
         GameManager.Default.Save();
     }
 
     private void tbServerBackupsInfo_TextChanged(object sender, EventArgs e)
     {
+        // Prüfe ob der Wert eine Zahl ist
+        if (!int.TryParse(tbServerBackupsInfo.Text, out _))
+        {
+            MessageBox.Show("The number of backups must be a number!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            tbServerBackupsInfo.Text = "";
+            return;
+        }
+
+        // Prüfe ob der wert zwischen 1 und 10 liegt
+        if (int.Parse(tbServerBackupsInfo.Text) < 1 || int.Parse(tbServerBackupsInfo.Text) > 10)
+        {
+            MessageBox.Show("The number of backups must be between 1 and 10!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            tbServerBackupsInfo.Text = "";
+            return;
+        }
+
         ServerBackups = tbServerBackupsInfo.Text;
         GameManager.Default.Save();
     }
 
     private void tbServerSaveDirInfo_TextChanged(object sender, EventArgs e)
     {
+        // Prüfe auf Leerzeichen
+        if (tbServerSaveDirInfo.Text.Contains(" "))
+        {
+            MessageBox.Show("The save directory must not contain any spaces!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            tbServerSaveDirInfo.Text = "";
+            return;
+        }
+
         ServerSaveDir = tbServerSaveDirInfo.Text;
         GameManager.Default.Save();
     }
 
     private void tbServerSaveIntervalInfo_TextChanged(object sender, EventArgs e)
     {
+        // Prüfe ob der Wert eine Zahl ist
+        if (!int.TryParse(tbServerSaveIntervalInfo.Text, out _))
+        {
+            MessageBox.Show("The save interval must be a number!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            tbServerSaveIntervalInfo.Text = "";
+            return;
+        }
+
+        // Prüfe ob der Wert zwischen 1800 und 10000 liegt
+        if (int.Parse(tbServerSaveIntervalInfo.Text) < 1800 || int.Parse(tbServerSaveIntervalInfo.Text) > 10000)
+        {
+            MessageBox.Show("The save interval must be between 1800 and 10000!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            tbServerSaveIntervalInfo.Text = "";
+            return;
+        }
+
         ServerSaveInterval = tbServerSaveIntervalInfo.Text;
         GameManager.Default.Save();
     }
 
     private void tbBackupShortInfo_TextChanged(object sender, EventArgs e)
     {
+        // Prüfe ob der Wert eine Zahl ist
+        if (!int.TryParse(tbBackupShortInfo.Text, out _))
+        {
+            MessageBox.Show("The short backup interval must be a number!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            tbBackupShortInfo.Text = "";
+            return;
+        }
+
+        // Prüfe ob der Wert zwischen 7200 und 43200 liegt
+        if (int.Parse(tbBackupShortInfo.Text) < 7200 || int.Parse(tbBackupShortInfo.Text) > 43200)
+        {
+            MessageBox.Show("The short backup interval must be between 7200 and 43200!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            tbBackupShortInfo.Text = "";
+            return;
+        }
+
         ServerBackupShort = tbBackupShortInfo.Text;
         GameManager.Default.Save();
     }
 
     private void tbBackupLonfInfo_TextChanged(object sender, EventArgs e)
     {
+        // Prüfe ob der Wert eine Zahl ist
+        if (!int.TryParse(tbBackupLongInfo.Text, out _))
+        {
+
+            MessageBox.Show("The long backup interval must be a number!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            tbBackupLongInfo.Text = "";
+            return;
+        }
+
+        // Prüfe ob der Wert zwischen 43200 und 172800 liegt
+        if (int.Parse(tbBackupLongInfo.Text) < 43200 || int.Parse(tbBackupLongInfo.Text) > 172800)
+        {
+            MessageBox.Show("The long backup interval must be between 43200 and 172800!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            tbBackupLongInfo.Text = "";
+            return;
+        }
+
         ServerBackupLong = tbBackupLongInfo.Text;
         GameManager.Default.Save();
     }
