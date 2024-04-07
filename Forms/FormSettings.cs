@@ -8,6 +8,7 @@ using System.Net.Quic;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
 using Game_Server_Manager.Properties;
 using Newtonsoft.Json.Linq;
 using GameManager = Game_Server_Manager.Properties.Settings;
@@ -74,6 +75,11 @@ public partial class FormSettings : Form
         btnSteamCMDUninstall.BackColor = ColorTheme.Default.ButtonBG;
         btnSteamCMDUninstall.FlatAppearance.MouseDownBackColor = ColorTheme.Default.MouseDown;
         btnSteamCMDUninstall.FlatAppearance.MouseOverBackColor = ColorTheme.Default.MouseHover;
+        btnGitHub.IconColor = ColorTheme.Default.Icon;
+        btnGitHub.ForeColor = ColorTheme.Default.Text;
+        btnGitHub.BackColor = ColorTheme.Default.ButtonBG;
+        btnGitHub.FlatAppearance.MouseDownBackColor = ColorTheme.Default.MouseDown;
+        btnGitHub.FlatAppearance.MouseOverBackColor = ColorTheme.Default.MouseHover;
         // Textboxen
         tbServerPath.BackColor = ColorTheme.Default.TextBoxBG;
         tbServerPath.ForeColor = ColorTheme.Default.TextBoxText;
@@ -237,5 +243,20 @@ public partial class FormSettings : Form
         {
             MessageBox.Show("SteamCMD is not installed!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
+    }
+
+    private void btnGitHub_Click(object sender, EventArgs e)
+    {
+
+        var url = GameManager.Default.GitHub; // Hier die gewünschte URL einsetzen
+        try
+        {
+            Process.Start(new ProcessStartInfo("cmd", $"/c start {url}"));
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show($"Fehler beim Öffnen der URL: {ex.Message}");
+        }
+
     }
 }

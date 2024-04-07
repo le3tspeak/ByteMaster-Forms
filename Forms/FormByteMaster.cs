@@ -67,12 +67,18 @@ public partial class FormByteMaster : Form
         btnValheim.IconColor = RGBColors.Default.Icon;
         btnValheim.FlatAppearance.MouseDownBackColor = RGBColors.Default.MouseDown;
         btnValheim.FlatAppearance.MouseOverBackColor = RGBColors.Default.MouseHover;
+        btnEnshrouded.BackColor = RGBColors.Default.FormBG;
+        btnEnshrouded.IconColor = RGBColors.Default.Icon;
+        btnEnshrouded.FlatAppearance.MouseDownBackColor = RGBColors.Default.MouseDown;
+        btnEnshrouded.FlatAppearance.MouseOverBackColor = RGBColors.Default.MouseHover;
         btnSettings.BackColor = RGBColors.Default.FormBG;
         btnSettings.IconColor = RGBColors.Default.Icon;
         btnSettings.FlatAppearance.MouseDownBackColor = RGBColors.Default.MouseDown;
         btnSettings.FlatAppearance.MouseOverBackColor = RGBColors.Default.MouseHover;
         // Text
         lblTitleChildForm.ForeColor = RGBColors.Default.Text;
+        lblRamUsageSystem.ForeColor = RGBColors.Default.Text;
+        lblSteamCMDInstalled.ForeColor = RGBColors.Default.Text;
     }
 
     // Timer für die Aktualisierung der Informationen

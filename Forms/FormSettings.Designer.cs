@@ -39,6 +39,7 @@ partial class FormSettings
         btnSteamCMDUninstall = new FontAwesome.Sharp.IconButton();
         lblSteamCMDLatUpdate = new Label();
         lblSteamCMDLatUpdateInfo = new Label();
+        btnGitHub = new FontAwesome.Sharp.IconButton();
         SuspendLayout();
         // 
         // lblServersPath
@@ -198,12 +199,35 @@ partial class FormSettings
         lblSteamCMDLatUpdateInfo.TabIndex = 12;
         lblSteamCMDLatUpdateInfo.Text = "22.04.2024 14:03";
         // 
+        // btnGitHub
+        // 
+        btnGitHub.BackColor = Color.Transparent;
+        btnGitHub.BackgroundImageLayout = ImageLayout.Zoom;
+        btnGitHub.FlatAppearance.BorderSize = 0;
+        btnGitHub.FlatStyle = FlatStyle.Flat;
+        btnGitHub.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+        btnGitHub.ForeColor = Color.White;
+        btnGitHub.IconChar = FontAwesome.Sharp.IconChar.SquareGithub;
+        btnGitHub.IconColor = Color.White;
+        btnGitHub.IconFont = FontAwesome.Sharp.IconFont.Auto;
+        btnGitHub.IconSize = 45;
+        btnGitHub.ImageAlign = ContentAlignment.MiddleLeft;
+        btnGitHub.Location = new Point(655, 468);
+        btnGitHub.Name = "btnGitHub";
+        btnGitHub.Size = new Size(109, 50);
+        btnGitHub.TabIndex = 13;
+        btnGitHub.Text = "GitHub";
+        btnGitHub.TextImageRelation = TextImageRelation.ImageBeforeText;
+        btnGitHub.UseVisualStyleBackColor = false;
+        btnGitHub.Click += btnGitHub_Click;
+        // 
         // FormSettings
         // 
         AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
         BackColor = Color.Black;
         ClientSize = new Size(880, 530);
+        Controls.Add(btnGitHub);
         Controls.Add(lblSteamCMDLatUpdateInfo);
         Controls.Add(lblSteamCMDLatUpdate);
         Controls.Add(btnSteamCMDUninstall);
@@ -235,4 +259,5 @@ partial class FormSettings
     private FontAwesome.Sharp.IconButton btnSteamCMDUninstall;
     private Label lblSteamCMDLatUpdate;
     private Label lblSteamCMDLatUpdateInfo;
+    private FontAwesome.Sharp.IconButton btnGitHub;
 }

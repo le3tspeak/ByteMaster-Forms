@@ -23,5 +23,8 @@
     <Setting Name="EnshroudedLastUpdate" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
+    <Setting Name="GitHub" Type="(Web Service URL)" Scope="User">
+      <Value Profile="(Default)">https://github.com/le3tspeak/ByteMaster</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

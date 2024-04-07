@@ -99,5 +99,18 @@ namespace Game_Server_Manager.Properties {
                 this["EnshroudedLastUpdate"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://github.com/le3tspeak/ByteMaster")]
+        public string GitHub {
+            get {
+                return ((string)(this["GitHub"]));
+            }
+            set {
+                this["GitHub"] = value;
+            }
+        }
     }
 }
