@@ -826,7 +826,7 @@ partial class FormValheim
         FormBorderStyle = FormBorderStyle.None;
         Name = "FormValheim";
         ShowInTaskbar = false;
-        Text = "Valheim";
+        Text = "Valheim Server";
         panelTopBar.ResumeLayout(false);
         panelTopBar.PerformLayout();
         panelServerUsage.ResumeLayout(false);

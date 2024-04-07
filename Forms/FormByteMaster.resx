@@ -118,13 +118,60 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnEnshrouded.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="btnEnshrouded.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnEnshrouded.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9.75pt, style=Bold</value>
+  </data>
+  <data name="btnEnshrouded.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="btnEnshrouded.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnEnshrouded.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 280</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnEnshrouded.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>10, 0, 20, 0</value>
+  </data>
+  <data name="btnEnshrouded.Size" type="System.Drawing.Size, System.Drawing">
+    <value>220, 60</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnEnshrouded.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="btnEnshrouded.Text" xml:space="preserve">
+    <value>Enshrouded</value>
+  </data>
+  <data name="btnEnshrouded.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageBeforeText</value>
+  </data>
+  <data name="&gt;&gt;btnEnshrouded.Name" xml:space="preserve">
+    <value>btnEnshrouded</value>
+  </data>
+  <data name="&gt;&gt;btnEnshrouded.Type" xml:space="preserve">
+    <value>FontAwesome.Sharp.IconButton, FontAwesome.Sharp, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f</value>
+  </data>
+  <data name="&gt;&gt;btnEnshrouded.Parent" xml:space="preserve">
+    <value>panelMenu</value>
+  </data>
+  <data name="&gt;&gt;btnEnshrouded.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="btnSettings.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Bottom</value>
   </data>
   <data name="btnSettings.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnSettings.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9.75pt, style=Bold</value>
   </data>
@@ -137,14 +184,12 @@
   <data name="btnSettings.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 540</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="btnSettings.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>10, 0, 20, 0</value>
   </data>
   <data name="btnSettings.Size" type="System.Drawing.Size, System.Drawing">
     <value>220, 60</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="btnSettings.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
@@ -167,7 +212,7 @@
     <value>panelMenu</value>
   </data>
   <data name="&gt;&gt;btnSettings.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="btnValheim.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -199,6 +244,9 @@
   <data name="btnValheim.Text" xml:space="preserve">
     <value>Valheim</value>
   </data>
+  <data name="btnValheim.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageBeforeText</value>
+  </data>
   <data name="&gt;&gt;btnValheim.Name" xml:space="preserve">
     <value>btnValheim</value>
   </data>
@@ -209,7 +257,7 @@
     <value>panelMenu</value>
   </data>
   <data name="&gt;&gt;btnValheim.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="btnHome.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -260,7 +308,7 @@
     <value>panelMenu</value>
   </data>
   <data name="&gt;&gt;panelLogo.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="panelMenu.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Left</value>
@@ -290,10 +338,10 @@
     <value>Bottom</value>
   </data>
   <data name="panelShadow.Location" type="System.Drawing.Point, System.Drawing">
-    <value>291, 60</value>
+    <value>45, 60</value>
   </data>
   <data name="panelShadow.Size" type="System.Drawing.Size, System.Drawing">
-    <value>589, 10</value>
+    <value>835, 10</value>
   </data>
   <data name="panelShadow.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
@@ -526,17 +574,14 @@
   <data name="&gt;&gt;btnControlboxExit.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="lblTitleChildForm.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Left</value>
-  </data>
   <data name="lblTitleChildForm.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 14.25pt, style=Bold</value>
   </data>
   <data name="lblTitleChildForm.Location" type="System.Drawing.Point, System.Drawing">
-    <value>45, 0</value>
+    <value>51, 22</value>
   </data>
   <data name="lblTitleChildForm.Size" type="System.Drawing.Size, System.Drawing">
-    <value>246, 70</value>
+    <value>308, 27</value>
   </data>
   <data name="lblTitleChildForm.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>

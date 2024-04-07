@@ -36,6 +36,8 @@ public partial class FormHome : Form
         LoadColorSettings();
         // Valheim
         ValheimUpdate();
+        // Enshrouded
+        EnshroudedUpdate();
     }
 
     // Lade Form Einstellungen
@@ -76,6 +78,7 @@ public partial class FormHome : Form
     private void Timer_Tick_Long(object sender, EventArgs e)
     {
         ValheimUpdate();
+        EnshroudedUpdate();
     }
 
     //
@@ -88,25 +91,25 @@ public partial class FormHome : Form
         // Überprüfen, ob der Server installiert ist
         if (File.Exists(Path.Combine(InstallDirValheim, GameManager_Valheim.Default.ServerExe)))
         {
-            lblServerValheimInstalledInfo.ForeColor = System.Drawing.Color.Green;
+            lblServerValheimInstalledInfo.ForeColor = Color.Green;
             lblServerValheimInstalledInfo.Text = "Installed";
         }
         else
         {
-            lblServerValheimInstalledInfo.ForeColor = System.Drawing.Color.Red;
+            lblServerValheimInstalledInfo.ForeColor = Color.Red;
             lblServerValheimInstalledInfo.Text = "Not Installed";
         }
 
         // Überprüfen, ob der Prozess läuft
         if (IsProcessRunning(GameManager_Valheim.Default.ProzessName))
         {
-            lblServerValheimRunningInfo.ForeColor = System.Drawing.Color.Green;
+            lblServerValheimRunningInfo.ForeColor = Color.Green;
             // Server läuft
             lblServerValheimRunningInfo.Text = "Der Prozess läuft.";
         }
         else
         {
-            lblServerValheimRunningInfo.ForeColor = System.Drawing.Color.Red;
+            lblServerValheimRunningInfo.ForeColor = Color.Red;
             // Server läuft nicht
             lblServerValheimRunningInfo.Text = "Der Prozess läuft nicht.";
         }
@@ -122,6 +125,56 @@ public partial class FormHome : Form
             progressBarRAMValheim.Value = ramUsageInfo.progressBarValue;
         }
     }
+
+    //
+    // Enshrouded
+    //
+
+    private void EnshroudedUpdate()
+    {
+        var InstallDirEnshrouded = Path.Combine(GameManager.Default.ServerPath, GameManager_Enshrouded.Default.ServerFolderName);
+
+        // Überprüfen, ob der Server installiert ist
+        if (File.Exists(Path.Combine(InstallDirEnshrouded, GameManager_Enshrouded.Default.ServerExe)))
+        {
+
+            lblServerInstalledEnshroudedInfo.ForeColor = Color.Green;
+            lblServerInstalledEnshroudedInfo.Text = "Installed";
+        }
+        else
+        {
+
+            lblServerInstalledEnshroudedInfo.ForeColor = Color.Red;
+            lblServerInstalledEnshroudedInfo.Text = "Not Installed";
+        }
+
+        // Überprüfen, ob der Prozess läuft
+        if (IsProcessRunning(GameManager_Enshrouded.Default.ProzessName))
+        {
+
+            lblServerRunningEnshroudedInfo.ForeColor = Color.Green;
+            // Server läuft
+            lblServerRunningEnshroudedInfo.Text = "Der Prozess läuft.";
+        }
+        else
+        {
+            lblServerRunningEnshroudedInfo.ForeColor = Color.Red;
+            // Server läuft nicht
+            lblServerRunningEnshroudedInfo.Text = "Der Prozess läuft nicht.";
+        }
+
+        // Installationspfad Enshrouded
+        lblServerPathEnshroudedInfo.Text = InstallDirEnshrouded;
+
+        // RAM-Verbrauch
+        (string infoText, int progressBarValue) ramUsageInfo = Worker.RAMUsage.UpdateShortGB(GameManager_Enshrouded.Default.ProzessName);
+        if (ramUsageInfo.infoText != lblRAMUsageEnshroudedInfo.Text || ramUsageInfo.progressBarValue != progressBarRAMEnshrouded.Value)
+        {
+            lblRAMUsageEnshroudedInfo.Text = ramUsageInfo.infoText;
+            progressBarRAMEnshrouded.Value = ramUsageInfo.progressBarValue;
+        }
+    }
+
     //
     // Default
     //

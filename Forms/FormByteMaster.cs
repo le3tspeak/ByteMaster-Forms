@@ -233,6 +233,13 @@ public partial class FormByteMaster : Form
         OpenChildForm(new FormValheim());
     }
 
+    // Button Enshrouded
+    private void btnEnshrouded_Click(object sender, EventArgs e)
+    {
+        ActivateButton(sender, RGBColors.Default.SideMenuSelected);
+        OpenChildForm(new FormEnshrouded());
+    }
+
     // Button Settings
     private void btnSettings_Click(object sender, EventArgs e)
     {
@@ -271,4 +278,6 @@ public partial class FormByteMaster : Form
     {
         OpenChildForm(new FormSettings());
     }
+
+
 }

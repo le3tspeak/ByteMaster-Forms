@@ -31,6 +31,7 @@ partial class FormByteMaster
     {
         var resources = new System.ComponentModel.ComponentResourceManager(typeof(FormByteMaster));
         panelMenu = new Panel();
+        btnEnshrouded = new FontAwesome.Sharp.IconButton();
         btnSettings = new FontAwesome.Sharp.IconButton();
         btnValheim = new FontAwesome.Sharp.IconButton();
         panelLogo = new Panel();
@@ -57,11 +58,26 @@ partial class FormByteMaster
         // panelMenu
         // 
         panelMenu.BackColor = Color.FromArgb(38, 38, 38);
+        panelMenu.Controls.Add(btnEnshrouded);
         panelMenu.Controls.Add(btnSettings);
         panelMenu.Controls.Add(btnValheim);
         panelMenu.Controls.Add(panelLogo);
         resources.ApplyResources(panelMenu, "panelMenu");
         panelMenu.Name = "panelMenu";
+        // 
+        // btnEnshrouded
+        // 
+        btnEnshrouded.BackColor = Color.FromArgb(38, 38, 38);
+        resources.ApplyResources(btnEnshrouded, "btnEnshrouded");
+        btnEnshrouded.FlatAppearance.BorderSize = 0;
+        btnEnshrouded.FlatAppearance.MouseDownBackColor = Color.FromArgb(18, 0, 22);
+        btnEnshrouded.FlatAppearance.MouseOverBackColor = Color.FromArgb(25, 0, 129);
+        btnEnshrouded.IconChar = FontAwesome.Sharp.IconChar.Server;
+        btnEnshrouded.IconColor = Color.White;
+        btnEnshrouded.IconFont = FontAwesome.Sharp.IconFont.Auto;
+        btnEnshrouded.Name = "btnEnshrouded";
+        btnEnshrouded.UseVisualStyleBackColor = false;
+        btnEnshrouded.Click += btnEnshrouded_Click;
         // 
         // btnSettings
         // 
@@ -281,4 +297,5 @@ partial class FormByteMaster
     private Label lblRamUsageSystemInfo;
     private Label lblRamUsageSystem;
     private Panel panelShadow;
+    private FontAwesome.Sharp.IconButton btnEnshrouded;
 }

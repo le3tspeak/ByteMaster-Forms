@@ -161,6 +161,7 @@ public partial class FormSettings : Form
             // Update the SteamCMD Date
             lblSteamCMDLatUpdateInfo.Text = $"Last Update: {DateTime.Now}";
             GameManager.Default.SteamCMDLastUpdate = DateTime.Now;
+            GameManager.Default.Save();
 
             // Check if the SteamCMD is installed
             SteamCMD();

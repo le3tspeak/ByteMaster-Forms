@@ -3,6 +3,7 @@ using System.Net.Sockets;
 using System.Net;
 using Timer = System.Windows.Forms.Timer;
 using GameManager = Game_Server_Manager.Properties.Valheim;
+using Game_Server_Manager.Properties;
 
 namespace Game_Server_Manager.Forms;
 
@@ -32,7 +33,7 @@ public partial class FormValheim : Form
     private static string ServerPreset = GameManager.Default.ServerPreset;
     private static int ServerPresetTrackbar = GameManager.Default.ServerPresetTrackbar;
 
-    private readonly string InstallDir = Path.Combine(Properties.Settings.Default.ServerPath, ServerFolderName);
+    private readonly string InstallDir = Path.Combine(Settings.Default.ServerPath, ServerFolderName);
 
     public FormValheim()
     {
@@ -90,7 +91,7 @@ public partial class FormValheim : Form
         // Form Settings
         ControlBox = false;
         DoubleBuffered = true;
-        BackColor = Properties.ColorTheme.Default.FormBG;
+        BackColor = ColorTheme.Default.FormBG;
     }
 
     // Lade Farb Einstellungen
@@ -98,59 +99,59 @@ public partial class FormValheim : Form
     {
 
         // Form
-        BackColor = Properties.ColorTheme.Default.FormBG;
+        BackColor = ColorTheme.Default.FormBG;
         // Buttons
-        btnInstallServer.IconColor = Properties.ColorTheme.Default.IconValheim;
-        btnInstallServer.ForeColor = Properties.ColorTheme.Default.Text;
-        btnInstallServer.BackColor = Properties.ColorTheme.Default.ButtonBG;
-        btnInstallServer.IconColor = Properties.ColorTheme.Default.Icon;
-        btnInstallServer.FlatAppearance.MouseDownBackColor = Properties.ColorTheme.Default.MouseDown;
-        btnInstallServer.FlatAppearance.MouseOverBackColor = Properties.ColorTheme.Default.MouseHover;
-        btnUninstallServer.IconColor = Properties.ColorTheme.Default.Icon;
-        btnUninstallServer.ForeColor = Properties.ColorTheme.Default.Text;
-        btnUninstallServer.BackColor = Properties.ColorTheme.Default.ButtonBG;
-        btnUninstallServer.IconColor = Properties.ColorTheme.Default.Icon;
-        btnUninstallServer.FlatAppearance.MouseDownBackColor = Properties.ColorTheme.Default.MouseDown;
-        btnUninstallServer.FlatAppearance.MouseOverBackColor = Properties.ColorTheme.Default.MouseHover;
-        btnStartServer.IconColor = Properties.ColorTheme.Default.IconValheim;
-        btnStartServer.ForeColor = Properties.ColorTheme.Default.Text;
-        btnStartServer.BackColor = Properties.ColorTheme.Default.ButtonBG;
-        btnStartServer.FlatAppearance.MouseDownBackColor = Properties.ColorTheme.Default.MouseDown;
-        btnStartServer.FlatAppearance.MouseOverBackColor = Properties.ColorTheme.Default.MouseHover;
-        btnStopServer.IconColor = Properties.ColorTheme.Default.IconValheim;
-        btnStopServer.ForeColor = Properties.ColorTheme.Default.Text;
-        btnStopServer.BackColor = Properties.ColorTheme.Default.ButtonBG;
-        btnStopServer.FlatAppearance.MouseDownBackColor = Properties.ColorTheme.Default.MouseDown;
-        btnStopServer.FlatAppearance.MouseOverBackColor = Properties.ColorTheme.Default.MouseHover;
-        btnOpenLogFile.IconColor = Properties.ColorTheme.Default.IconValheim;
-        btnOpenLogFile.ForeColor = Properties.ColorTheme.Default.Text;
-        btnOpenLogFile.BackColor = Properties.ColorTheme.Default.ButtonBG;
-        btnOpenLogFile.FlatAppearance.MouseDownBackColor = Properties.ColorTheme.Default.MouseDown;
-        btnOpenLogFile.FlatAppearance.MouseOverBackColor = Properties.ColorTheme.Default.MouseHover;
-        btnOpenServerDir.IconColor = Properties.ColorTheme.Default.IconValheim;
-        btnOpenServerDir.ForeColor = Properties.ColorTheme.Default.Text;
-        btnOpenServerDir.BackColor = Properties.ColorTheme.Default.ButtonBG;
-        btnOpenServerDir.FlatAppearance.MouseDownBackColor = Properties.ColorTheme.Default.MouseDown;
-        btnOpenServerDir.FlatAppearance.MouseOverBackColor = Properties.ColorTheme.Default.MouseHover;
+        btnInstallServer.IconColor = ColorTheme.Default.IconValheim;
+        btnInstallServer.ForeColor = ColorTheme.Default.Text;
+        btnInstallServer.BackColor = ColorTheme.Default.ButtonBG;
+        btnInstallServer.IconColor = ColorTheme.Default.Icon;
+        btnInstallServer.FlatAppearance.MouseDownBackColor = ColorTheme.Default.MouseDown;
+        btnInstallServer.FlatAppearance.MouseOverBackColor = ColorTheme.Default.MouseHover;
+        btnUninstallServer.IconColor = ColorTheme.Default.Icon;
+        btnUninstallServer.ForeColor = ColorTheme.Default.Text;
+        btnUninstallServer.BackColor = ColorTheme.Default.ButtonBG;
+        btnUninstallServer.IconColor = ColorTheme.Default.Icon;
+        btnUninstallServer.FlatAppearance.MouseDownBackColor = ColorTheme.Default.MouseDown;
+        btnUninstallServer.FlatAppearance.MouseOverBackColor = ColorTheme.Default.MouseHover;
+        btnStartServer.IconColor = ColorTheme.Default.IconValheim;
+        btnStartServer.ForeColor = ColorTheme.Default.Text;
+        btnStartServer.BackColor = ColorTheme.Default.ButtonBG;
+        btnStartServer.FlatAppearance.MouseDownBackColor = ColorTheme.Default.MouseDown;
+        btnStartServer.FlatAppearance.MouseOverBackColor = ColorTheme.Default.MouseHover;
+        btnStopServer.IconColor = ColorTheme.Default.IconValheim;
+        btnStopServer.ForeColor = ColorTheme.Default.Text;
+        btnStopServer.BackColor = ColorTheme.Default.ButtonBG;
+        btnStopServer.FlatAppearance.MouseDownBackColor = ColorTheme.Default.MouseDown;
+        btnStopServer.FlatAppearance.MouseOverBackColor = ColorTheme.Default.MouseHover;
+        btnOpenLogFile.IconColor = ColorTheme.Default.IconValheim;
+        btnOpenLogFile.ForeColor = ColorTheme.Default.Text;
+        btnOpenLogFile.BackColor = ColorTheme.Default.ButtonBG;
+        btnOpenLogFile.FlatAppearance.MouseDownBackColor = ColorTheme.Default.MouseDown;
+        btnOpenLogFile.FlatAppearance.MouseOverBackColor = ColorTheme.Default.MouseHover;
+        btnOpenServerDir.IconColor = ColorTheme.Default.IconValheim;
+        btnOpenServerDir.ForeColor = ColorTheme.Default.Text;
+        btnOpenServerDir.BackColor = ColorTheme.Default.ButtonBG;
+        btnOpenServerDir.FlatAppearance.MouseDownBackColor = ColorTheme.Default.MouseDown;
+        btnOpenServerDir.FlatAppearance.MouseOverBackColor = ColorTheme.Default.MouseHover;
         // Textboxen
-        tbServerNameInfo.BackColor = Properties.ColorTheme.Default.TextBoxBG;
-        tbServerNameInfo.ForeColor = Properties.ColorTheme.Default.TextBoxText;
-        tbServerPasswordInfo.BackColor = Properties.ColorTheme.Default.TextBoxBG;
-        tbServerPasswordInfo.ForeColor = Properties.ColorTheme.Default.TextBoxText;
-        tbServerPortInfo.BackColor = Properties.ColorTheme.Default.TextBoxBG;
-        tbServerPortInfo.ForeColor = Properties.ColorTheme.Default.TextBoxText;
-        tbServerWorldInfo.BackColor = Properties.ColorTheme.Default.TextBoxBG;
-        tbServerWorldInfo.ForeColor = Properties.ColorTheme.Default.TextBoxText;
-        tbServerBackupsInfo.BackColor = Properties.ColorTheme.Default.TextBoxBG;
-        tbServerBackupsInfo.ForeColor = Properties.ColorTheme.Default.TextBoxText;
-        tbServerSaveDirInfo.BackColor = Properties.ColorTheme.Default.TextBoxBG;
-        tbServerSaveDirInfo.ForeColor = Properties.ColorTheme.Default.TextBoxText;
-        tbServerSaveIntervalInfo.BackColor = Properties.ColorTheme.Default.TextBoxBG;
-        tbServerSaveIntervalInfo.ForeColor = Properties.ColorTheme.Default.TextBoxText;
-        tbBackupShortInfo.BackColor = Properties.ColorTheme.Default.TextBoxBG;
-        tbBackupShortInfo.ForeColor = Properties.ColorTheme.Default.TextBoxText;
-        tbBackupLongInfo.BackColor = Properties.ColorTheme.Default.TextBoxBG;
-        tbBackupLongInfo.ForeColor = Properties.ColorTheme.Default.TextBoxText;
+        tbServerNameInfo.BackColor = ColorTheme.Default.TextBoxBG;
+        tbServerNameInfo.ForeColor = ColorTheme.Default.TextBoxText;
+        tbServerPasswordInfo.BackColor = ColorTheme.Default.TextBoxBG;
+        tbServerPasswordInfo.ForeColor = ColorTheme.Default.TextBoxText;
+        tbServerPortInfo.BackColor = ColorTheme.Default.TextBoxBG;
+        tbServerPortInfo.ForeColor = ColorTheme.Default.TextBoxText;
+        tbServerWorldInfo.BackColor = ColorTheme.Default.TextBoxBG;
+        tbServerWorldInfo.ForeColor = ColorTheme.Default.TextBoxText;
+        tbServerBackupsInfo.BackColor = ColorTheme.Default.TextBoxBG;
+        tbServerBackupsInfo.ForeColor = ColorTheme.Default.TextBoxText;
+        tbServerSaveDirInfo.BackColor = ColorTheme.Default.TextBoxBG;
+        tbServerSaveDirInfo.ForeColor = ColorTheme.Default.TextBoxText;
+        tbServerSaveIntervalInfo.BackColor = ColorTheme.Default.TextBoxBG;
+        tbServerSaveIntervalInfo.ForeColor = ColorTheme.Default.TextBoxText;
+        tbBackupShortInfo.BackColor = ColorTheme.Default.TextBoxBG;
+        tbBackupShortInfo.ForeColor = ColorTheme.Default.TextBoxText;
+        tbBackupLongInfo.BackColor = ColorTheme.Default.TextBoxBG;
+        tbBackupLongInfo.ForeColor = ColorTheme.Default.TextBoxText;
     }
 
     // Load Settings
@@ -282,7 +283,7 @@ public partial class FormValheim : Form
         }
 
         // Check if the Path to the Server is set
-        if (string.IsNullOrEmpty(Properties.Settings.Default.ServerPath))
+        if (string.IsNullOrEmpty(Settings.Default.ServerPath))
         {
             ShowErrorMessage("The path to the Server is not set!");
             return;
@@ -299,7 +300,7 @@ public partial class FormValheim : Form
         }
 
         CheckFolderExist();
-        Game_Server_Manager.Forms.FormSteamCMD formSteamCMD = new Game_Server_Manager.Forms.FormSteamCMD();
+        FormSteamCMD formSteamCMD = new FormSteamCMD();
         formSteamCMD.StartSteamCMD($"+force_install_dir \"{InstallDir}\" +login anonymous +app_update {SteamAppID} validate +exit");
         formSteamCMD.ShowDialog();
         CheckServerInstalled();
@@ -518,7 +519,7 @@ public partial class FormValheim : Form
     {
         CreateStartBat();
         // Wait for Bat File
-        System.Threading.Thread.Sleep(500);
+        Thread.Sleep(500);
         StartProcess();
         CheckServerRunning();
     }
@@ -562,7 +563,7 @@ public partial class FormValheim : Form
     // Open Server Directory Button
     private void btnOpenServerDir_Click(object sender, EventArgs e)
     {
-        if (System.IO.Directory.Exists(InstallDir))
+        if (Directory.Exists(InstallDir))
         {
             // Öffne das Verzeichnis im Explorer
             Process.Start("explorer.exe", InstallDir);
