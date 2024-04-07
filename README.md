@@ -17,6 +17,7 @@ This is a simple game server manager for managing game servers on a Windows serv
 ## Supported Games
 
 - Valheim
+- Enshrouded
 
 ## Installation
 
