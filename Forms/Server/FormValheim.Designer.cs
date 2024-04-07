@@ -29,13 +29,12 @@ partial class FormValheim
     private void InitializeComponent()
     {
         panelTopBar = new Panel();
-        lblServerPathInfo = new Label();
-        panelServerUsage = new Panel();
+        lblLastUpdateInfo = new Label();
+        lblLastUpdate = new Label();
         progressBarRAM = new ProgressBar();
         lblRAMUsageInfo = new Label();
         lblRAMUsage = new Label();
-        lblCPUUsageInfo = new Label();
-        lblCPUUsage = new Label();
+        lblServerPathInfo = new Label();
         lblServerPath = new Label();
         lblServerRunning = new Label();
         lblServerRunningInfo = new Label();
@@ -81,14 +80,17 @@ partial class FormValheim
         lblServerName = new Label();
         label3 = new Label();
         panelTopBar.SuspendLayout();
-        panelServerUsage.SuspendLayout();
         ((System.ComponentModel.ISupportInitialize)trackBarPreset).BeginInit();
         SuspendLayout();
         // 
         // panelTopBar
         // 
+        panelTopBar.Controls.Add(lblLastUpdateInfo);
+        panelTopBar.Controls.Add(lblLastUpdate);
+        panelTopBar.Controls.Add(progressBarRAM);
+        panelTopBar.Controls.Add(lblRAMUsageInfo);
+        panelTopBar.Controls.Add(lblRAMUsage);
         panelTopBar.Controls.Add(lblServerPathInfo);
-        panelTopBar.Controls.Add(panelServerUsage);
         panelTopBar.Controls.Add(lblServerPath);
         panelTopBar.Controls.Add(lblServerRunning);
         panelTopBar.Controls.Add(lblServerRunningInfo);
@@ -99,6 +101,65 @@ partial class FormValheim
         panelTopBar.Name = "panelTopBar";
         panelTopBar.Size = new Size(880, 84);
         panelTopBar.TabIndex = 0;
+        // 
+        // lblLastUpdateInfo
+        // 
+        lblLastUpdateInfo.AutoSize = true;
+        lblLastUpdateInfo.BackColor = Color.Transparent;
+        lblLastUpdateInfo.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+        lblLastUpdateInfo.ForeColor = Color.White;
+        lblLastUpdateInfo.ImeMode = ImeMode.NoControl;
+        lblLastUpdateInfo.Location = new Point(711, 9);
+        lblLastUpdateInfo.Name = "lblLastUpdateInfo";
+        lblLastUpdateInfo.Size = new Size(72, 17);
+        lblLastUpdateInfo.TabIndex = 22;
+        lblLastUpdateInfo.Text = "01.01.2000";
+        // 
+        // lblLastUpdate
+        // 
+        lblLastUpdate.AutoSize = true;
+        lblLastUpdate.BackColor = Color.Transparent;
+        lblLastUpdate.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+        lblLastUpdate.ForeColor = Color.White;
+        lblLastUpdate.ImeMode = ImeMode.NoControl;
+        lblLastUpdate.Location = new Point(626, 9);
+        lblLastUpdate.Name = "lblLastUpdate";
+        lblLastUpdate.Size = new Size(85, 17);
+        lblLastUpdate.TabIndex = 23;
+        lblLastUpdate.Text = "Last Update:";
+        // 
+        // progressBarRAM
+        // 
+        progressBarRAM.ForeColor = Color.Firebrick;
+        progressBarRAM.Location = new Point(398, 29);
+        progressBarRAM.Name = "progressBarRAM";
+        progressBarRAM.Size = new Size(142, 10);
+        progressBarRAM.Step = 1;
+        progressBarRAM.TabIndex = 20;
+        // 
+        // lblRAMUsageInfo
+        // 
+        lblRAMUsageInfo.AutoSize = true;
+        lblRAMUsageInfo.BackColor = Color.Transparent;
+        lblRAMUsageInfo.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+        lblRAMUsageInfo.ForeColor = Color.White;
+        lblRAMUsageInfo.Location = new Point(398, 9);
+        lblRAMUsageInfo.Name = "lblRAMUsageInfo";
+        lblRAMUsageInfo.Size = new Size(84, 17);
+        lblRAMUsageInfo.TabIndex = 19;
+        lblRAMUsageInfo.Text = "0 MB / 0 MB";
+        // 
+        // lblRAMUsage
+        // 
+        lblRAMUsage.AutoSize = true;
+        lblRAMUsage.BackColor = Color.Transparent;
+        lblRAMUsage.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+        lblRAMUsage.ForeColor = Color.White;
+        lblRAMUsage.Location = new Point(314, 9);
+        lblRAMUsage.Name = "lblRAMUsage";
+        lblRAMUsage.Size = new Size(86, 17);
+        lblRAMUsage.TabIndex = 18;
+        lblRAMUsage.Text = "RAM Usage: ";
         // 
         // lblServerPathInfo
         // 
@@ -111,77 +172,6 @@ partial class FormValheim
         lblServerPathInfo.Size = new Size(38, 17);
         lblServerPathInfo.TabIndex = 5;
         lblServerPathInfo.Text = "C:\\...";
-        // 
-        // panelServerUsage
-        // 
-        panelServerUsage.Controls.Add(progressBarRAM);
-        panelServerUsage.Controls.Add(lblRAMUsageInfo);
-        panelServerUsage.Controls.Add(lblRAMUsage);
-        panelServerUsage.Controls.Add(lblCPUUsageInfo);
-        panelServerUsage.Controls.Add(lblCPUUsage);
-        panelServerUsage.Location = new Point(479, 9);
-        panelServerUsage.Name = "panelServerUsage";
-        panelServerUsage.Size = new Size(373, 55);
-        panelServerUsage.TabIndex = 7;
-        // 
-        // progressBarRAM
-        // 
-        progressBarRAM.ForeColor = Color.Firebrick;
-        progressBarRAM.Location = new Point(222, 32);
-        progressBarRAM.Name = "progressBarRAM";
-        progressBarRAM.Size = new Size(142, 15);
-        progressBarRAM.Step = 1;
-        progressBarRAM.TabIndex = 17;
-        // 
-        // lblRAMUsageInfo
-        // 
-        lblRAMUsageInfo.AutoSize = true;
-        lblRAMUsageInfo.BackColor = Color.Transparent;
-        lblRAMUsageInfo.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
-        lblRAMUsageInfo.ForeColor = Color.White;
-        lblRAMUsageInfo.Location = new Point(87, 32);
-        lblRAMUsageInfo.Name = "lblRAMUsageInfo";
-        lblRAMUsageInfo.Size = new Size(84, 17);
-        lblRAMUsageInfo.TabIndex = 16;
-        lblRAMUsageInfo.Text = "0 MB / 0 MB";
-        // 
-        // lblRAMUsage
-        // 
-        lblRAMUsage.AutoSize = true;
-        lblRAMUsage.BackColor = Color.Transparent;
-        lblRAMUsage.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
-        lblRAMUsage.ForeColor = Color.White;
-        lblRAMUsage.Location = new Point(3, 32);
-        lblRAMUsage.Name = "lblRAMUsage";
-        lblRAMUsage.Size = new Size(86, 17);
-        lblRAMUsage.TabIndex = 15;
-        lblRAMUsage.Text = "RAM Usage: ";
-        // 
-        // lblCPUUsageInfo
-        // 
-        lblCPUUsageInfo.AutoSize = true;
-        lblCPUUsageInfo.BackColor = Color.Transparent;
-        lblCPUUsageInfo.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
-        lblCPUUsageInfo.ForeColor = Color.White;
-        lblCPUUsageInfo.Location = new Point(87, 7);
-        lblCPUUsageInfo.Name = "lblCPUUsageInfo";
-        lblCPUUsageInfo.Size = new Size(44, 17);
-        lblCPUUsageInfo.TabIndex = 14;
-        lblCPUUsageInfo.Text = "0.00%";
-        lblCPUUsageInfo.Visible = false;
-        // 
-        // lblCPUUsage
-        // 
-        lblCPUUsage.AutoSize = true;
-        lblCPUUsage.BackColor = Color.Transparent;
-        lblCPUUsage.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
-        lblCPUUsage.ForeColor = Color.White;
-        lblCPUUsage.Location = new Point(7, 7);
-        lblCPUUsage.Name = "lblCPUUsage";
-        lblCPUUsage.Size = new Size(82, 17);
-        lblCPUUsage.TabIndex = 13;
-        lblCPUUsage.Text = "CPU Usage: ";
-        lblCPUUsage.Visible = false;
         // 
         // lblServerPath
         // 
@@ -370,7 +360,7 @@ partial class FormValheim
         lblPresetHammer.BackColor = Color.Transparent;
         lblPresetHammer.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
         lblPresetHammer.ForeColor = Color.White;
-        lblPresetHammer.Location = new Point(767, 153);
+        lblPresetHammer.Location = new Point(767, 173);
         lblPresetHammer.Name = "lblPresetHammer";
         lblPresetHammer.Size = new Size(70, 23);
         lblPresetHammer.TabIndex = 82;
@@ -382,7 +372,7 @@ partial class FormValheim
         lblPresetImmersive.BackColor = Color.Transparent;
         lblPresetImmersive.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
         lblPresetImmersive.ForeColor = Color.White;
-        lblPresetImmersive.Location = new Point(767, 186);
+        lblPresetImmersive.Location = new Point(767, 206);
         lblPresetImmersive.Name = "lblPresetImmersive";
         lblPresetImmersive.Size = new Size(90, 23);
         lblPresetImmersive.TabIndex = 81;
@@ -394,7 +384,7 @@ partial class FormValheim
         lblPresetHardcore.BackColor = Color.Transparent;
         lblPresetHardcore.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
         lblPresetHardcore.ForeColor = Color.White;
-        lblPresetHardcore.Location = new Point(767, 219);
+        lblPresetHardcore.Location = new Point(767, 239);
         lblPresetHardcore.Name = "lblPresetHardcore";
         lblPresetHardcore.Size = new Size(70, 23);
         lblPresetHardcore.TabIndex = 80;
@@ -406,7 +396,7 @@ partial class FormValheim
         lblPresetHard.BackColor = Color.Transparent;
         lblPresetHard.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
         lblPresetHard.ForeColor = Color.White;
-        lblPresetHard.Location = new Point(767, 252);
+        lblPresetHard.Location = new Point(767, 272);
         lblPresetHard.Name = "lblPresetHard";
         lblPresetHard.Size = new Size(52, 23);
         lblPresetHard.TabIndex = 79;
@@ -418,7 +408,7 @@ partial class FormValheim
         lblPresetNormal.BackColor = Color.Transparent;
         lblPresetNormal.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
         lblPresetNormal.ForeColor = Color.White;
-        lblPresetNormal.Location = new Point(767, 284);
+        lblPresetNormal.Location = new Point(767, 304);
         lblPresetNormal.Name = "lblPresetNormal";
         lblPresetNormal.Size = new Size(70, 23);
         lblPresetNormal.TabIndex = 78;
@@ -430,7 +420,7 @@ partial class FormValheim
         lblPresetEasy.BackColor = Color.Transparent;
         lblPresetEasy.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
         lblPresetEasy.ForeColor = Color.White;
-        lblPresetEasy.Location = new Point(767, 317);
+        lblPresetEasy.Location = new Point(767, 337);
         lblPresetEasy.Name = "lblPresetEasy";
         lblPresetEasy.Size = new Size(52, 23);
         lblPresetEasy.TabIndex = 77;
@@ -442,7 +432,7 @@ partial class FormValheim
         lblPresetCasual.BackColor = Color.Transparent;
         lblPresetCasual.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
         lblPresetCasual.ForeColor = Color.White;
-        lblPresetCasual.Location = new Point(767, 350);
+        lblPresetCasual.Location = new Point(767, 370);
         lblPresetCasual.Name = "lblPresetCasual";
         lblPresetCasual.Size = new Size(52, 23);
         lblPresetCasual.TabIndex = 76;
@@ -452,7 +442,7 @@ partial class FormValheim
         // trackBarPreset
         // 
         trackBarPreset.LargeChange = 1;
-        trackBarPreset.Location = new Point(738, 151);
+        trackBarPreset.Location = new Point(738, 171);
         trackBarPreset.Maximum = 7;
         trackBarPreset.Minimum = 1;
         trackBarPreset.Name = "trackBarPreset";
@@ -505,7 +495,7 @@ partial class FormValheim
         lblPreset.BackColor = Color.Transparent;
         lblPreset.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
         lblPreset.ForeColor = Color.White;
-        lblPreset.Location = new Point(738, 119);
+        lblPreset.Location = new Point(738, 139);
         lblPreset.Name = "lblPreset";
         lblPreset.Size = new Size(92, 23);
         lblPreset.TabIndex = 72;
@@ -671,7 +661,7 @@ partial class FormValheim
         lblServerPort.BackColor = Color.Transparent;
         lblServerPort.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
         lblServerPort.ForeColor = Color.White;
-        lblServerPort.Location = new Point(24, 219);
+        lblServerPort.Location = new Point(25, 217);
         lblServerPort.Name = "lblServerPort";
         lblServerPort.Size = new Size(78, 23);
         lblServerPort.TabIndex = 54;
@@ -683,7 +673,7 @@ partial class FormValheim
         lblServerIP.BackColor = Color.Transparent;
         lblServerIP.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
         lblServerIP.ForeColor = Color.White;
-        lblServerIP.Location = new Point(25, 194);
+        lblServerIP.Location = new Point(28, 192);
         lblServerIP.Name = "lblServerIP";
         lblServerIP.Size = new Size(78, 23);
         lblServerIP.TabIndex = 53;
@@ -695,7 +685,7 @@ partial class FormValheim
         lblServerPassword.BackColor = Color.Transparent;
         lblServerPassword.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
         lblServerPassword.ForeColor = Color.White;
-        lblServerPassword.Location = new Point(25, 169);
+        lblServerPassword.Location = new Point(28, 167);
         lblServerPassword.Name = "lblServerPassword";
         lblServerPassword.Size = new Size(78, 23);
         lblServerPassword.TabIndex = 52;
@@ -780,8 +770,6 @@ partial class FormValheim
         Text = "Valheim Server";
         panelTopBar.ResumeLayout(false);
         panelTopBar.PerformLayout();
-        panelServerUsage.ResumeLayout(false);
-        panelServerUsage.PerformLayout();
         ((System.ComponentModel.ISupportInitialize)trackBarPreset).EndInit();
         ResumeLayout(false);
         PerformLayout();
@@ -802,12 +790,6 @@ partial class FormValheim
     private FontAwesome.Sharp.IconButton btnOpenLogFile;
     private FontAwesome.Sharp.IconButton btnOpenServerDir;
     private FontAwesome.Sharp.IconButton btnUninstallServer;
-    private Panel panelServerUsage;
-    private ProgressBar progressBarRAM;
-    private Label lblRAMUsageInfo;
-    private Label lblRAMUsage;
-    private Label lblCPUUsageInfo;
-    private Label lblCPUUsage;
     private Label lblPresetHammer;
     private Label lblPresetImmersive;
     private Label lblPresetHardcore;
@@ -841,4 +823,9 @@ partial class FormValheim
     private Label lblServerPassword;
     private Label lblServerName;
     private Label label3;
+    private ProgressBar progressBarRAM;
+    private Label lblRAMUsageInfo;
+    private Label lblRAMUsage;
+    private Label lblLastUpdateInfo;
+    private Label lblLastUpdate;
 }

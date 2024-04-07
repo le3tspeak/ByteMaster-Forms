@@ -29,13 +29,12 @@ partial class FormEnshrouded
     private void InitializeComponent()
     {
         panelTopBar = new Panel();
-        lblServerPathInfo = new Label();
-        panelServerUsage = new Panel();
+        lblLastUpdateInfo = new Label();
+        lblLastUpdate = new Label();
         progressBarRAM = new ProgressBar();
         lblRAMUsageInfo = new Label();
         lblRAMUsage = new Label();
-        lblCPUUsageInfo = new Label();
-        lblCPUUsage = new Label();
+        lblServerPathInfo = new Label();
         lblServerPath = new Label();
         lblServerRunning = new Label();
         lblServerRunningInfo = new Label();
@@ -65,13 +64,16 @@ partial class FormEnshrouded
         tbServerSlotsInfo = new TextBox();
         lblSLots = new Label();
         panelTopBar.SuspendLayout();
-        panelServerUsage.SuspendLayout();
         SuspendLayout();
         // 
         // panelTopBar
         // 
+        panelTopBar.Controls.Add(lblLastUpdateInfo);
+        panelTopBar.Controls.Add(lblLastUpdate);
+        panelTopBar.Controls.Add(progressBarRAM);
+        panelTopBar.Controls.Add(lblRAMUsageInfo);
+        panelTopBar.Controls.Add(lblRAMUsage);
         panelTopBar.Controls.Add(lblServerPathInfo);
-        panelTopBar.Controls.Add(panelServerUsage);
         panelTopBar.Controls.Add(lblServerPath);
         panelTopBar.Controls.Add(lblServerRunning);
         panelTopBar.Controls.Add(lblServerRunningInfo);
@@ -82,6 +84,65 @@ partial class FormEnshrouded
         panelTopBar.Name = "panelTopBar";
         panelTopBar.Size = new Size(880, 84);
         panelTopBar.TabIndex = 1;
+        // 
+        // lblLastUpdateInfo
+        // 
+        lblLastUpdateInfo.AutoSize = true;
+        lblLastUpdateInfo.BackColor = Color.Transparent;
+        lblLastUpdateInfo.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+        lblLastUpdateInfo.ForeColor = Color.White;
+        lblLastUpdateInfo.ImeMode = ImeMode.NoControl;
+        lblLastUpdateInfo.Location = new Point(711, 9);
+        lblLastUpdateInfo.Name = "lblLastUpdateInfo";
+        lblLastUpdateInfo.Size = new Size(72, 17);
+        lblLastUpdateInfo.TabIndex = 22;
+        lblLastUpdateInfo.Text = "01.01.2000";
+        // 
+        // lblLastUpdate
+        // 
+        lblLastUpdate.AutoSize = true;
+        lblLastUpdate.BackColor = Color.Transparent;
+        lblLastUpdate.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+        lblLastUpdate.ForeColor = Color.White;
+        lblLastUpdate.ImeMode = ImeMode.NoControl;
+        lblLastUpdate.Location = new Point(626, 9);
+        lblLastUpdate.Name = "lblLastUpdate";
+        lblLastUpdate.Size = new Size(85, 17);
+        lblLastUpdate.TabIndex = 23;
+        lblLastUpdate.Text = "Last Update:";
+        // 
+        // progressBarRAM
+        // 
+        progressBarRAM.ForeColor = Color.Firebrick;
+        progressBarRAM.Location = new Point(398, 29);
+        progressBarRAM.Name = "progressBarRAM";
+        progressBarRAM.Size = new Size(142, 10);
+        progressBarRAM.Step = 1;
+        progressBarRAM.TabIndex = 20;
+        // 
+        // lblRAMUsageInfo
+        // 
+        lblRAMUsageInfo.AutoSize = true;
+        lblRAMUsageInfo.BackColor = Color.Transparent;
+        lblRAMUsageInfo.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+        lblRAMUsageInfo.ForeColor = Color.White;
+        lblRAMUsageInfo.Location = new Point(398, 9);
+        lblRAMUsageInfo.Name = "lblRAMUsageInfo";
+        lblRAMUsageInfo.Size = new Size(84, 17);
+        lblRAMUsageInfo.TabIndex = 19;
+        lblRAMUsageInfo.Text = "0 MB / 0 MB";
+        // 
+        // lblRAMUsage
+        // 
+        lblRAMUsage.AutoSize = true;
+        lblRAMUsage.BackColor = Color.Transparent;
+        lblRAMUsage.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+        lblRAMUsage.ForeColor = Color.White;
+        lblRAMUsage.Location = new Point(314, 9);
+        lblRAMUsage.Name = "lblRAMUsage";
+        lblRAMUsage.Size = new Size(86, 17);
+        lblRAMUsage.TabIndex = 18;
+        lblRAMUsage.Text = "RAM Usage: ";
         // 
         // lblServerPathInfo
         // 
@@ -94,77 +155,6 @@ partial class FormEnshrouded
         lblServerPathInfo.Size = new Size(38, 17);
         lblServerPathInfo.TabIndex = 5;
         lblServerPathInfo.Text = "C:\\...";
-        // 
-        // panelServerUsage
-        // 
-        panelServerUsage.Controls.Add(progressBarRAM);
-        panelServerUsage.Controls.Add(lblRAMUsageInfo);
-        panelServerUsage.Controls.Add(lblRAMUsage);
-        panelServerUsage.Controls.Add(lblCPUUsageInfo);
-        panelServerUsage.Controls.Add(lblCPUUsage);
-        panelServerUsage.Location = new Point(479, 9);
-        panelServerUsage.Name = "panelServerUsage";
-        panelServerUsage.Size = new Size(373, 55);
-        panelServerUsage.TabIndex = 7;
-        // 
-        // progressBarRAM
-        // 
-        progressBarRAM.ForeColor = Color.Firebrick;
-        progressBarRAM.Location = new Point(222, 32);
-        progressBarRAM.Name = "progressBarRAM";
-        progressBarRAM.Size = new Size(142, 15);
-        progressBarRAM.Step = 1;
-        progressBarRAM.TabIndex = 17;
-        // 
-        // lblRAMUsageInfo
-        // 
-        lblRAMUsageInfo.AutoSize = true;
-        lblRAMUsageInfo.BackColor = Color.Transparent;
-        lblRAMUsageInfo.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
-        lblRAMUsageInfo.ForeColor = Color.White;
-        lblRAMUsageInfo.Location = new Point(87, 32);
-        lblRAMUsageInfo.Name = "lblRAMUsageInfo";
-        lblRAMUsageInfo.Size = new Size(84, 17);
-        lblRAMUsageInfo.TabIndex = 16;
-        lblRAMUsageInfo.Text = "0 MB / 0 MB";
-        // 
-        // lblRAMUsage
-        // 
-        lblRAMUsage.AutoSize = true;
-        lblRAMUsage.BackColor = Color.Transparent;
-        lblRAMUsage.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
-        lblRAMUsage.ForeColor = Color.White;
-        lblRAMUsage.Location = new Point(3, 32);
-        lblRAMUsage.Name = "lblRAMUsage";
-        lblRAMUsage.Size = new Size(86, 17);
-        lblRAMUsage.TabIndex = 15;
-        lblRAMUsage.Text = "RAM Usage: ";
-        // 
-        // lblCPUUsageInfo
-        // 
-        lblCPUUsageInfo.AutoSize = true;
-        lblCPUUsageInfo.BackColor = Color.Transparent;
-        lblCPUUsageInfo.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
-        lblCPUUsageInfo.ForeColor = Color.White;
-        lblCPUUsageInfo.Location = new Point(87, 7);
-        lblCPUUsageInfo.Name = "lblCPUUsageInfo";
-        lblCPUUsageInfo.Size = new Size(44, 17);
-        lblCPUUsageInfo.TabIndex = 14;
-        lblCPUUsageInfo.Text = "0.00%";
-        lblCPUUsageInfo.Visible = false;
-        // 
-        // lblCPUUsage
-        // 
-        lblCPUUsage.AutoSize = true;
-        lblCPUUsage.BackColor = Color.Transparent;
-        lblCPUUsage.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
-        lblCPUUsage.ForeColor = Color.White;
-        lblCPUUsage.Location = new Point(7, 7);
-        lblCPUUsage.Name = "lblCPUUsage";
-        lblCPUUsage.Size = new Size(82, 17);
-        lblCPUUsage.TabIndex = 13;
-        lblCPUUsage.Text = "CPU Usage: ";
-        lblCPUUsage.Visible = false;
         // 
         // lblServerPath
         // 
@@ -565,8 +555,6 @@ partial class FormEnshrouded
         Text = "Enshrouded Server";
         panelTopBar.ResumeLayout(false);
         panelTopBar.PerformLayout();
-        panelServerUsage.ResumeLayout(false);
-        panelServerUsage.PerformLayout();
         ResumeLayout(false);
         PerformLayout();
     }
@@ -575,12 +563,6 @@ partial class FormEnshrouded
 
     private Panel panelTopBar;
     private Label lblServerPathInfo;
-    private Panel panelServerUsage;
-    private ProgressBar progressBarRAM;
-    private Label lblRAMUsageInfo;
-    private Label lblRAMUsage;
-    private Label lblCPUUsageInfo;
-    private Label lblCPUUsage;
     private Label lblServerPath;
     private Label lblServerRunning;
     private Label lblServerRunningInfo;
@@ -609,4 +591,9 @@ partial class FormEnshrouded
     private Label lblLogDir;
     private TextBox tbServerSlotsInfo;
     private Label lblSLots;
+    private ProgressBar progressBarRAM;
+    private Label lblRAMUsageInfo;
+    private Label lblRAMUsage;
+    private Label lblLastUpdateInfo;
+    private Label lblLastUpdate;
 }

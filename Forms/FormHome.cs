@@ -65,7 +65,7 @@ public partial class FormHome : Form
         timerShort.Start();
         // Timer 2 Sekunden
         Timer timerLong = new Timer();
-        timerLong.Interval = 2000;
+        timerLong.Interval = 1000;
         timerLong.Tick += Timer_Tick_Long;
         timerLong.Start();
     }
@@ -87,6 +87,9 @@ public partial class FormHome : Form
     private void ValheimUpdate()
     {
         var InstallDirValheim = Path.Combine(GameManager.Default.ServerPath, GameManager_Valheim.Default.ServerFolderName);
+
+        // Load Last Update Time
+        lblValheimLastUpdateInfo.Text = GameManager.Default.ValheimLastUpdate;
 
         // Überprüfen, ob der Server installiert ist
         if (File.Exists(Path.Combine(InstallDirValheim, GameManager_Valheim.Default.ServerExe)))
@@ -133,6 +136,9 @@ public partial class FormHome : Form
     private void EnshroudedUpdate()
     {
         var InstallDirEnshrouded = Path.Combine(GameManager.Default.ServerPath, GameManager_Enshrouded.Default.ServerFolderName);
+
+        // Load Last Update Time
+        lblEnshroudedLastUpdateInfo.Text = GameManager.Default.EnshroudedLastUpdate;
 
         // Überprüfen, ob der Server installiert ist
         if (File.Exists(Path.Combine(InstallDirEnshrouded, GameManager_Enshrouded.Default.ServerExe)))

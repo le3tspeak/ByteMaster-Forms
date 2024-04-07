@@ -75,5 +75,29 @@ namespace Game_Server_Manager.Properties {
                 this["SteamCMDLastUpdate"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string ValheimLastUpdate {
+            get {
+                return ((string)(this["ValheimLastUpdate"]));
+            }
+            set {
+                this["ValheimLastUpdate"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string EnshroudedLastUpdate {
+            get {
+                return ((string)(this["EnshroudedLastUpdate"]));
+            }
+            set {
+                this["EnshroudedLastUpdate"] = value;
+            }
+        }
     }
 }

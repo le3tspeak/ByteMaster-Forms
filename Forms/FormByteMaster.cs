@@ -128,7 +128,7 @@ public partial class FormByteMaster : Form
         var totalRAMPercentage = (float)(100f * ramFree / totalRAM);
         totalRAMPercentage = (float)Math.Round(totalRAMPercentage, 2);
         // Formatierung für die Ausgabe
-        lblRamUsageSystemInfo.Text = $"{ramUsage:F2} GB / {totalRAM:F0} GB  {totalRAMPercentage:F2} %";
+        lblRamUsageSystem.Text = $"RAM: {ramUsage:F2}GB / {totalRAM:F0}GB Free: {totalRAMPercentage:F2}%";
     }
 
     // Prüfe ob SteamCMD installiert ist

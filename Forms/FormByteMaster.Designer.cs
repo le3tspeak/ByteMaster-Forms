@@ -38,7 +38,6 @@ partial class FormByteMaster
         btnHome = new PictureBox();
         panelTitelBar = new Panel();
         panelShadow = new Panel();
-        lblRamUsageSystemInfo = new Label();
         lblRamUsageSystem = new Label();
         lblCpuNameInfo = new Label();
         lblSteamCMDInstalledInfo = new Label();
@@ -130,7 +129,6 @@ partial class FormByteMaster
         // 
         panelTitelBar.BackColor = Color.FromArgb(38, 38, 38);
         panelTitelBar.Controls.Add(panelShadow);
-        panelTitelBar.Controls.Add(lblRamUsageSystemInfo);
         panelTitelBar.Controls.Add(lblRamUsageSystem);
         panelTitelBar.Controls.Add(lblCpuNameInfo);
         panelTitelBar.Controls.Add(lblSteamCMDInstalledInfo);
@@ -147,14 +145,6 @@ partial class FormByteMaster
         // 
         resources.ApplyResources(panelShadow, "panelShadow");
         panelShadow.Name = "panelShadow";
-        // 
-        // lblRamUsageSystemInfo
-        // 
-        resources.ApplyResources(lblRamUsageSystemInfo, "lblRamUsageSystemInfo");
-        lblRamUsageSystemInfo.BackColor = Color.Transparent;
-        lblRamUsageSystemInfo.ForeColor = Color.White;
-        lblRamUsageSystemInfo.Name = "lblRamUsageSystemInfo";
-        lblRamUsageSystemInfo.MouseDown += panelTitleBar_MouseDown;
         // 
         // lblRamUsageSystem
         // 
@@ -294,7 +284,6 @@ partial class FormByteMaster
     private Label lblSteamCMDInstalledInfo;
     private Label lblSteamCMDInstalled;
     private Label lblCpuNameInfo;
-    private Label lblRamUsageSystemInfo;
     private Label lblRamUsageSystem;
     private Panel panelShadow;
     private FontAwesome.Sharp.IconButton btnEnshrouded;

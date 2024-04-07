@@ -30,19 +30,23 @@ partial class FormHome
     {
         label1 = new Label();
         panelValheimBar = new Panel();
+        lblValheimLastUpdateInfo = new Label();
+        lblValheimLastUpdate = new Label();
+        progressBarRAMValheim = new ProgressBar();
+        lblRAMUsageInfoValheim = new Label();
+        lblRAMUsageValheim = new Label();
         lblServerValheimPathInfo = new Label();
         lblServerPathValheim = new Label();
         lblServerRunningValheim = new Label();
         lblServerValheimRunningInfo = new Label();
         lblServerValheimInstalledInfo = new Label();
         lblServerInstalledValheim = new Label();
-        panelServerUsage = new Panel();
-        progressBarRAMValheim = new ProgressBar();
-        lblRAMUsageInfoValheim = new Label();
-        lblRAMUsageValheim = new Label();
-        lblCPUUsageInfo = new Label();
-        lblCPUUsage = new Label();
         panel1 = new Panel();
+        lblEnshroudedLastUpdateInfo = new Label();
+        progressBarRAMEnshrouded = new ProgressBar();
+        lblEnshroudedLastUpdate = new Label();
+        lblRAMUsageEnshroudedInfo = new Label();
+        lblRAMUsageEnshrouded = new Label();
         label2 = new Label();
         lblServerPathEnshroudedInfo = new Label();
         lblServerPathEnshrouded = new Label();
@@ -50,16 +54,8 @@ partial class FormHome
         lblServerRunningEnshroudedInfo = new Label();
         lblServerInstalledEnshroudedInfo = new Label();
         lblServerInstalledEnshrouded = new Label();
-        panel2 = new Panel();
-        progressBarRAMEnshrouded = new ProgressBar();
-        lblRAMUsageEnshroudedInfo = new Label();
-        lblRAMUsageEnshrouded = new Label();
-        label11 = new Label();
-        label12 = new Label();
         panelValheimBar.SuspendLayout();
-        panelServerUsage.SuspendLayout();
         panel1.SuspendLayout();
-        panel2.SuspendLayout();
         SuspendLayout();
         // 
         // label1
@@ -79,6 +75,11 @@ partial class FormHome
         // 
         // panelValheimBar
         // 
+        panelValheimBar.Controls.Add(lblValheimLastUpdateInfo);
+        panelValheimBar.Controls.Add(lblValheimLastUpdate);
+        panelValheimBar.Controls.Add(progressBarRAMValheim);
+        panelValheimBar.Controls.Add(lblRAMUsageInfoValheim);
+        panelValheimBar.Controls.Add(lblRAMUsageValheim);
         panelValheimBar.Controls.Add(label1);
         panelValheimBar.Controls.Add(lblServerValheimPathInfo);
         panelValheimBar.Controls.Add(lblServerPathValheim);
@@ -86,12 +87,74 @@ partial class FormHome
         panelValheimBar.Controls.Add(lblServerValheimRunningInfo);
         panelValheimBar.Controls.Add(lblServerValheimInstalledInfo);
         panelValheimBar.Controls.Add(lblServerInstalledValheim);
-        panelValheimBar.Controls.Add(panelServerUsage);
         panelValheimBar.Dock = DockStyle.Top;
         panelValheimBar.Location = new Point(0, 0);
         panelValheimBar.Name = "panelValheimBar";
         panelValheimBar.Size = new Size(864, 105);
         panelValheimBar.TabIndex = 1;
+        // 
+        // lblValheimLastUpdateInfo
+        // 
+        lblValheimLastUpdateInfo.AutoSize = true;
+        lblValheimLastUpdateInfo.BackColor = Color.Transparent;
+        lblValheimLastUpdateInfo.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+        lblValheimLastUpdateInfo.ForeColor = Color.White;
+        lblValheimLastUpdateInfo.ImeMode = ImeMode.NoControl;
+        lblValheimLastUpdateInfo.Location = new Point(597, 38);
+        lblValheimLastUpdateInfo.Name = "lblValheimLastUpdateInfo";
+        lblValheimLastUpdateInfo.Size = new Size(72, 17);
+        lblValheimLastUpdateInfo.TabIndex = 21;
+        lblValheimLastUpdateInfo.Text = "01.01.2000";
+        // 
+        // lblValheimLastUpdate
+        // 
+        lblValheimLastUpdate.AutoSize = true;
+        lblValheimLastUpdate.BackColor = Color.Transparent;
+        lblValheimLastUpdate.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+        lblValheimLastUpdate.ForeColor = Color.White;
+        lblValheimLastUpdate.ImeMode = ImeMode.NoControl;
+        lblValheimLastUpdate.Location = new Point(506, 38);
+        lblValheimLastUpdate.Name = "lblValheimLastUpdate";
+        lblValheimLastUpdate.Size = new Size(85, 17);
+        lblValheimLastUpdate.TabIndex = 21;
+        lblValheimLastUpdate.Text = "Last Update:";
+        // 
+        // progressBarRAMValheim
+        // 
+        progressBarRAMValheim.BackColor = Color.Black;
+        progressBarRAMValheim.ForeColor = Color.Firebrick;
+        progressBarRAMValheim.ImeMode = ImeMode.NoControl;
+        progressBarRAMValheim.Location = new Point(313, 59);
+        progressBarRAMValheim.Name = "progressBarRAMValheim";
+        progressBarRAMValheim.Size = new Size(142, 10);
+        progressBarRAMValheim.Step = 1;
+        progressBarRAMValheim.TabIndex = 20;
+        // 
+        // lblRAMUsageInfoValheim
+        // 
+        lblRAMUsageInfoValheim.AutoSize = true;
+        lblRAMUsageInfoValheim.BackColor = Color.Transparent;
+        lblRAMUsageInfoValheim.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+        lblRAMUsageInfoValheim.ForeColor = Color.White;
+        lblRAMUsageInfoValheim.ImeMode = ImeMode.NoControl;
+        lblRAMUsageInfoValheim.Location = new Point(313, 38);
+        lblRAMUsageInfoValheim.Name = "lblRAMUsageInfoValheim";
+        lblRAMUsageInfoValheim.Size = new Size(84, 17);
+        lblRAMUsageInfoValheim.TabIndex = 19;
+        lblRAMUsageInfoValheim.Text = "0 MB / 0 MB";
+        // 
+        // lblRAMUsageValheim
+        // 
+        lblRAMUsageValheim.AutoSize = true;
+        lblRAMUsageValheim.BackColor = Color.Transparent;
+        lblRAMUsageValheim.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+        lblRAMUsageValheim.ForeColor = Color.White;
+        lblRAMUsageValheim.ImeMode = ImeMode.NoControl;
+        lblRAMUsageValheim.Location = new Point(229, 38);
+        lblRAMUsageValheim.Name = "lblRAMUsageValheim";
+        lblRAMUsageValheim.Size = new Size(86, 17);
+        lblRAMUsageValheim.TabIndex = 18;
+        lblRAMUsageValheim.Text = "RAM Usage: ";
         // 
         // lblServerValheimPathInfo
         // 
@@ -171,85 +234,13 @@ partial class FormHome
         lblServerInstalledValheim.TabIndex = 0;
         lblServerInstalledValheim.Text = "Installed:";
         // 
-        // panelServerUsage
-        // 
-        panelServerUsage.Controls.Add(progressBarRAMValheim);
-        panelServerUsage.Controls.Add(lblRAMUsageInfoValheim);
-        panelServerUsage.Controls.Add(lblRAMUsageValheim);
-        panelServerUsage.Controls.Add(lblCPUUsageInfo);
-        panelServerUsage.Controls.Add(lblCPUUsage);
-        panelServerUsage.Location = new Point(477, 42);
-        panelServerUsage.Name = "panelServerUsage";
-        panelServerUsage.Size = new Size(373, 55);
-        panelServerUsage.TabIndex = 7;
-        // 
-        // progressBarRAMValheim
-        // 
-        progressBarRAMValheim.BackColor = Color.Black;
-        progressBarRAMValheim.ForeColor = Color.Firebrick;
-        progressBarRAMValheim.ImeMode = ImeMode.NoControl;
-        progressBarRAMValheim.Location = new Point(228, 9);
-        progressBarRAMValheim.Name = "progressBarRAMValheim";
-        progressBarRAMValheim.Size = new Size(142, 15);
-        progressBarRAMValheim.Step = 1;
-        progressBarRAMValheim.TabIndex = 17;
-        // 
-        // lblRAMUsageInfoValheim
-        // 
-        lblRAMUsageInfoValheim.AutoSize = true;
-        lblRAMUsageInfoValheim.BackColor = Color.Transparent;
-        lblRAMUsageInfoValheim.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
-        lblRAMUsageInfoValheim.ForeColor = Color.White;
-        lblRAMUsageInfoValheim.ImeMode = ImeMode.NoControl;
-        lblRAMUsageInfoValheim.Location = new Point(87, 32);
-        lblRAMUsageInfoValheim.Name = "lblRAMUsageInfoValheim";
-        lblRAMUsageInfoValheim.Size = new Size(84, 17);
-        lblRAMUsageInfoValheim.TabIndex = 16;
-        lblRAMUsageInfoValheim.Text = "0 MB / 0 MB";
-        // 
-        // lblRAMUsageValheim
-        // 
-        lblRAMUsageValheim.AutoSize = true;
-        lblRAMUsageValheim.BackColor = Color.Transparent;
-        lblRAMUsageValheim.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
-        lblRAMUsageValheim.ForeColor = Color.White;
-        lblRAMUsageValheim.ImeMode = ImeMode.NoControl;
-        lblRAMUsageValheim.Location = new Point(3, 32);
-        lblRAMUsageValheim.Name = "lblRAMUsageValheim";
-        lblRAMUsageValheim.Size = new Size(86, 17);
-        lblRAMUsageValheim.TabIndex = 15;
-        lblRAMUsageValheim.Text = "RAM Usage: ";
-        // 
-        // lblCPUUsageInfo
-        // 
-        lblCPUUsageInfo.AutoSize = true;
-        lblCPUUsageInfo.BackColor = Color.Transparent;
-        lblCPUUsageInfo.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
-        lblCPUUsageInfo.ForeColor = Color.White;
-        lblCPUUsageInfo.ImeMode = ImeMode.NoControl;
-        lblCPUUsageInfo.Location = new Point(87, 7);
-        lblCPUUsageInfo.Name = "lblCPUUsageInfo";
-        lblCPUUsageInfo.Size = new Size(44, 17);
-        lblCPUUsageInfo.TabIndex = 14;
-        lblCPUUsageInfo.Text = "0.00%";
-        lblCPUUsageInfo.Visible = false;
-        // 
-        // lblCPUUsage
-        // 
-        lblCPUUsage.AutoSize = true;
-        lblCPUUsage.BackColor = Color.Transparent;
-        lblCPUUsage.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
-        lblCPUUsage.ForeColor = Color.White;
-        lblCPUUsage.ImeMode = ImeMode.NoControl;
-        lblCPUUsage.Location = new Point(7, 7);
-        lblCPUUsage.Name = "lblCPUUsage";
-        lblCPUUsage.Size = new Size(82, 17);
-        lblCPUUsage.TabIndex = 13;
-        lblCPUUsage.Text = "CPU Usage: ";
-        lblCPUUsage.Visible = false;
-        // 
         // panel1
         // 
+        panel1.Controls.Add(lblEnshroudedLastUpdateInfo);
+        panel1.Controls.Add(progressBarRAMEnshrouded);
+        panel1.Controls.Add(lblEnshroudedLastUpdate);
+        panel1.Controls.Add(lblRAMUsageEnshroudedInfo);
+        panel1.Controls.Add(lblRAMUsageEnshrouded);
         panel1.Controls.Add(label2);
         panel1.Controls.Add(lblServerPathEnshroudedInfo);
         panel1.Controls.Add(lblServerPathEnshrouded);
@@ -257,12 +248,74 @@ partial class FormHome
         panel1.Controls.Add(lblServerRunningEnshroudedInfo);
         panel1.Controls.Add(lblServerInstalledEnshroudedInfo);
         panel1.Controls.Add(lblServerInstalledEnshrouded);
-        panel1.Controls.Add(panel2);
         panel1.Dock = DockStyle.Top;
         panel1.Location = new Point(0, 105);
         panel1.Name = "panel1";
         panel1.Size = new Size(864, 105);
         panel1.TabIndex = 2;
+        // 
+        // lblEnshroudedLastUpdateInfo
+        // 
+        lblEnshroudedLastUpdateInfo.AutoSize = true;
+        lblEnshroudedLastUpdateInfo.BackColor = Color.Transparent;
+        lblEnshroudedLastUpdateInfo.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+        lblEnshroudedLastUpdateInfo.ForeColor = Color.White;
+        lblEnshroudedLastUpdateInfo.ImeMode = ImeMode.NoControl;
+        lblEnshroudedLastUpdateInfo.Location = new Point(597, 38);
+        lblEnshroudedLastUpdateInfo.Name = "lblEnshroudedLastUpdateInfo";
+        lblEnshroudedLastUpdateInfo.Size = new Size(72, 17);
+        lblEnshroudedLastUpdateInfo.TabIndex = 21;
+        lblEnshroudedLastUpdateInfo.Text = "01.01.2000";
+        // 
+        // progressBarRAMEnshrouded
+        // 
+        progressBarRAMEnshrouded.BackColor = Color.Black;
+        progressBarRAMEnshrouded.ForeColor = Color.Firebrick;
+        progressBarRAMEnshrouded.ImeMode = ImeMode.NoControl;
+        progressBarRAMEnshrouded.Location = new Point(313, 59);
+        progressBarRAMEnshrouded.Name = "progressBarRAMEnshrouded";
+        progressBarRAMEnshrouded.Size = new Size(142, 10);
+        progressBarRAMEnshrouded.Step = 1;
+        progressBarRAMEnshrouded.TabIndex = 20;
+        // 
+        // lblEnshroudedLastUpdate
+        // 
+        lblEnshroudedLastUpdate.AutoSize = true;
+        lblEnshroudedLastUpdate.BackColor = Color.Transparent;
+        lblEnshroudedLastUpdate.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+        lblEnshroudedLastUpdate.ForeColor = Color.White;
+        lblEnshroudedLastUpdate.ImeMode = ImeMode.NoControl;
+        lblEnshroudedLastUpdate.Location = new Point(506, 38);
+        lblEnshroudedLastUpdate.Name = "lblEnshroudedLastUpdate";
+        lblEnshroudedLastUpdate.Size = new Size(85, 17);
+        lblEnshroudedLastUpdate.TabIndex = 21;
+        lblEnshroudedLastUpdate.Text = "Last Update:";
+        // 
+        // lblRAMUsageEnshroudedInfo
+        // 
+        lblRAMUsageEnshroudedInfo.AutoSize = true;
+        lblRAMUsageEnshroudedInfo.BackColor = Color.Transparent;
+        lblRAMUsageEnshroudedInfo.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+        lblRAMUsageEnshroudedInfo.ForeColor = Color.White;
+        lblRAMUsageEnshroudedInfo.ImeMode = ImeMode.NoControl;
+        lblRAMUsageEnshroudedInfo.Location = new Point(313, 38);
+        lblRAMUsageEnshroudedInfo.Name = "lblRAMUsageEnshroudedInfo";
+        lblRAMUsageEnshroudedInfo.Size = new Size(84, 17);
+        lblRAMUsageEnshroudedInfo.TabIndex = 19;
+        lblRAMUsageEnshroudedInfo.Text = "0 MB / 0 MB";
+        // 
+        // lblRAMUsageEnshrouded
+        // 
+        lblRAMUsageEnshrouded.AutoSize = true;
+        lblRAMUsageEnshrouded.BackColor = Color.Transparent;
+        lblRAMUsageEnshrouded.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+        lblRAMUsageEnshrouded.ForeColor = Color.White;
+        lblRAMUsageEnshrouded.ImeMode = ImeMode.NoControl;
+        lblRAMUsageEnshrouded.Location = new Point(229, 38);
+        lblRAMUsageEnshrouded.Name = "lblRAMUsageEnshrouded";
+        lblRAMUsageEnshrouded.Size = new Size(86, 17);
+        lblRAMUsageEnshrouded.TabIndex = 18;
+        lblRAMUsageEnshrouded.Text = "RAM Usage: ";
         // 
         // label2
         // 
@@ -357,83 +410,6 @@ partial class FormHome
         lblServerInstalledEnshrouded.TabIndex = 0;
         lblServerInstalledEnshrouded.Text = "Installed:";
         // 
-        // panel2
-        // 
-        panel2.Controls.Add(progressBarRAMEnshrouded);
-        panel2.Controls.Add(lblRAMUsageEnshroudedInfo);
-        panel2.Controls.Add(lblRAMUsageEnshrouded);
-        panel2.Controls.Add(label11);
-        panel2.Controls.Add(label12);
-        panel2.Location = new Point(477, 42);
-        panel2.Name = "panel2";
-        panel2.Size = new Size(373, 55);
-        panel2.TabIndex = 7;
-        // 
-        // progressBarRAMEnshrouded
-        // 
-        progressBarRAMEnshrouded.BackColor = Color.Black;
-        progressBarRAMEnshrouded.ForeColor = Color.Firebrick;
-        progressBarRAMEnshrouded.ImeMode = ImeMode.NoControl;
-        progressBarRAMEnshrouded.Location = new Point(228, 9);
-        progressBarRAMEnshrouded.Name = "progressBarRAMEnshrouded";
-        progressBarRAMEnshrouded.Size = new Size(142, 15);
-        progressBarRAMEnshrouded.Step = 1;
-        progressBarRAMEnshrouded.TabIndex = 17;
-        // 
-        // lblRAMUsageEnshroudedInfo
-        // 
-        lblRAMUsageEnshroudedInfo.AutoSize = true;
-        lblRAMUsageEnshroudedInfo.BackColor = Color.Transparent;
-        lblRAMUsageEnshroudedInfo.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
-        lblRAMUsageEnshroudedInfo.ForeColor = Color.White;
-        lblRAMUsageEnshroudedInfo.ImeMode = ImeMode.NoControl;
-        lblRAMUsageEnshroudedInfo.Location = new Point(87, 32);
-        lblRAMUsageEnshroudedInfo.Name = "lblRAMUsageEnshroudedInfo";
-        lblRAMUsageEnshroudedInfo.Size = new Size(84, 17);
-        lblRAMUsageEnshroudedInfo.TabIndex = 16;
-        lblRAMUsageEnshroudedInfo.Text = "0 MB / 0 MB";
-        // 
-        // lblRAMUsageEnshrouded
-        // 
-        lblRAMUsageEnshrouded.AutoSize = true;
-        lblRAMUsageEnshrouded.BackColor = Color.Transparent;
-        lblRAMUsageEnshrouded.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
-        lblRAMUsageEnshrouded.ForeColor = Color.White;
-        lblRAMUsageEnshrouded.ImeMode = ImeMode.NoControl;
-        lblRAMUsageEnshrouded.Location = new Point(3, 32);
-        lblRAMUsageEnshrouded.Name = "lblRAMUsageEnshrouded";
-        lblRAMUsageEnshrouded.Size = new Size(86, 17);
-        lblRAMUsageEnshrouded.TabIndex = 15;
-        lblRAMUsageEnshrouded.Text = "RAM Usage: ";
-        // 
-        // label11
-        // 
-        label11.AutoSize = true;
-        label11.BackColor = Color.Transparent;
-        label11.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
-        label11.ForeColor = Color.White;
-        label11.ImeMode = ImeMode.NoControl;
-        label11.Location = new Point(87, 7);
-        label11.Name = "label11";
-        label11.Size = new Size(44, 17);
-        label11.TabIndex = 14;
-        label11.Text = "0.00%";
-        label11.Visible = false;
-        // 
-        // label12
-        // 
-        label12.AutoSize = true;
-        label12.BackColor = Color.Transparent;
-        label12.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
-        label12.ForeColor = Color.White;
-        label12.ImeMode = ImeMode.NoControl;
-        label12.Location = new Point(7, 7);
-        label12.Name = "label12";
-        label12.Size = new Size(82, 17);
-        label12.TabIndex = 13;
-        label12.Text = "CPU Usage: ";
-        label12.Visible = false;
-        // 
         // FormHome
         // 
         AutoScaleDimensions = new SizeF(7F, 15F);
@@ -446,12 +422,8 @@ partial class FormHome
         Text = "Home";
         panelValheimBar.ResumeLayout(false);
         panelValheimBar.PerformLayout();
-        panelServerUsage.ResumeLayout(false);
-        panelServerUsage.PerformLayout();
         panel1.ResumeLayout(false);
         panel1.PerformLayout();
-        panel2.ResumeLayout(false);
-        panel2.PerformLayout();
         ResumeLayout(false);
     }
 
@@ -459,12 +431,6 @@ partial class FormHome
     private Label label1;
     private Panel panelValheimBar;
     private Label lblServerValheimPathInfo;
-    private Panel panelServerUsage;
-    private ProgressBar progressBarRAMValheim;
-    private Label lblRAMUsageInfoValheim;
-    private Label lblRAMUsageValheim;
-    private Label lblCPUUsageInfo;
-    private Label lblCPUUsage;
     private Label lblServerPathValheim;
     private Label lblServerRunningValheim;
     private Label lblServerValheimRunningInfo;
@@ -478,10 +444,14 @@ partial class FormHome
     private Label lblServerRunningEnshroudedInfo;
     private Label lblServerInstalledEnshroudedInfo;
     private Label lblServerInstalledEnshrouded;
-    private Panel panel2;
+    private Label lblEnshroudedLastUpdate;
+    private Label lblEnshroudedLastUpdateInfo;
+    private ProgressBar progressBarRAMValheim;
+    private Label lblRAMUsageInfoValheim;
+    private Label lblRAMUsageValheim;
     private ProgressBar progressBarRAMEnshrouded;
     private Label lblRAMUsageEnshroudedInfo;
     private Label lblRAMUsageEnshrouded;
-    private Label label11;
-    private Label label12;
+    private Label lblValheimLastUpdateInfo;
+    private Label lblValheimLastUpdate;
 }

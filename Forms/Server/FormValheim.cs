@@ -150,7 +150,7 @@ public partial class FormValheim : Form
     {
         // Load Labels
         lblServerPathInfo.Text = InstallDir;
-
+        lblLastUpdateInfo.Text = Settings.Default.ValheimLastUpdate;
 
         // Load Textboxes
         tbServerNameInfo.Text = $"{ServerName}";
@@ -295,6 +295,10 @@ public partial class FormValheim : Form
         formSteamCMD.StartSteamCMD($"+force_install_dir \"{InstallDir}\" +login anonymous +app_update {SteamAppID} validate +exit");
         formSteamCMD.ShowDialog();
         CheckServerInstalled();
+
+        // Save Server Update Time
+        Settings.Default.ValheimLastUpdate = DateTime.Now.ToString();
+        Settings.Default.Save();
     }
 
     private void ShowErrorMessage(string v) => throw new NotImplementedException();
@@ -352,12 +356,6 @@ public partial class FormValheim : Form
             }
         }
         return false; // Prozess nicht gefunden
-    }
-
-    // Methode für die Aktualisierung der CPU-Informationen
-    private void UpdateCPUInfo()
-    {
-        lblCPUUsageInfo.Text = Worker.CPUUsage.Update(ProzessName);
     }
 
     // Methode für die Aktualisierung der RAM-Informationen

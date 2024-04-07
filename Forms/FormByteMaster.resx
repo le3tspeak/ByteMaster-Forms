@@ -358,36 +358,6 @@
   <data name="&gt;&gt;panelShadow.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="lblRamUsageSystemInfo.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lblRamUsageSystemInfo.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 9.75pt, style=Bold</value>
-  </data>
-  <data name="lblRamUsageSystemInfo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>464, 44</value>
-  </data>
-  <data name="lblRamUsageSystemInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>84, 17</value>
-  </data>
-  <data name="lblRamUsageSystemInfo.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
-  </data>
-  <data name="lblRamUsageSystemInfo.Text" xml:space="preserve">
-    <value>0 MB / 1 MB</value>
-  </data>
-  <data name="&gt;&gt;lblRamUsageSystemInfo.Name" xml:space="preserve">
-    <value>lblRamUsageSystemInfo</value>
-  </data>
-  <data name="&gt;&gt;lblRamUsageSystemInfo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblRamUsageSystemInfo.Parent" xml:space="preserve">
-    <value>panelTitelBar</value>
-  </data>
-  <data name="&gt;&gt;lblRamUsageSystemInfo.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="lblRamUsageSystem.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -395,16 +365,16 @@
     <value>Segoe UI, 9.75pt, style=Bold</value>
   </data>
   <data name="lblRamUsageSystem.Location" type="System.Drawing.Point, System.Drawing">
-    <value>417, 44</value>
+    <value>404, 44</value>
   </data>
   <data name="lblRamUsageSystem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>41, 17</value>
+    <value>181, 17</value>
   </data>
   <data name="lblRamUsageSystem.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
+    <value>17</value>
   </data>
   <data name="lblRamUsageSystem.Text" xml:space="preserve">
-    <value>RAM:</value>
+    <value>RAM: 0 GB / 1 GB Free: 1 GB</value>
   </data>
   <data name="&gt;&gt;lblRamUsageSystem.Name" xml:space="preserve">
     <value>lblRamUsageSystem</value>
@@ -416,7 +386,7 @@
     <value>panelTitelBar</value>
   </data>
   <data name="&gt;&gt;lblRamUsageSystem.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="lblCpuNameInfo.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -443,7 +413,7 @@
     <value>panelTitelBar</value>
   </data>
   <data name="&gt;&gt;lblCpuNameInfo.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="lblSteamCMDInstalledInfo.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -473,7 +443,7 @@
     <value>panelTitelBar</value>
   </data>
   <data name="&gt;&gt;lblSteamCMDInstalledInfo.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="lblSteamCMDInstalled.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -503,7 +473,7 @@
     <value>panelTitelBar</value>
   </data>
   <data name="&gt;&gt;lblSteamCMDInstalled.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="btnControlboxMinimize.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -536,7 +506,7 @@
     <value>panelTitelBar</value>
   </data>
   <data name="&gt;&gt;btnControlboxMinimize.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>5</value>
   </data>
   <data name="btnControlboxExit.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -572,7 +542,7 @@
     <value>panelTitelBar</value>
   </data>
   <data name="&gt;&gt;btnControlboxExit.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>6</value>
   </data>
   <data name="lblTitleChildForm.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 14.25pt, style=Bold</value>
@@ -602,7 +572,7 @@
     <value>panelTitelBar</value>
   </data>
   <data name="&gt;&gt;lblTitleChildForm.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>7</value>
   </data>
   <data name="iconCurrentChildForm.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Left</value>
@@ -632,7 +602,7 @@
     <value>panelTitelBar</value>
   </data>
   <data name="&gt;&gt;iconCurrentChildForm.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>8</value>
   </data>
   <data name="panelTitelBar.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
