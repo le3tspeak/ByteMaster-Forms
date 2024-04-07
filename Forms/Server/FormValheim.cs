@@ -511,7 +511,13 @@ public partial class FormValheim : Form
     // Uninstall Server Button
     private void btnUninstallServer_Click(object sender, EventArgs e)
     {
-        UninstallServer();
+        DialogResult dialogResult = MessageBox.Show("Do you want to Uninstall the Server?", "Uninstall Server", MessageBoxButtons.YesNo);
+        if (dialogResult == DialogResult.Yes)
+        {
+            UninstallServer();
+            return;
+        }
+
     }
 
     // Start Server Button
@@ -590,7 +596,7 @@ public partial class FormValheim : Form
         if (tbServerPasswordInfo.Text.Contains(" "))
         {
             MessageBox.Show("The password must not contain any spaces!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            tbServerPasswordInfo.Text = "";
+            tbServerPasswordInfo.Text = ServerPassword;
             return;
         }
         ServerPassword = tbServerPasswordInfo.Text;
@@ -603,7 +609,7 @@ public partial class FormValheim : Form
         if (!int.TryParse(tbServerPortInfo.Text, out _))
         {
             MessageBox.Show("The port must be a number!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            tbServerPortInfo.Text = "";
+            tbServerPortInfo.Text = ServerPort;
             return;
         }
 
@@ -617,7 +623,7 @@ public partial class FormValheim : Form
         if (tbServerWorldInfo.Text.Contains(" "))
         {
             MessageBox.Show("The world name must not contain any spaces!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            tbServerWorldInfo.Text = "";
+            tbServerWorldInfo.Text = ServerWorld;
             return;
         }
 
@@ -631,7 +637,7 @@ public partial class FormValheim : Form
         if (!int.TryParse(tbServerBackupsInfo.Text, out _))
         {
             MessageBox.Show("The number of backups must be a number!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            tbServerBackupsInfo.Text = "";
+            tbServerBackupsInfo.Text = ServerBackups;
             return;
         }
 
@@ -639,7 +645,7 @@ public partial class FormValheim : Form
         if (int.Parse(tbServerBackupsInfo.Text) < 1 || int.Parse(tbServerBackupsInfo.Text) > 10)
         {
             MessageBox.Show("The number of backups must be between 1 and 10!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            tbServerBackupsInfo.Text = "";
+            tbServerBackupsInfo.Text = ServerBackups;
             return;
         }
 
@@ -653,7 +659,7 @@ public partial class FormValheim : Form
         if (tbServerSaveDirInfo.Text.Contains(" "))
         {
             MessageBox.Show("The save directory must not contain any spaces!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            tbServerSaveDirInfo.Text = "";
+            tbServerSaveDirInfo.Text = ServerSaveDir;
             return;
         }
 
@@ -667,7 +673,7 @@ public partial class FormValheim : Form
         if (!int.TryParse(tbServerSaveIntervalInfo.Text, out _))
         {
             MessageBox.Show("The save interval must be a number!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            tbServerSaveIntervalInfo.Text = "";
+            tbServerSaveIntervalInfo.Text = ServerSaveInterval;
             return;
         }
 
@@ -675,7 +681,7 @@ public partial class FormValheim : Form
         if (int.Parse(tbServerSaveIntervalInfo.Text) < 1800 || int.Parse(tbServerSaveIntervalInfo.Text) > 10000)
         {
             MessageBox.Show("The save interval must be between 1800 and 10000!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            tbServerSaveIntervalInfo.Text = "";
+            tbServerSaveIntervalInfo.Text = ServerSaveInterval;
             return;
         }
 
@@ -689,7 +695,7 @@ public partial class FormValheim : Form
         if (!int.TryParse(tbBackupShortInfo.Text, out _))
         {
             MessageBox.Show("The short backup interval must be a number!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            tbBackupShortInfo.Text = "";
+            tbBackupShortInfo.Text = ServerBackupShort;
             return;
         }
 
@@ -697,7 +703,7 @@ public partial class FormValheim : Form
         if (int.Parse(tbBackupShortInfo.Text) < 7200 || int.Parse(tbBackupShortInfo.Text) > 43200)
         {
             MessageBox.Show("The short backup interval must be between 7200 and 43200!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            tbBackupShortInfo.Text = "";
+            tbBackupShortInfo.Text = ServerBackupShort;
             return;
         }
 
@@ -712,7 +718,7 @@ public partial class FormValheim : Form
         {
 
             MessageBox.Show("The long backup interval must be a number!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            tbBackupLongInfo.Text = "";
+            tbBackupLongInfo.Text = ServerBackupLong;
             return;
         }
 
@@ -720,7 +726,7 @@ public partial class FormValheim : Form
         if (int.Parse(tbBackupLongInfo.Text) < 43200 || int.Parse(tbBackupLongInfo.Text) > 172800)
         {
             MessageBox.Show("The long backup interval must be between 43200 and 172800!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            tbBackupLongInfo.Text = "";
+            tbBackupLongInfo.Text = ServerBackupLong;
             return;
         }
 

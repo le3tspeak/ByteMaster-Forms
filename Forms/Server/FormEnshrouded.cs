@@ -391,7 +391,12 @@ public partial class FormEnshrouded : Form
     // Uninstall Server Button
     private void btnUninstallServer_Click(object sender, EventArgs e)
     {
-        UninstallServer();
+        DialogResult dialogResult = MessageBox.Show("Do you want to Uninstall the Server?", "Uninstall Server", MessageBoxButtons.YesNo);
+        if (dialogResult == DialogResult.Yes)
+        {
+            UninstallServer();
+            return;
+        }
     }
 
     // Start Server Button
@@ -458,7 +463,7 @@ public partial class FormEnshrouded : Form
         if (tbServerPasswordInfo.Text.Contains(" "))
         {
             MessageBox.Show("Please enter a password without spaces!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            tbServerPasswordInfo.Text = "password";
+            tbServerPasswordInfo.Text = ServerPassword;
             return;
         }
         ServerPassword = tbServerPasswordInfo.Text;
@@ -471,7 +476,7 @@ public partial class FormEnshrouded : Form
         if (!int.TryParse(tbServerPortInfo.Text, out _))
         {
             MessageBox.Show("Please enter a number!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            tbServerPortInfo.Text = "2456";
+            tbServerPortInfo.Text = ServerPort;
             return;
         }
 
@@ -485,7 +490,7 @@ public partial class FormEnshrouded : Form
         if (!int.TryParse(tbServerQueryPortInfo.Text, out _))
         {
             MessageBox.Show("Please enter a number!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            tbServerQueryPortInfo.Text = "2456";
+            tbServerQueryPortInfo.Text = ServerQueryPort;
             return;
         }
 
@@ -499,7 +504,7 @@ public partial class FormEnshrouded : Form
         if (tbServerSaveDirInfo.Text.Contains(" ") || tbServerSaveDirInfo.Text.Contains("/") || tbServerSaveDirInfo.Text.Contains("\\") || tbServerSaveDirInfo.Text.Contains(":") || tbServerSaveDirInfo.Text.Contains("*") || tbServerSaveDirInfo.Text.Contains("?") || tbServerSaveDirInfo.Text.Contains("\"") || tbServerSaveDirInfo.Text.Contains("<") || tbServerSaveDirInfo.Text.Contains(">") || tbServerSaveDirInfo.Text.Contains("|"))
         {
             MessageBox.Show("Please enter a valid folder name!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            tbServerSaveDirInfo.Text = "Save";
+            tbServerSaveDirInfo.Text = ServerSaveDir;
             return;
         }
 
@@ -513,7 +518,7 @@ public partial class FormEnshrouded : Form
         if (tbServerLogDirInfo.Text.Contains(" ") || tbServerLogDirInfo.Text.Contains("/") || tbServerLogDirInfo.Text.Contains("\\") || tbServerLogDirInfo.Text.Contains(":") || tbServerLogDirInfo.Text.Contains("*") || tbServerLogDirInfo.Text.Contains("?") || tbServerLogDirInfo.Text.Contains("\"") || tbServerLogDirInfo.Text.Contains("<") || tbServerLogDirInfo.Text.Contains(">") || tbServerLogDirInfo.Text.Contains("|"))
         {
             MessageBox.Show("Please enter a valid folder name!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            tbServerLogDirInfo.Text = "Logs";
+            tbServerLogDirInfo.Text = ServerLogFolder;
             return;
         }
         ServerLogFolder = tbServerLogDirInfo.Text;
@@ -526,7 +531,7 @@ public partial class FormEnshrouded : Form
         if (!int.TryParse(tbServerSlotsInfo.Text, out _))
         {
             MessageBox.Show("Please enter a number!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            tbServerSlotsInfo.Text = "16";
+            tbServerSlotsInfo.Text = ServerSlots;
             return;
         }
 

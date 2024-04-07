@@ -495,6 +495,7 @@ partial class FormEnshrouded
         tbServerLogDirInfo.PlaceholderText = "log_dir";
         tbServerLogDirInfo.Size = new Size(147, 23);
         tbServerLogDirInfo.TabIndex = 33;
+        tbServerLogDirInfo.TextChanged += tbServerLogDirInfo_TextChanged;
         // 
         // lblLogDir
         // 
@@ -515,6 +516,7 @@ partial class FormEnshrouded
         tbServerSlotsInfo.PlaceholderText = "16";
         tbServerSlotsInfo.Size = new Size(147, 23);
         tbServerSlotsInfo.TabIndex = 35;
+        tbServerSlotsInfo.TextChanged += tbServerSlotsInfo_TextChanged;
         // 
         // lblSLots
         // 
