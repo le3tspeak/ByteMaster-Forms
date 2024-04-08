@@ -49,7 +49,7 @@ namespace Game_Server_Manager.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0.1")]
+        [global::System.Configuration.DefaultSettingValueAttribute("0.01")]
         public string Version {
             get {
                 return ((string)(this["Version"]));
@@ -110,6 +110,18 @@ namespace Game_Server_Manager.Properties {
             }
             set {
                 this["GitHub"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Github")]
+        public string GitHubFolder {
+            get {
+                return ((string)(this["GitHubFolder"]));
+            }
+            set {
+                this["GitHubFolder"] = value;
             }
         }
     }

@@ -1,17 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Controls;
-using System.Windows.Forms;
-using FontAwesome.Sharp;
-using Game_Server_Manager.Properties;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
+﻿using Game_Server_Manager.Properties;
 
 namespace Game_Server_Manager.Forms;
 public partial class FormExit : Form

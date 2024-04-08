@@ -1,16 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Net.Quic;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using Game_Server_Manager.Properties;
-using Newtonsoft.Json.Linq;
 using GameManager = Game_Server_Manager.Properties.Settings;
 
 namespace Game_Server_Manager.Forms;
@@ -83,6 +72,10 @@ public partial class FormSettings : Form
         btnThemeDesigner.BackColor = ColorTheme.Default.ButtonBG;
         btnThemeDesigner.FlatAppearance.MouseDownBackColor = ColorTheme.Default.MouseDown;
         btnThemeDesigner.FlatAppearance.MouseOverBackColor = ColorTheme.Default.MouseHover;
+        btnUpdateGMS.IconColor = ColorTheme.Default.Icon;
+        btnUpdateGMS.ForeColor = ColorTheme.Default.Text;
+        btnUpdateGMS.FlatAppearance.MouseDownBackColor = ColorTheme.Default.MouseDown;
+        btnUpdateGMS.FlatAppearance.MouseOverBackColor = ColorTheme.Default.MouseHover;
         // Textboxen
         tbServerPath.BackColor = ColorTheme.Default.TextBoxBG;
         tbServerPath.ForeColor = ColorTheme.Default.TextBoxText;
@@ -154,7 +147,7 @@ public partial class FormSettings : Form
                 formDownloader.ShowDialog();
             }
             // Check if the SteamCMD is already extracted
-            if (!System.IO.File.Exists(steamCMDunzipPath + "\\steamcmd.exe"))
+            if (!File.Exists(steamCMDunzipPath + "\\steamcmd.exe"))
             {
                 // Extract the SteamCMD
                 FormZIP formZIP = new FormZIP();
@@ -250,7 +243,7 @@ public partial class FormSettings : Form
 
     private void btnGitHub_Click(object sender, EventArgs e)
     {
-        var url = GameManager.Default.GitHub; // Hier die gewünschte URL einsetzen
+        var url = GameManager.Default.GitHub;
         try
         {
             Process.Start(new ProcessStartInfo
@@ -272,5 +265,11 @@ public partial class FormSettings : Form
         // Öffne FormThemeDesigner
         FormThemeDesigner formThemeDesigner = new FormThemeDesigner();
         formThemeDesigner.ShowDialog();
+    }
+
+    private void btnUpdateGMS_Click(object sender, EventArgs e)
+    {
+        FormUpdaterBM formUpdaterBM = new FormUpdaterBM();
+        formUpdaterBM.ShowDialog();
     }
 }

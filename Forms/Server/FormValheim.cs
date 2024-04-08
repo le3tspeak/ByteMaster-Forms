@@ -21,7 +21,7 @@ public partial class FormValheim : Form
     }
 
     private void StartUp()
-    {        
+    {
         // Timer Start
         Timer();
         // Load Form Settings

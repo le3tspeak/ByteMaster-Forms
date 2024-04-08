@@ -1,15 +1,4 @@
-﻿using System;
-using System.CodeDom;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.IO.Compression;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using GameManager = Game_Server_Manager.Properties.Settings;
+﻿using System.IO.Compression;
 
 namespace Game_Server_Manager.Forms;
 
@@ -38,7 +27,7 @@ public partial class FormZIP : Form
     // Methode zum Entpacken des ZIP-Archivs
     public void Extract()
     {
-        
+
         lblStatusInfo.Text = "Entpacke ZIP-Archiv...";
         lblZIPPathInfo.Text = $"{zipFile}";
 

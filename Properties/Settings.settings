@@ -9,7 +9,7 @@
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="Version" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">0.1</Value>
+      <Value Profile="(Default)">0.01</Value>
     </Setting>
     <Setting Name="SteamCMDURL" Type="System.String" Scope="Application">
       <Value Profile="(Default)">https://steamcdn-a.akamaihd.net/client/installer/steamcmd.zip</Value>
@@ -25,6 +25,9 @@
     </Setting>
     <Setting Name="GitHub" Type="(Web Service URL)" Scope="User">
       <Value Profile="(Default)">https://github.com/le3tspeak/ByteMaster</Value>
+    </Setting>
+    <Setting Name="GitHubFolder" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Github</Value>
     </Setting>
   </Settings>
 </SettingsFile>

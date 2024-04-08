@@ -1,14 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using GameManager = Game_Server_Manager.Properties.Settings;
-using AltoHttp;
+﻿using AltoHttp;
+using Game_Server_Manager.Properties;
 
 namespace Game_Server_Manager.Forms;
 
@@ -17,7 +8,7 @@ public partial class FormDownloader : Form
     public FormDownloader()
     {
         InitializeComponent();
-        BackColor = Properties.ColorTheme.Default.FormBGPopup;
+        BackColor = ColorTheme.Default.FormBGPopup;
     }
 
     // Fields
@@ -32,6 +23,7 @@ public partial class FormDownloader : Form
         URL = url;
         savePath = path;
     }
+
     // Methode zum Starten des Downloads
     public void Download()
     {
@@ -63,7 +55,7 @@ public partial class FormDownloader : Form
         //Play a Beep sound when the download fails
         System.Media.SystemSounds.Beep.Play();
         // Delete the file
-        System.IO.File.Delete(savePath);
+        File.Delete(savePath);
         // Wait 5 seconds before closing the form
         Task.Delay(5000).ContinueWith(t => this.Invoke((MethodInvoker)delegate { this.Close(); }));
     }
@@ -85,6 +77,7 @@ public partial class FormDownloader : Form
         // Wait 2 seconds before closing the form
         Task.Delay(2000).ContinueWith(t => this.Invoke((MethodInvoker)delegate { this.Close(); }));
     }
+
     // Event-Handler für den Download-Fortschritt-Event
     private void HttpDownloader_DownloadProgressChanged(object sender, AltoHttp.ProgressChangedEventArgs e)
     {
@@ -94,6 +87,7 @@ public partial class FormDownloader : Form
         lblDownloadedMB.Text = string.Format("{0} MB/s", (httpDownloader.TotalBytesReceived / 1024d / 1024d).ToString("0.00"));
         lblStatusInfo.Text = "Downloading...";
     }
+
     // Event-Handler für den Pause-Button
     private void btnPause_Click(object sender, EventArgs e)
     {
@@ -102,6 +96,7 @@ public partial class FormDownloader : Form
         btnPause.Visible = false;
         btnResume.Visible = true;
     }
+
     // Event-Handler für den Resume-Button
     private void btnResume_Click(object sender, EventArgs e)
     {
@@ -110,6 +105,7 @@ public partial class FormDownloader : Form
         btnPause.Visible = true;
         btnResume.Visible = false;
     }
+
     // Event-Handler für den Abort-Button
     private void btnAbort_Click(object sender, EventArgs e)
     {
@@ -119,9 +115,8 @@ public partial class FormDownloader : Form
         btnResume.Visible = false;
         lblStatusInfo.Text = "Aborting...";
         // Delete the file
-        System.IO.File.Delete(savePath);
+        File.Delete(savePath);
         // Wait 2 seconds before closing the form
-        Task.Delay(2000).ContinueWith(t => this.Invoke((MethodInvoker)delegate { this.Close(); }));
-
+        Task.Delay(2000).ContinueWith(t => this.Invoke((MethodInvoker)delegate { Close(); }));
     }
 }

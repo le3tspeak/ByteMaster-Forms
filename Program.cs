@@ -1,6 +1,3 @@
-using System.Drawing.Text;
-using System.Management;
-
 namespace Game_Server_Manager;
 
 internal static class Program

@@ -1,12 +1,9 @@
-using System.Drawing.Text;
-using System.Management;
 using System.Runtime.InteropServices;
 using FontAwesome.Sharp;
 using Game_Server_Manager.Forms;
 using Game_Server_Manager.Properties;
-using Timer = System.Windows.Forms.Timer;
 using GameManager = Game_Server_Manager.Properties.Settings;
-using GameManager_Valheim = Game_Server_Manager.Properties.Valheim;
+using Timer = System.Windows.Forms.Timer;
 
 namespace Game_Server_Manager;
 

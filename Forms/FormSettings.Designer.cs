@@ -41,6 +41,7 @@ partial class FormSettings
         lblSteamCMDLatUpdateInfo = new Label();
         btnGitHub = new FontAwesome.Sharp.IconButton();
         btnThemeDesigner = new FontAwesome.Sharp.IconButton();
+        btnUpdateGMS = new FontAwesome.Sharp.IconButton();
         SuspendLayout();
         // 
         // lblServersPath
@@ -235,7 +236,7 @@ partial class FormSettings
         btnThemeDesigner.IconFont = FontAwesome.Sharp.IconFont.Auto;
         btnThemeDesigner.IconSize = 35;
         btnThemeDesigner.ImageAlign = ContentAlignment.MiddleLeft;
-        btnThemeDesigner.Location = new Point(508, 468);
+        btnThemeDesigner.Location = new Point(278, 468);
         btnThemeDesigner.Name = "btnThemeDesigner";
         btnThemeDesigner.Size = new Size(127, 50);
         btnThemeDesigner.TabIndex = 14;
@@ -245,12 +246,35 @@ partial class FormSettings
         btnThemeDesigner.Visible = false;
         btnThemeDesigner.Click += btnThemeDesigner_Click;
         // 
+        // btnUpdateGMS
+        // 
+        btnUpdateGMS.BackColor = Color.Transparent;
+        btnUpdateGMS.BackgroundImageLayout = ImageLayout.Zoom;
+        btnUpdateGMS.FlatAppearance.BorderSize = 0;
+        btnUpdateGMS.FlatStyle = FlatStyle.Flat;
+        btnUpdateGMS.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+        btnUpdateGMS.ForeColor = Color.White;
+        btnUpdateGMS.IconChar = FontAwesome.Sharp.IconChar.Wrench;
+        btnUpdateGMS.IconColor = Color.White;
+        btnUpdateGMS.IconFont = FontAwesome.Sharp.IconFont.Auto;
+        btnUpdateGMS.IconSize = 45;
+        btnUpdateGMS.ImageAlign = ContentAlignment.MiddleLeft;
+        btnUpdateGMS.Location = new Point(655, 408);
+        btnUpdateGMS.Name = "btnUpdateGMS";
+        btnUpdateGMS.Size = new Size(189, 50);
+        btnUpdateGMS.TabIndex = 15;
+        btnUpdateGMS.Text = "Update ByteMaster";
+        btnUpdateGMS.TextImageRelation = TextImageRelation.ImageBeforeText;
+        btnUpdateGMS.UseVisualStyleBackColor = false;
+        btnUpdateGMS.Click += btnUpdateGMS_Click;
+        // 
         // FormSettings
         // 
         AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
         BackColor = Color.Black;
         ClientSize = new Size(880, 530);
+        Controls.Add(btnUpdateGMS);
         Controls.Add(btnThemeDesigner);
         Controls.Add(btnGitHub);
         Controls.Add(lblSteamCMDLatUpdateInfo);
@@ -286,4 +310,5 @@ partial class FormSettings
     private Label lblSteamCMDLatUpdateInfo;
     private FontAwesome.Sharp.IconButton btnGitHub;
     private FontAwesome.Sharp.IconButton btnThemeDesigner;
+    private FontAwesome.Sharp.IconButton btnUpdateGMS;
 }
