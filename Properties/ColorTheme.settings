@@ -60,7 +60,7 @@
       <Value Profile="(Default)">White</Value>
     </Setting>
     <Setting Name="MenuSelected" Type="System.Drawing.Color" Scope="User">
-      <Value Profile="(Default)">DimGray</Value>
+      <Value Profile="(Default)">218, 135, 44</Value>
     </Setting>
     <Setting Name="FormBGChild" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">38, 38, 38</Value>

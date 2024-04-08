@@ -40,19 +40,18 @@ partial class FormZIP
         // progressBar
         // 
         progressBar.BackColor = Color.Black;
-        progressBar.Location = new Point(25, 52);
+        progressBar.Location = new Point(25, 55);
         progressBar.Name = "progressBar";
-        progressBar.Size = new Size(747, 23);
+        progressBar.Size = new Size(412, 23);
         progressBar.Step = 5;
         progressBar.TabIndex = 6;
         // 
         // lblZIPPathInfo
         // 
-        lblZIPPathInfo.AutoSize = true;
         lblZIPPathInfo.Location = new Point(62, 9);
         lblZIPPathInfo.MaximumSize = new Size(700, 0);
         lblZIPPathInfo.Name = "lblZIPPathInfo";
-        lblZIPPathInfo.Size = new Size(53, 15);
+        lblZIPPathInfo.Size = new Size(375, 15);
         lblZIPPathInfo.TabIndex = 16;
         lblZIPPathInfo.Text = "c:\\\\ Path";
         // 
@@ -94,19 +93,19 @@ partial class FormZIP
         // 
         // lblPercent
         // 
-        lblPercent.AutoSize = true;
-        lblPercent.Location = new Point(749, 28);
+        lblPercent.Location = new Point(387, 28);
         lblPercent.Name = "lblPercent";
-        lblPercent.Size = new Size(23, 15);
+        lblPercent.Size = new Size(62, 15);
         lblPercent.TabIndex = 21;
         lblPercent.Text = "0%";
+        lblPercent.TextAlign = ContentAlignment.TopCenter;
         // 
         // FormZIP
         // 
         AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
         BackColor = Color.Black;
-        ClientSize = new Size(800, 107);
+        ClientSize = new Size(461, 107);
         Controls.Add(lblPercent);
         Controls.Add(lblFilesInfo);
         Controls.Add(lblStatusInfo);

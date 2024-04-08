@@ -73,11 +73,11 @@ public partial class FormSteamCMD : Form
         await Task.Run(() =>
         {
             // Read standard output and standard error streams asynchronously
-            string output = process.StandardOutput.ReadToEnd();
-            string error = process.StandardError.ReadToEnd();
+            var output = process.StandardOutput.ReadToEnd();
+            var error = process.StandardError.ReadToEnd();
 
             // Combine standard output and standard error
-            string combinedOutput = output + error;
+            var combinedOutput = output + error;
 
             // Update the output
             UpdateOutput(combinedOutput);
@@ -100,7 +100,7 @@ public partial class FormSteamCMD : Form
             //TextBox ist leer, also lesen wir das Log - File
             if (File.Exists(LogFilePath))
             {
-                string logContent = File.ReadAllText(LogFilePath);
+                var logContent = File.ReadAllText(LogFilePath);
                 tbConsole.Text = logContent;
 
                 // Das Formular nach 5 Sekunden automatisch schließen

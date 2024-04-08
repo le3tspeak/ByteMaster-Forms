@@ -340,38 +340,38 @@ partial class FormEnshrouded
         // 
         // tbServerPortInfo
         // 
-        tbServerPortInfo.Location = new Point(110, 215);
+        tbServerPortInfo.Location = new Point(121, 215);
         tbServerPortInfo.Name = "tbServerPortInfo";
         tbServerPortInfo.PlaceholderText = "12345";
-        tbServerPortInfo.Size = new Size(147, 23);
+        tbServerPortInfo.Size = new Size(150, 23);
         tbServerPortInfo.TabIndex = 26;
         tbServerPortInfo.TextChanged += tbServerPortInfo_TextChanged;
         // 
         // tbServerIPInfo
         // 
         tbServerIPInfo.Enabled = false;
-        tbServerIPInfo.Location = new Point(110, 190);
+        tbServerIPInfo.Location = new Point(121, 190);
         tbServerIPInfo.Name = "tbServerIPInfo";
         tbServerIPInfo.PlaceholderText = "127.0.0.1";
         tbServerIPInfo.ReadOnly = true;
-        tbServerIPInfo.Size = new Size(147, 23);
+        tbServerIPInfo.Size = new Size(150, 23);
         tbServerIPInfo.TabIndex = 25;
         // 
         // tbServerPasswordInfo
         // 
-        tbServerPasswordInfo.Location = new Point(110, 165);
+        tbServerPasswordInfo.Location = new Point(121, 165);
         tbServerPasswordInfo.Name = "tbServerPasswordInfo";
         tbServerPasswordInfo.PlaceholderText = "Secret";
-        tbServerPasswordInfo.Size = new Size(147, 23);
+        tbServerPasswordInfo.Size = new Size(150, 23);
         tbServerPasswordInfo.TabIndex = 24;
         tbServerPasswordInfo.TextChanged += tbServerPasswordInfo_TextChanged;
         // 
         // tbServerNameInfo
         // 
-        tbServerNameInfo.Location = new Point(110, 140);
+        tbServerNameInfo.Location = new Point(121, 140);
         tbServerNameInfo.Name = "tbServerNameInfo";
         tbServerNameInfo.PlaceholderText = "HeftiKuss";
-        tbServerNameInfo.Size = new Size(147, 23);
+        tbServerNameInfo.Size = new Size(150, 23);
         tbServerNameInfo.TabIndex = 23;
         tbServerNameInfo.TextChanged += tbServerNameInfo_TextChanged;
         // 
@@ -380,9 +380,9 @@ partial class FormEnshrouded
         lblServerPort.BackColor = Color.Transparent;
         lblServerPort.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
         lblServerPort.ForeColor = Color.White;
-        lblServerPort.Location = new Point(25, 215);
+        lblServerPort.Location = new Point(15, 215);
         lblServerPort.Name = "lblServerPort";
-        lblServerPort.Size = new Size(78, 23);
+        lblServerPort.Size = new Size(100, 23);
         lblServerPort.TabIndex = 22;
         lblServerPort.Text = "Port:";
         lblServerPort.TextAlign = ContentAlignment.MiddleRight;
@@ -392,9 +392,9 @@ partial class FormEnshrouded
         lblServerIP.BackColor = Color.Transparent;
         lblServerIP.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
         lblServerIP.ForeColor = Color.White;
-        lblServerIP.Location = new Point(26, 190);
+        lblServerIP.Location = new Point(15, 190);
         lblServerIP.Name = "lblServerIP";
-        lblServerIP.Size = new Size(78, 23);
+        lblServerIP.Size = new Size(100, 23);
         lblServerIP.TabIndex = 21;
         lblServerIP.Text = " IP:";
         lblServerIP.TextAlign = ContentAlignment.MiddleRight;
@@ -404,9 +404,9 @@ partial class FormEnshrouded
         lblServerPassword.BackColor = Color.Transparent;
         lblServerPassword.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
         lblServerPassword.ForeColor = Color.White;
-        lblServerPassword.Location = new Point(26, 165);
+        lblServerPassword.Location = new Point(15, 165);
         lblServerPassword.Name = "lblServerPassword";
-        lblServerPassword.Size = new Size(78, 23);
+        lblServerPassword.Size = new Size(100, 23);
         lblServerPassword.TabIndex = 20;
         lblServerPassword.Text = "Password:";
         lblServerPassword.TextAlign = ContentAlignment.MiddleRight;
@@ -416,19 +416,19 @@ partial class FormEnshrouded
         lblServerName.BackColor = Color.Transparent;
         lblServerName.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
         lblServerName.ForeColor = Color.White;
-        lblServerName.Location = new Point(26, 140);
+        lblServerName.Location = new Point(15, 140);
         lblServerName.Name = "lblServerName";
-        lblServerName.Size = new Size(78, 23);
+        lblServerName.Size = new Size(100, 23);
         lblServerName.TabIndex = 19;
         lblServerName.Text = "Name:";
         lblServerName.TextAlign = ContentAlignment.MiddleRight;
         // 
         // tbServerQueryPortInfo
         // 
-        tbServerQueryPortInfo.Location = new Point(110, 240);
+        tbServerQueryPortInfo.Location = new Point(121, 240);
         tbServerQueryPortInfo.Name = "tbServerQueryPortInfo";
         tbServerQueryPortInfo.PlaceholderText = "12345";
-        tbServerQueryPortInfo.Size = new Size(147, 23);
+        tbServerQueryPortInfo.Size = new Size(150, 23);
         tbServerQueryPortInfo.TabIndex = 28;
         tbServerQueryPortInfo.TextChanged += tbServerQuaryPortInfo_TextChanged;
         // 
@@ -437,9 +437,9 @@ partial class FormEnshrouded
         lblServerQueryPort.BackColor = Color.Transparent;
         lblServerQueryPort.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
         lblServerQueryPort.ForeColor = Color.White;
-        lblServerQueryPort.Location = new Point(12, 240);
+        lblServerQueryPort.Location = new Point(15, 240);
         lblServerQueryPort.Name = "lblServerQueryPort";
-        lblServerQueryPort.Size = new Size(91, 23);
+        lblServerQueryPort.Size = new Size(100, 23);
         lblServerQueryPort.TabIndex = 27;
         lblServerQueryPort.Text = "Query Port:";
         lblServerQueryPort.TextAlign = ContentAlignment.MiddleRight;
@@ -459,10 +459,10 @@ partial class FormEnshrouded
         // 
         // tbServerSaveDirInfo
         // 
-        tbServerSaveDirInfo.Location = new Point(406, 138);
+        tbServerSaveDirInfo.Location = new Point(389, 140);
         tbServerSaveDirInfo.Name = "tbServerSaveDirInfo";
         tbServerSaveDirInfo.PlaceholderText = "save_game";
-        tbServerSaveDirInfo.Size = new Size(147, 23);
+        tbServerSaveDirInfo.Size = new Size(150, 23);
         tbServerSaveDirInfo.TabIndex = 31;
         tbServerSaveDirInfo.TextChanged += tbServerSaveDirInfo_TextChanged;
         // 
@@ -471,19 +471,19 @@ partial class FormEnshrouded
         lblServerSaveDir.BackColor = Color.Transparent;
         lblServerSaveDir.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
         lblServerSaveDir.ForeColor = Color.White;
-        lblServerSaveDir.Location = new Point(292, 138);
+        lblServerSaveDir.Location = new Point(283, 140);
         lblServerSaveDir.Name = "lblServerSaveDir";
-        lblServerSaveDir.Size = new Size(108, 23);
+        lblServerSaveDir.Size = new Size(100, 23);
         lblServerSaveDir.TabIndex = 30;
         lblServerSaveDir.Text = "Save Dir.:";
         lblServerSaveDir.TextAlign = ContentAlignment.MiddleRight;
         // 
         // tbServerLogDirInfo
         // 
-        tbServerLogDirInfo.Location = new Point(406, 163);
+        tbServerLogDirInfo.Location = new Point(389, 165);
         tbServerLogDirInfo.Name = "tbServerLogDirInfo";
         tbServerLogDirInfo.PlaceholderText = "log_dir";
-        tbServerLogDirInfo.Size = new Size(147, 23);
+        tbServerLogDirInfo.Size = new Size(150, 23);
         tbServerLogDirInfo.TabIndex = 33;
         tbServerLogDirInfo.TextChanged += tbServerLogDirInfo_TextChanged;
         // 
@@ -492,19 +492,19 @@ partial class FormEnshrouded
         lblLogDir.BackColor = Color.Transparent;
         lblLogDir.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
         lblLogDir.ForeColor = Color.White;
-        lblLogDir.Location = new Point(292, 163);
+        lblLogDir.Location = new Point(283, 165);
         lblLogDir.Name = "lblLogDir";
-        lblLogDir.Size = new Size(108, 23);
+        lblLogDir.Size = new Size(100, 23);
         lblLogDir.TabIndex = 32;
         lblLogDir.Text = "Log Dir.:";
         lblLogDir.TextAlign = ContentAlignment.MiddleRight;
         // 
         // tbServerSlotsInfo
         // 
-        tbServerSlotsInfo.Location = new Point(406, 188);
+        tbServerSlotsInfo.Location = new Point(389, 190);
         tbServerSlotsInfo.Name = "tbServerSlotsInfo";
         tbServerSlotsInfo.PlaceholderText = "16";
-        tbServerSlotsInfo.Size = new Size(147, 23);
+        tbServerSlotsInfo.Size = new Size(150, 23);
         tbServerSlotsInfo.TabIndex = 35;
         tbServerSlotsInfo.TextChanged += tbServerSlotsInfo_TextChanged;
         // 
@@ -513,9 +513,9 @@ partial class FormEnshrouded
         lblSLots.BackColor = Color.Transparent;
         lblSLots.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
         lblSLots.ForeColor = Color.White;
-        lblSLots.Location = new Point(292, 188);
+        lblSLots.Location = new Point(283, 188);
         lblSLots.Name = "lblSLots";
-        lblSLots.Size = new Size(108, 23);
+        lblSLots.Size = new Size(100, 23);
         lblSLots.TabIndex = 34;
         lblSLots.Text = "Slots:";
         lblSLots.TextAlign = ContentAlignment.MiddleRight;

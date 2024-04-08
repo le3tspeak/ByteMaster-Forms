@@ -259,7 +259,7 @@ partial class FormSettings
         btnUpdateGMS.IconFont = FontAwesome.Sharp.IconFont.Auto;
         btnUpdateGMS.IconSize = 45;
         btnUpdateGMS.ImageAlign = ContentAlignment.MiddleLeft;
-        btnUpdateGMS.Location = new Point(655, 408);
+        btnUpdateGMS.Location = new Point(460, 468);
         btnUpdateGMS.Name = "btnUpdateGMS";
         btnUpdateGMS.Size = new Size(189, 50);
         btnUpdateGMS.TabIndex = 15;

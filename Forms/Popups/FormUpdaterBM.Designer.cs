@@ -45,6 +45,8 @@ partial class FormUpdaterBM
         btnExit.BackColor = Color.Transparent;
         btnExit.BackgroundImageLayout = ImageLayout.Zoom;
         btnExit.FlatAppearance.BorderSize = 0;
+        btnExit.FlatAppearance.MouseDownBackColor = Color.Transparent;
+        btnExit.FlatAppearance.MouseOverBackColor = Color.Transparent;
         btnExit.FlatStyle = FlatStyle.Flat;
         btnExit.Flip = FontAwesome.Sharp.FlipOrientation.Horizontal;
         btnExit.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
@@ -54,7 +56,7 @@ partial class FormUpdaterBM
         btnExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
         btnExit.IconSize = 45;
         btnExit.ImageAlign = ContentAlignment.MiddleLeft;
-        btnExit.Location = new Point(234, 141);
+        btnExit.Location = new Point(174, 141);
         btnExit.Name = "btnExit";
         btnExit.Size = new Size(110, 50);
         btnExit.TabIndex = 16;
@@ -62,50 +64,50 @@ partial class FormUpdaterBM
         btnExit.TextImageRelation = TextImageRelation.ImageBeforeText;
         btnExit.UseVisualStyleBackColor = false;
         btnExit.Click += btnExit_Click;
+        btnExit.MouseEnter += btnExit_MouseEnter;
+        btnExit.MouseLeave += btnExit_MouseLeave;
         // 
         // lblLatestVersion
         // 
-        lblLatestVersion.AutoSize = true;
         lblLatestVersion.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
         lblLatestVersion.ForeColor = Color.White;
-        lblLatestVersion.Location = new Point(133, 40);
+        lblLatestVersion.Location = new Point(0, 53);
         lblLatestVersion.Name = "lblLatestVersion";
-        lblLatestVersion.Size = new Size(149, 17);
+        lblLatestVersion.Size = new Size(296, 17);
         lblLatestVersion.TabIndex = 18;
-        lblLatestVersion.Text = "Prüfe auf neue Version";
+        lblLatestVersion.TextAlign = ContentAlignment.MiddleCenter;
         // 
         // label1
         // 
-        label1.AutoSize = true;
         label1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
         label1.ForeColor = Color.White;
-        label1.Location = new Point(14, 40);
+        label1.Location = new Point(0, 36);
         label1.Name = "label1";
-        label1.Size = new Size(113, 17);
+        label1.Size = new Size(296, 17);
         label1.TabIndex = 19;
-        label1.Text = "Aktuelle Version:";
+        label1.Text = "Aktuelle Version";
+        label1.TextAlign = ContentAlignment.MiddleCenter;
         // 
         // label2
         // 
-        label2.AutoSize = true;
         label2.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
         label2.ForeColor = Color.White;
-        label2.Location = new Point(66, 71);
+        label2.Location = new Point(0, 76);
         label2.Name = "label2";
-        label2.Size = new Size(58, 17);
+        label2.Size = new Size(296, 17);
         label2.TabIndex = 20;
-        label2.Text = "Version:";
+        label2.Text = "Lokale Version";
+        label2.TextAlign = ContentAlignment.MiddleCenter;
         // 
         // lblVersionInfo
         // 
-        lblVersionInfo.AutoSize = true;
         lblVersionInfo.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
         lblVersionInfo.ForeColor = Color.White;
-        lblVersionInfo.Location = new Point(133, 71);
+        lblVersionInfo.Location = new Point(0, 93);
         lblVersionInfo.Name = "lblVersionInfo";
-        lblVersionInfo.Size = new Size(98, 17);
+        lblVersionInfo.Size = new Size(296, 17);
         lblVersionInfo.TabIndex = 21;
-        lblVersionInfo.Text = "Lokale Version";
+        lblVersionInfo.TextAlign = ContentAlignment.MiddleCenter;
         // 
         // btnUpdate
         // 
@@ -113,6 +115,8 @@ partial class FormUpdaterBM
         btnUpdate.BackgroundImageLayout = ImageLayout.Zoom;
         btnUpdate.Enabled = false;
         btnUpdate.FlatAppearance.BorderSize = 0;
+        btnUpdate.FlatAppearance.MouseDownBackColor = Color.Transparent;
+        btnUpdate.FlatAppearance.MouseOverBackColor = Color.Transparent;
         btnUpdate.FlatStyle = FlatStyle.Flat;
         btnUpdate.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
         btnUpdate.ForeColor = Color.White;
@@ -121,7 +125,7 @@ partial class FormUpdaterBM
         btnUpdate.IconFont = FontAwesome.Sharp.IconFont.Auto;
         btnUpdate.IconSize = 45;
         btnUpdate.ImageAlign = ContentAlignment.MiddleLeft;
-        btnUpdate.Location = new Point(14, 141);
+        btnUpdate.Location = new Point(12, 141);
         btnUpdate.Name = "btnUpdate";
         btnUpdate.Size = new Size(110, 50);
         btnUpdate.TabIndex = 22;
@@ -129,15 +133,16 @@ partial class FormUpdaterBM
         btnUpdate.TextImageRelation = TextImageRelation.ImageBeforeText;
         btnUpdate.UseVisualStyleBackColor = false;
         btnUpdate.Click += btnDownload_Click;
+        btnUpdate.MouseEnter += btnUpdate_MouseEnter;
+        btnUpdate.MouseLeave += btnUpdate_MouseLeave;
         // 
         // lblNewVersion
         // 
-        lblNewVersion.AutoSize = true;
         lblNewVersion.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
         lblNewVersion.ForeColor = Color.White;
-        lblNewVersion.Location = new Point(76, 107);
+        lblNewVersion.Location = new Point(0, 115);
         lblNewVersion.Name = "lblNewVersion";
-        lblNewVersion.Size = new Size(192, 17);
+        lblNewVersion.Size = new Size(296, 31);
         lblNewVersion.TabIndex = 23;
         lblNewVersion.Text = "Keine Neue Version verfügbar";
         lblNewVersion.TextAlign = ContentAlignment.MiddleCenter;
@@ -148,7 +153,7 @@ partial class FormUpdaterBM
         panelTopBar.Dock = DockStyle.Top;
         panelTopBar.Location = new Point(0, 0);
         panelTopBar.Name = "panelTopBar";
-        panelTopBar.Size = new Size(356, 27);
+        panelTopBar.Size = new Size(296, 27);
         panelTopBar.TabIndex = 24;
         // 
         // lblTopBar
@@ -158,7 +163,7 @@ partial class FormUpdaterBM
         lblTopBar.ForeColor = Color.White;
         lblTopBar.Location = new Point(0, 0);
         lblTopBar.Name = "lblTopBar";
-        lblTopBar.Size = new Size(356, 27);
+        lblTopBar.Size = new Size(296, 27);
         lblTopBar.TabIndex = 25;
         lblTopBar.Text = "Bytemaster Versions Update";
         lblTopBar.TextAlign = ContentAlignment.MiddleCenter;
@@ -168,7 +173,7 @@ partial class FormUpdaterBM
         AutoScaleDimensions = new SizeF(8F, 17F);
         AutoScaleMode = AutoScaleMode.Font;
         BackColor = Color.Black;
-        ClientSize = new Size(356, 203);
+        ClientSize = new Size(296, 203);
         Controls.Add(panelTopBar);
         Controls.Add(lblNewVersion);
         Controls.Add(btnUpdate);
@@ -185,7 +190,6 @@ partial class FormUpdaterBM
         Text = "FormUpdaterBM";
         panelTopBar.ResumeLayout(false);
         ResumeLayout(false);
-        PerformLayout();
     }
 
     #endregion

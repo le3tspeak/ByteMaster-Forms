@@ -1,4 +1,6 @@
-﻿using Game_Server_Manager.Properties;
+﻿using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using Game_Server_Manager.Properties;
 using Newtonsoft.Json;
 
 namespace Game_Server_Manager.Forms;
@@ -6,7 +8,7 @@ public partial class FormUpdaterBM : Form
 {
     private const string Owner = "le3tspeak";
     private const string Repo = "ByteMaster";
-    private readonly string Version = Properties.Settings.Default.Version;
+    private readonly string Version = Settings.Default.Version;
     private string LatestVersion = "";
 
     public FormUpdaterBM()
@@ -51,12 +53,8 @@ public partial class FormUpdaterBM : Form
         // Buttons
         btnUpdate.IconColor = ColorTheme.Default.Icon;
         btnUpdate.ForeColor = ColorTheme.Default.Text;
-        btnUpdate.FlatAppearance.MouseDownBackColor = ColorTheme.Default.MouseDown;
-        btnUpdate.FlatAppearance.MouseOverBackColor = ColorTheme.Default.MouseHover;
         btnExit.IconColor = ColorTheme.Default.Icon;
         btnExit.ForeColor = ColorTheme.Default.Text;
-        btnExit.FlatAppearance.MouseDownBackColor = ColorTheme.Default.MouseDown;
-        btnExit.FlatAppearance.MouseOverBackColor = ColorTheme.Default.MouseHover;
     }
 
     private async void UpdateVersion()
@@ -66,7 +64,7 @@ public partial class FormUpdaterBM : Form
             var latestVersion = await GetLatestVersion();
             lblLatestVersion.Text = latestVersion;
 
-            if (Settings.Default.Version != LatestVersion)
+            if (Settings.Default.Version != latestVersion)
             {
                 lblNewVersion.Text = "Es ist eine neue Version verfügbar";
                 btnUpdate.Enabled = true;
@@ -96,18 +94,43 @@ public partial class FormUpdaterBM : Form
         return release.tag_name;
     }
 
-    // Methode zum Starten des Downloads der neuesten Version
-    private async void btnDownload_Click(object sender, EventArgs e)
+    public static void StartInstaller(string installerPath)
     {
         try
         {
-            var latestVersion = await GetLatestVersion();
-            var downloadUrl = $"https://github.com/{Owner}/{Repo}/releases/download/{latestVersion}/ByteMasterV{latestVersion}.zip";
-            var savePath = Path.Combine(Settings.Default.ServerPath, "GitHub", $"{latestVersion}.zip");
+            // Überprüfe, ob die Datei existiert
+            if (!File.Exists(installerPath))
+            {
+                MessageBox.Show("Die Installer-Datei wurde nicht gefunden.", "Fehler", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
+            // Starte den Installer
+            ProcessStartInfo startInfo = new ProcessStartInfo();
+            startInfo.FileName = installerPath;
+            startInfo.Arguments = "";
+            startInfo.WindowStyle = ProcessWindowStyle.Normal;
+            Process.Start(startInfo);
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show("Fehler beim Starten des Installers: " + ex.Message, "Fehler", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+    }
+
+    // Methode zum Starten des Downloads der neuesten Version
+    private async void btnDownload_Click(object sender, EventArgs e)
+    {
+        var latestVersion = await GetLatestVersion();
+        var downloadUrl = $"https://github.com/{Owner}/{Repo}/releases/download/{latestVersion}/ByteMaster.zip";
+        var savePath = Path.Combine(Settings.Default.ServerPath, "Updater", "ByteMaster.zip");
+        var unzipPath = Path.Combine(Settings.Default.ServerPath, "Updater");
+
+        try
+        {
             // prüfen, ob der Download-Ordner existiert
-            if (!Directory.Exists(Path.Combine(Settings.Default.ServerPath, "GitHub")))
-                Directory.CreateDirectory(Path.Combine(Settings.Default.ServerPath, "GitHub"));
+            if (!Directory.Exists(Path.Combine(Settings.Default.ServerPath, "Updater")))
+                Directory.CreateDirectory(Path.Combine(Settings.Default.ServerPath, "Updater"));
 
             //Download the Release
             FormDownloader formDownloader = new FormDownloader();
@@ -119,15 +142,49 @@ public partial class FormUpdaterBM : Form
         {
             MessageBox.Show("Fehler beim Herunterladen der neuesten Version: " + ex.Message, "Fehler", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
+
+        try
+        {
+            // Extract the SteamCMD
+            FormZIP formZIP = new FormZIP();
+            formZIP.SetZIPPath(savePath, unzipPath);
+            formZIP.Extract();
+            formZIP.ShowDialog();
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show("Fehler beim Entpacken der neuesten Version: " + ex.Message, "Fehler", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        // Starte den Installer ByteMaster.msi
+        StartInstaller(Path.Combine(Settings.Default.ServerPath, "Updater", "setup.exe"));
+
+        // Schließe das Programm
+        Program.Exit();
     }
-
-
-
-
-
 
     private void btnExit_Click(object sender, EventArgs e)
     {
         Close();
+    }
+
+    private void btnUpdate_MouseEnter(object sender, EventArgs e)
+    {
+        btnUpdate.IconColor = RGBColors.Default.Confirm;
+    }
+
+    private void btnUpdate_MouseLeave(object sender, EventArgs e)
+    {
+        btnUpdate.IconColor = Color.White;
+    }
+
+    private void btnExit_MouseEnter(object sender, EventArgs e)
+    {
+        btnExit.IconColor = RGBColors.Default.Cancel;
+    }
+
+    private void btnExit_MouseLeave(object sender, EventArgs e)
+    {
+        btnExit.IconColor = Color.White;
     }
 }

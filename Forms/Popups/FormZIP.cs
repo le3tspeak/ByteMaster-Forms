@@ -62,7 +62,7 @@ public partial class FormZIP : Form
         lblStatusInfo.Text = "Entpacken abgeschlossen.";
 
         // Wait 2 seconds before closing the form
-        Task.Delay(2000).ContinueWith(t => this.Invoke((MethodInvoker)delegate { this.Close(); }));
+        Task.Delay(2000).ContinueWith(t => Invoke((MethodInvoker)delegate { Close(); }));
     }
 }
 

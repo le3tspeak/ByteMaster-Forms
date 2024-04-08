@@ -250,7 +250,7 @@ namespace Game_Server_Manager.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("DimGray")]
+        [global::System.Configuration.DefaultSettingValueAttribute("218, 135, 44")]
         public global::System.Drawing.Color MenuSelected {
             get {
                 return ((global::System.Drawing.Color)(this["MenuSelected"]));

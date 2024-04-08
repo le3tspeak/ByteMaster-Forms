@@ -25,8 +25,6 @@ public partial class FormExit : Form
         btnExitNo.IconColor = RGBColors.Default.ExitBTNCancel;
         lblTextTopBar.ForeColor = RGBColors.Default.Text;
         lblTextTopBar.BackColor = RGBColors.Default.FormBGPopupTopBar;
-
-
     }
 
     // Exit Yes
@@ -48,7 +46,7 @@ public partial class FormExit : Form
     // Exit No  
     private void btnExitNo_Click(object sender, EventArgs e)
     {
-        this.Close();
+        Close();
     }
     // Mouse Enter
     private void btnExitNo_MouseLeave(object sender, EventArgs e)

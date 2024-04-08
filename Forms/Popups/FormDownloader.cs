@@ -75,14 +75,14 @@ public partial class FormDownloader : Form
         System.Media.SystemSounds.Question.Play();
 
         // Wait 2 seconds before closing the form
-        Task.Delay(2000).ContinueWith(t => this.Invoke((MethodInvoker)delegate { this.Close(); }));
+        Task.Delay(2000).ContinueWith(t => Invoke((MethodInvoker)delegate { Close(); }));
     }
 
     // Event-Handler für den Download-Fortschritt-Event
     private void HttpDownloader_DownloadProgressChanged(object sender, AltoHttp.ProgressChangedEventArgs e)
     {
         progressBar.Value = (int)e.Progress;
-        lblPercent.Text = $"{e.Progress.ToString("0.00")} %";
+        lblPercent.Text = $"{e.Progress.ToString("0.0")} %";
         lblSpeedStatus.Text = string.Format("{0} MB/s", (e.SpeedInBytes / 1024d / 1024d).ToString("0.00"));
         lblDownloadedMB.Text = string.Format("{0} MB/s", (httpDownloader.TotalBytesReceived / 1024d / 1024d).ToString("0.00"));
         lblStatusInfo.Text = "Downloading...";
@@ -117,6 +117,6 @@ public partial class FormDownloader : Form
         // Delete the file
         File.Delete(savePath);
         // Wait 2 seconds before closing the form
-        Task.Delay(2000).ContinueWith(t => this.Invoke((MethodInvoker)delegate { Close(); }));
+        Task.Delay(2000).ContinueWith(t => Invoke((MethodInvoker)delegate { Close(); }));
     }
 }
