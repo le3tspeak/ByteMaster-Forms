@@ -242,6 +242,7 @@ partial class FormSettings
         btnThemeDesigner.Text = "Design";
         btnThemeDesigner.TextImageRelation = TextImageRelation.ImageBeforeText;
         btnThemeDesigner.UseVisualStyleBackColor = false;
+        btnThemeDesigner.Visible = false;
         btnThemeDesigner.Click += btnThemeDesigner_Click;
         // 
         // FormSettings

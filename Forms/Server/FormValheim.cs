@@ -21,8 +21,7 @@ public partial class FormValheim : Form
     }
 
     private void StartUp()
-    {
-        InitializeTrackbar();
+    {        
         // Timer Start
         Timer();
         // Load Form Settings
@@ -150,6 +149,9 @@ public partial class FormValheim : Form
         cbCrossplay.Checked = GameManager.Default.ServerCrossplay;
         cbPublic.Checked = GameManager.Default.ServerPublic;
         cbLogFile.Checked = GameManager.Default.ServerLogFile;
+
+        // Load Trackbar
+        InitializeTrackbar();
     }
 
     // Disable Editing Settings if Server is Running

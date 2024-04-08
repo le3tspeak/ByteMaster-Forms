@@ -23,7 +23,6 @@ public partial class FormEnshrouded : Form
     private static string ServerLogFolder = GameManager.Default.ServerLogFolder;
     private static readonly string ServerCFGName = GameManager.Default.ServerCFGName;
     private static string ServerSlots = GameManager.Default.ServerSlots;
-
     private readonly string InstallDir = Path.Combine(Settings.Default.ServerPath, ServerFolderName);
 
     public FormEnshrouded()
