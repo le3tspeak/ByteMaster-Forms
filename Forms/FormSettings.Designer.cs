@@ -40,6 +40,7 @@ partial class FormSettings
         lblSteamCMDLatUpdate = new Label();
         lblSteamCMDLatUpdateInfo = new Label();
         btnGitHub = new FontAwesome.Sharp.IconButton();
+        btnThemeDesigner = new FontAwesome.Sharp.IconButton();
         SuspendLayout();
         // 
         // lblServersPath
@@ -182,7 +183,7 @@ partial class FormSettings
         lblSteamCMDLatUpdate.AutoSize = true;
         lblSteamCMDLatUpdate.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
         lblSteamCMDLatUpdate.ForeColor = Color.White;
-        lblSteamCMDLatUpdate.Location = new Point(31, 271);
+        lblSteamCMDLatUpdate.Location = new Point(31, 330);
         lblSteamCMDLatUpdate.Name = "lblSteamCMDLatUpdate";
         lblSteamCMDLatUpdate.Size = new Size(95, 21);
         lblSteamCMDLatUpdate.TabIndex = 11;
@@ -193,7 +194,7 @@ partial class FormSettings
         lblSteamCMDLatUpdateInfo.AutoSize = true;
         lblSteamCMDLatUpdateInfo.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
         lblSteamCMDLatUpdateInfo.ForeColor = Color.White;
-        lblSteamCMDLatUpdateInfo.Location = new Point(77, 296);
+        lblSteamCMDLatUpdateInfo.Location = new Point(77, 355);
         lblSteamCMDLatUpdateInfo.Name = "lblSteamCMDLatUpdateInfo";
         lblSteamCMDLatUpdateInfo.Size = new Size(108, 17);
         lblSteamCMDLatUpdateInfo.TabIndex = 12;
@@ -207,7 +208,7 @@ partial class FormSettings
         btnGitHub.FlatStyle = FlatStyle.Flat;
         btnGitHub.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
         btnGitHub.ForeColor = Color.White;
-        btnGitHub.IconChar = FontAwesome.Sharp.IconChar.SquareGithub;
+        btnGitHub.IconChar = FontAwesome.Sharp.IconChar.GithubSquare;
         btnGitHub.IconColor = Color.White;
         btnGitHub.IconFont = FontAwesome.Sharp.IconFont.Auto;
         btnGitHub.IconSize = 45;
@@ -221,12 +222,35 @@ partial class FormSettings
         btnGitHub.UseVisualStyleBackColor = false;
         btnGitHub.Click += btnGitHub_Click;
         // 
+        // btnThemeDesigner
+        // 
+        btnThemeDesigner.BackColor = Color.Transparent;
+        btnThemeDesigner.BackgroundImageLayout = ImageLayout.Zoom;
+        btnThemeDesigner.FlatAppearance.BorderSize = 0;
+        btnThemeDesigner.FlatStyle = FlatStyle.Flat;
+        btnThemeDesigner.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+        btnThemeDesigner.ForeColor = Color.White;
+        btnThemeDesigner.IconChar = FontAwesome.Sharp.IconChar.Brush;
+        btnThemeDesigner.IconColor = Color.White;
+        btnThemeDesigner.IconFont = FontAwesome.Sharp.IconFont.Auto;
+        btnThemeDesigner.IconSize = 45;
+        btnThemeDesigner.ImageAlign = ContentAlignment.MiddleLeft;
+        btnThemeDesigner.Location = new Point(260, 408);
+        btnThemeDesigner.Name = "btnThemeDesigner";
+        btnThemeDesigner.Size = new Size(127, 50);
+        btnThemeDesigner.TabIndex = 14;
+        btnThemeDesigner.Text = "Design";
+        btnThemeDesigner.TextImageRelation = TextImageRelation.ImageBeforeText;
+        btnThemeDesigner.UseVisualStyleBackColor = false;
+        btnThemeDesigner.Click += btnThemeDesigner_Click;
+        // 
         // FormSettings
         // 
         AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
         BackColor = Color.Black;
         ClientSize = new Size(880, 530);
+        Controls.Add(btnThemeDesigner);
         Controls.Add(btnGitHub);
         Controls.Add(lblSteamCMDLatUpdateInfo);
         Controls.Add(lblSteamCMDLatUpdate);
@@ -260,4 +284,5 @@ partial class FormSettings
     private Label lblSteamCMDLatUpdate;
     private Label lblSteamCMDLatUpdateInfo;
     private FontAwesome.Sharp.IconButton btnGitHub;
+    private FontAwesome.Sharp.IconButton btnThemeDesigner;
 }

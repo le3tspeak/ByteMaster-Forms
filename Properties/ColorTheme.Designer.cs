@@ -274,7 +274,7 @@ namespace Game_Server_Manager.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("38, 38, 38")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Transparent")]
         public global::System.Drawing.Color ButtonBG {
             get {
                 return ((global::System.Drawing.Color)(this["ButtonBG"]));

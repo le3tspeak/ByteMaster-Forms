@@ -63,10 +63,10 @@
       <Value Profile="(Default)">valheim_server_log.txt</Value>
     </Setting>
     <Setting Name="ServerPreset" Type="System.String" Scope="User">
-      <Value Profile="(Default)">0</Value>
+      <Value Profile="(Default)">normal</Value>
     </Setting>
-    <Setting Name="ServerPresetTrackbar" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">4</Value>
+    <Setting Name="ServerPresetTrackbarValue" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">3</Value>
     </Setting>
     <Setting Name="ServerBackupShort" Type="System.String" Scope="User">
       <Value Profile="(Default)">7200</Value>

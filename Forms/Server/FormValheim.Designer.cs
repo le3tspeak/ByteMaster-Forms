@@ -449,7 +449,8 @@ partial class FormValheim
         trackBarPreset.Orientation = Orientation.Vertical;
         trackBarPreset.Size = new Size(45, 224);
         trackBarPreset.TabIndex = 75;
-        trackBarPreset.Value = 4;
+        trackBarPreset.Value = 1;
+        trackBarPreset.Scroll += trackBarPreset_Scroll;
         // 
         // cbLogFile
         // 
@@ -463,6 +464,7 @@ partial class FormValheim
         cbLogFile.TabIndex = 74;
         cbLogFile.Text = "Log FIle";
         cbLogFile.UseVisualStyleBackColor = false;
+        cbLogFile.CheckedChanged += cbLogFile_CheckedChanged;
         // 
         // cbPublic
         // 
@@ -476,6 +478,7 @@ partial class FormValheim
         cbPublic.TabIndex = 73;
         cbPublic.Text = "Public";
         cbPublic.UseVisualStyleBackColor = false;
+        cbPublic.CheckedChanged += cbPublic_CheckedChanged;
         // 
         // cbCrossplay
         // 
@@ -489,6 +492,7 @@ partial class FormValheim
         cbCrossplay.TabIndex = 71;
         cbCrossplay.Text = "Crossplay";
         cbCrossplay.UseVisualStyleBackColor = false;
+        cbCrossplay.CheckedChanged += cbCrossplay_CheckedChanged;
         // 
         // lblPreset
         // 
@@ -506,9 +510,9 @@ partial class FormValheim
         // 
         tbBackupLongInfo.Location = new Point(392, 267);
         tbBackupLongInfo.Name = "tbBackupLongInfo";
-        tbBackupLongInfo.PlaceholderText = "43200";
         tbBackupLongInfo.Size = new Size(147, 23);
         tbBackupLongInfo.TabIndex = 70;
+        tbBackupLongInfo.TextChanged += tbBackupLonfInfo_TextChanged;
         // 
         // label2
         // 
@@ -526,9 +530,9 @@ partial class FormValheim
         // 
         tbBackupShortInfo.Location = new Point(392, 242);
         tbBackupShortInfo.Name = "tbBackupShortInfo";
-        tbBackupShortInfo.PlaceholderText = "7200";
         tbBackupShortInfo.Size = new Size(147, 23);
         tbBackupShortInfo.TabIndex = 68;
+        tbBackupShortInfo.TextChanged += tbBackupShortInfo_TextChanged;
         // 
         // blblBackupShort
         // 
@@ -549,6 +553,7 @@ partial class FormValheim
         tbServerSaveIntervalInfo.PlaceholderText = "1800";
         tbServerSaveIntervalInfo.Size = new Size(147, 23);
         tbServerSaveIntervalInfo.TabIndex = 66;
+        tbServerSaveIntervalInfo.TextChanged += tbServerSaveIntervalInfo_TextChanged;
         // 
         // lblServerSaveInterval
         // 
@@ -569,6 +574,7 @@ partial class FormValheim
         tbServerSaveDirInfo.PlaceholderText = "save_game";
         tbServerSaveDirInfo.Size = new Size(147, 23);
         tbServerSaveDirInfo.TabIndex = 64;
+        tbServerSaveDirInfo.TextChanged += tbServerSaveDirInfo_TextChanged;
         // 
         // lblServerSaveDir
         // 
@@ -589,6 +595,7 @@ partial class FormValheim
         tbServerBackupsInfo.PlaceholderText = "4";
         tbServerBackupsInfo.Size = new Size(147, 23);
         tbServerBackupsInfo.TabIndex = 62;
+        tbServerBackupsInfo.TextChanged += tbServerBackupsInfo_TextChanged;
         // 
         // lblServerBackups
         // 
@@ -609,6 +616,7 @@ partial class FormValheim
         tbServerWorldInfo.PlaceholderText = "Default";
         tbServerWorldInfo.Size = new Size(147, 23);
         tbServerWorldInfo.TabIndex = 60;
+        tbServerWorldInfo.TextChanged += tbServerWorldInfo_TextChanged;
         // 
         // lblServerWorld
         // 
@@ -629,6 +637,7 @@ partial class FormValheim
         tbServerPortInfo.PlaceholderText = "12345";
         tbServerPortInfo.Size = new Size(147, 23);
         tbServerPortInfo.TabIndex = 58;
+        tbServerPortInfo.TextChanged += tbServerPortInfo_TextChanged;
         // 
         // tbServerIPInfo
         // 
@@ -647,6 +656,7 @@ partial class FormValheim
         tbServerPasswordInfo.PlaceholderText = "Secret";
         tbServerPasswordInfo.Size = new Size(147, 23);
         tbServerPasswordInfo.TabIndex = 56;
+        tbServerPasswordInfo.TextChanged += tbServerPasswordInfo_TextChanged;
         // 
         // tbServerNameInfo
         // 
@@ -655,6 +665,7 @@ partial class FormValheim
         tbServerNameInfo.PlaceholderText = "HeftiKuss";
         tbServerNameInfo.Size = new Size(147, 23);
         tbServerNameInfo.TabIndex = 55;
+        tbServerNameInfo.TextChanged += tbServerNameInfo_TextChanged;
         // 
         // lblServerPort
         // 

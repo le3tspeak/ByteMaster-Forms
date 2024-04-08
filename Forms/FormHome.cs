@@ -53,6 +53,10 @@ public partial class FormHome : Form
     {
         // Form
         BackColor = RGBColors.Default.FormBGChild;
+        // Labels
+        lblValheimTitle.ForeColor = RGBColors.Default.Text;
+        label2.ForeColor = RGBColors.Default.Text;
+        lblServerInstalledValheim.ForeColor = RGBColors.Default.Text;
     }
 
     // Timer für die Aktualisierung der Informationen
@@ -63,7 +67,7 @@ public partial class FormHome : Form
         timerShort.Interval = 500;
         timerShort.Tick += Timer_Tick_Short;
         timerShort.Start();
-        // Timer 2 Sekunden
+        // Timer 1 Sekunde
         Timer timerLong = new Timer();
         timerLong.Interval = 1000;
         timerLong.Tick += Timer_Tick_Long;
@@ -87,9 +91,6 @@ public partial class FormHome : Form
     private void ValheimUpdate()
     {
         var InstallDirValheim = Path.Combine(GameManager.Default.ServerPath, GameManager_Valheim.Default.ServerFolderName);
-
-        // Load Last Update Time
-        lblValheimLastUpdateInfo.Text = GameManager.Default.ValheimLastUpdate;
 
         // Überprüfen, ob der Server installiert ist
         if (File.Exists(Path.Combine(InstallDirValheim, GameManager_Valheim.Default.ServerExe)))
@@ -120,6 +121,9 @@ public partial class FormHome : Form
         // Installationspfad Valheim
         lblServerValheimPathInfo.Text = InstallDirValheim;
 
+        // Load Last Update Time
+        lblValheimLastUpdateInfo.Text = GameManager.Default.ValheimLastUpdate;
+
         // RAM-Verbrauch
         (string infoText, int progressBarValue) ramUsageInfo = Worker.RAMUsage.UpdateShortGB(GameManager_Valheim.Default.ProzessName);
         if (ramUsageInfo.infoText != lblRAMUsageInfoValheim.Text || ramUsageInfo.progressBarValue != progressBarRAMValheim.Value)
@@ -137,19 +141,14 @@ public partial class FormHome : Form
     {
         var InstallDirEnshrouded = Path.Combine(GameManager.Default.ServerPath, GameManager_Enshrouded.Default.ServerFolderName);
 
-        // Load Last Update Time
-        lblEnshroudedLastUpdateInfo.Text = GameManager.Default.EnshroudedLastUpdate;
-
         // Überprüfen, ob der Server installiert ist
         if (File.Exists(Path.Combine(InstallDirEnshrouded, GameManager_Enshrouded.Default.ServerExe)))
         {
-
             lblServerInstalledEnshroudedInfo.ForeColor = Color.Green;
             lblServerInstalledEnshroudedInfo.Text = "Installed";
         }
         else
         {
-
             lblServerInstalledEnshroudedInfo.ForeColor = Color.Red;
             lblServerInstalledEnshroudedInfo.Text = "Not Installed";
         }
@@ -157,7 +156,6 @@ public partial class FormHome : Form
         // Überprüfen, ob der Prozess läuft
         if (IsProcessRunning(GameManager_Enshrouded.Default.ProzessName))
         {
-
             lblServerRunningEnshroudedInfo.ForeColor = Color.Green;
             // Server läuft
             lblServerRunningEnshroudedInfo.Text = "Der Prozess läuft.";
@@ -171,6 +169,9 @@ public partial class FormHome : Form
 
         // Installationspfad Enshrouded
         lblServerPathEnshroudedInfo.Text = InstallDirEnshrouded;
+
+        // Load Last Update Time
+        lblEnshroudedLastUpdateInfo.Text = GameManager.Default.EnshroudedLastUpdate;
 
         // RAM-Verbrauch
         (string infoText, int progressBarValue) ramUsageInfo = Worker.RAMUsage.UpdateShortGB(GameManager_Enshrouded.Default.ProzessName);

@@ -28,7 +28,7 @@ partial class FormHome
     /// </summary>
     private void InitializeComponent()
     {
-        label1 = new Label();
+        lblValheimTitle = new Label();
         panelValheimBar = new Panel();
         lblValheimLastUpdateInfo = new Label();
         lblValheimLastUpdate = new Label();
@@ -60,18 +60,18 @@ partial class FormHome
         // 
         // label1
         // 
-        label1.Dock = DockStyle.Top;
-        label1.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold);
-        label1.ForeColor = Color.White;
-        label1.ImeMode = ImeMode.NoControl;
-        label1.Location = new Point(0, 0);
-        label1.Margin = new Padding(20, 0, 3, 0);
-        label1.Name = "label1";
-        label1.Padding = new Padding(25, 0, 0, 0);
-        label1.Size = new Size(864, 39);
-        label1.TabIndex = 1;
-        label1.Text = "Valheim Server";
-        label1.TextAlign = ContentAlignment.MiddleLeft;
+        lblValheimTitle.Dock = DockStyle.Top;
+        lblValheimTitle.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold);
+        lblValheimTitle.ForeColor = Color.White;
+        lblValheimTitle.ImeMode = ImeMode.NoControl;
+        lblValheimTitle.Location = new Point(0, 0);
+        lblValheimTitle.Margin = new Padding(20, 0, 3, 0);
+        lblValheimTitle.Name = "label1";
+        lblValheimTitle.Padding = new Padding(25, 0, 0, 0);
+        lblValheimTitle.Size = new Size(880, 39);
+        lblValheimTitle.TabIndex = 1;
+        lblValheimTitle.Text = "Valheim Server";
+        lblValheimTitle.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // panelValheimBar
         // 
@@ -80,7 +80,7 @@ partial class FormHome
         panelValheimBar.Controls.Add(progressBarRAMValheim);
         panelValheimBar.Controls.Add(lblRAMUsageInfoValheim);
         panelValheimBar.Controls.Add(lblRAMUsageValheim);
-        panelValheimBar.Controls.Add(label1);
+        panelValheimBar.Controls.Add(lblValheimTitle);
         panelValheimBar.Controls.Add(lblServerValheimPathInfo);
         panelValheimBar.Controls.Add(lblServerPathValheim);
         panelValheimBar.Controls.Add(lblServerRunningValheim);
@@ -90,7 +90,7 @@ partial class FormHome
         panelValheimBar.Dock = DockStyle.Top;
         panelValheimBar.Location = new Point(0, 0);
         panelValheimBar.Name = "panelValheimBar";
-        panelValheimBar.Size = new Size(864, 105);
+        panelValheimBar.Size = new Size(880, 105);
         panelValheimBar.TabIndex = 1;
         // 
         // lblValheimLastUpdateInfo
@@ -251,7 +251,7 @@ partial class FormHome
         panel1.Dock = DockStyle.Top;
         panel1.Location = new Point(0, 105);
         panel1.Name = "panel1";
-        panel1.Size = new Size(864, 105);
+        panel1.Size = new Size(880, 105);
         panel1.TabIndex = 2;
         // 
         // lblEnshroudedLastUpdateInfo
@@ -327,7 +327,7 @@ partial class FormHome
         label2.Margin = new Padding(20, 0, 3, 0);
         label2.Name = "label2";
         label2.Padding = new Padding(25, 0, 0, 0);
-        label2.Size = new Size(864, 39);
+        label2.Size = new Size(880, 39);
         label2.TabIndex = 1;
         label2.Text = "Enshrouded Server";
         label2.TextAlign = ContentAlignment.MiddleLeft;
@@ -415,9 +415,10 @@ partial class FormHome
         AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
         BackColor = Color.Black;
-        ClientSize = new Size(864, 491);
+        ClientSize = new Size(880, 530);
         Controls.Add(panel1);
         Controls.Add(panelValheimBar);
+        FormBorderStyle = FormBorderStyle.None;
         Name = "FormHome";
         Text = "Home";
         panelValheimBar.ResumeLayout(false);
@@ -428,7 +429,7 @@ partial class FormHome
     }
 
     #endregion
-    private Label label1;
+    private Label lblValheimTitle;
     private Panel panelValheimBar;
     private Label lblServerValheimPathInfo;
     private Label lblServerPathValheim;

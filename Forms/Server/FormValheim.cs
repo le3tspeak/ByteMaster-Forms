@@ -1,38 +1,17 @@
 ﻿using System.Diagnostics;
-using System.Net.Sockets;
 using System.Net;
-using Timer = System.Windows.Forms.Timer;
-using GameManager = Game_Server_Manager.Properties.Valheim;
+using System.Net.Sockets;
 using Game_Server_Manager.Properties;
+using GameManager = Game_Server_Manager.Properties.Valheim;
+using Timer = System.Windows.Forms.Timer;
 
 namespace Game_Server_Manager.Forms;
 
 public partial class FormValheim : Form
 {
-    // Alle Settings aus Properties.Valheim.Default
-    private static readonly int BATAppID = GameManager.Default.BATAppID;
-    private static readonly string BATExeName = GameManager.Default.BATEXEName;
-    private static readonly string BATName = GameManager.Default.BATName;
-    private static readonly int SteamAppID = GameManager.Default.SteamAppID;
+    // Konstanten
     private static readonly string ServerFolderName = GameManager.Default.ServerFolderName;
-    private static readonly string ServerExe = GameManager.Default.ServerExe;
     private static readonly string ProzessName = GameManager.Default.ProzessName;
-    private static readonly string ServerLogFileName = GameManager.Default.ServerLogFileName;
-    private static string ServerName = GameManager.Default.ServerName;
-    private static string ServerPassword = GameManager.Default.ServerPassword;
-    private static string ServerPort = GameManager.Default.ServerPort;
-    private static string ServerWorld = GameManager.Default.ServerWorld;
-    private static string ServerBackups = GameManager.Default.ServerBackups;
-    private static string ServerSaveDir = GameManager.Default.ServerSaveDir;
-    private static string ServerSaveInterval = GameManager.Default.ServerSaveInterval;
-    private static string ServerBackupShort = GameManager.Default.ServerBackupShort;
-    private static string ServerBackupLong = GameManager.Default.ServerBackupLong;
-    private static bool ServerCrossplay = GameManager.Default.ServerCrossplay;
-    private static bool ServerPublic = GameManager.Default.ServerPublic;
-    private static bool ServerLogFile = GameManager.Default.ServerLogFile;
-    private static string ServerPreset = GameManager.Default.ServerPreset;
-    private static int ServerPresetTrackbar = GameManager.Default.ServerPresetTrackbar;
-
     private readonly string InstallDir = Path.Combine(Settings.Default.ServerPath, ServerFolderName);
 
     public FormValheim()
@@ -43,6 +22,7 @@ public partial class FormValheim : Form
 
     private void StartUp()
     {
+        InitializeTrackbar();
         // Timer Start
         Timer();
         // Load Form Settings
@@ -51,12 +31,14 @@ public partial class FormValheim : Form
         LoadColorSettings();
         // Load Settings
         LoadSettings();
-        // Checks
+        // Check Server Installed
         CheckServerInstalled();
+        // Check Server Running
         CheckServerRunning();
-        SettingsEnabeld();
         // Update Process Info
         UpdateRAMInfo();
+        // Settings Enabled
+        SettingsEnabeld();
     }
 
     // Timer
@@ -153,31 +135,27 @@ public partial class FormValheim : Form
         lblLastUpdateInfo.Text = Settings.Default.ValheimLastUpdate;
 
         // Load Textboxes
-        tbServerNameInfo.Text = $"{ServerName}";
-        tbServerPasswordInfo.Text = $"{ServerPassword}";
+        tbServerNameInfo.Text = $"{GameManager.Default.ServerName}";
+        tbServerPasswordInfo.Text = $"{GameManager.Default.ServerPassword}";
         tbServerIPInfo.Text = $"{GetLocalIPAddress()}";
-        tbServerPortInfo.Text = $"{ServerPort}";
-        tbServerWorldInfo.Text = $"{ServerWorld}";
-        tbServerBackupsInfo.Text = $"{ServerBackups}";
-        tbServerSaveDirInfo.Text = $"{ServerSaveDir}";
-        tbServerSaveIntervalInfo.Text = $"{ServerSaveInterval}";
-        tbBackupShortInfo.Text = $"{ServerBackupShort}";
-        tbBackupLongInfo.Text = $"{ServerBackupLong}";
+        tbServerPortInfo.Text = $"{GameManager.Default.ServerPort}";
+        tbServerWorldInfo.Text = $"{GameManager.Default.ServerWorld}";
+        tbServerBackupsInfo.Text = $"{GameManager.Default.ServerBackups}";
+        tbServerSaveDirInfo.Text = $"{GameManager.Default.ServerSaveDir}";
+        tbServerSaveIntervalInfo.Text = $"{GameManager.Default.ServerSaveInterval}";
+        tbBackupShortInfo.Text = $"{GameManager.Default.ServerBackupShort}";
+        tbBackupLongInfo.Text = $"{GameManager.Default.ServerBackupLong}";
 
         // Load Checkboxes
-        cbCrossplay.Checked = ServerCrossplay;
-        cbPublic.Checked = ServerPublic;
-        cbLogFile.Checked = ServerLogFile;
-
-        // Load Preset Bar
-        trackBarPreset.Value = ServerPresetTrackbar;
-        LoadPreset(ServerPresetTrackbar);
+        cbCrossplay.Checked = GameManager.Default.ServerCrossplay;
+        cbPublic.Checked = GameManager.Default.ServerPublic;
+        cbLogFile.Checked = GameManager.Default.ServerLogFile;
     }
 
     // Disable Editing Settings if Server is Running
     private void SettingsEnabeld()
     {
-        if (IsProcessRunning(ProzessName))
+        if (IsProcessRunning(GameManager.Default.ProzessName))
         {
             EnableSettings(false);
             return;
@@ -218,7 +196,7 @@ public partial class FormValheim : Form
     {
         try
         {
-            var processPath = Path.Combine(InstallDir, BATName);
+            var processPath = Path.Combine(InstallDir, GameManager.Default.BATName);
 
             ProcessStartInfo startInfo = new ProcessStartInfo();
             startInfo.FileName = processPath;
@@ -238,7 +216,7 @@ public partial class FormValheim : Form
     {
         try
         {
-            Process[] processes = Process.GetProcessesByName(ProzessName);
+            Process[] processes = Process.GetProcessesByName(GameManager.Default.ProzessName);
             foreach (Process process in processes)
             {
                 process.Kill();
@@ -257,9 +235,9 @@ public partial class FormValheim : Form
         {
             Directory.CreateDirectory(InstallDir);
         }
-        if (!Directory.Exists(Path.Combine(InstallDir, ServerSaveDir)))
+        if (!Directory.Exists(Path.Combine(InstallDir, GameManager.Default.ServerSaveDir)))
         {
-            Directory.CreateDirectory(Path.Combine(InstallDir, ServerSaveDir));
+            Directory.CreateDirectory(Path.Combine(InstallDir, GameManager.Default.ServerSaveDir));
         }
     }
 
@@ -267,7 +245,7 @@ public partial class FormValheim : Form
     private void InstallServer()
     {
         // Ceck if the Server is Running
-        if (IsProcessRunning(ProzessName))
+        if (IsProcessRunning(GameManager.Default.ProzessName))
         {
             MessageBox.Show("The Server is still running. Please stop the Server first!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             return;
@@ -280,7 +258,7 @@ public partial class FormValheim : Form
             return;
         }
         // Check if Server is already installed
-        if (File.Exists(Path.Combine(InstallDir, ServerExe)))
+        if (File.Exists(Path.Combine(InstallDir, GameManager.Default.ServerExe)))
         {
 
             DialogResult dialogResult = MessageBox.Show("Do you want to Update the Server?", "Update Server", MessageBoxButtons.YesNo);
@@ -292,7 +270,7 @@ public partial class FormValheim : Form
 
         CheckFolderExist();
         FormSteamCMD formSteamCMD = new FormSteamCMD();
-        formSteamCMD.StartSteamCMD($"+force_install_dir \"{InstallDir}\" +login anonymous +app_update {SteamAppID} validate +exit");
+        formSteamCMD.StartSteamCMD($"+force_install_dir \"{InstallDir}\" +login anonymous +app_update {GameManager.Default.SteamAppID} validate +exit");
         formSteamCMD.ShowDialog();
         CheckServerInstalled();
 
@@ -306,18 +284,18 @@ public partial class FormValheim : Form
     // Check Server is Installed
     private void CheckServerInstalled()
     {
-        if (File.Exists(Path.Combine(InstallDir, ServerExe)))
+        if (File.Exists(Path.Combine(InstallDir, GameManager.Default.ServerExe)))
         {
             btnInstallServer.Text = "Update Server";
             btnUninstallServer.Enabled = true;
-            lblServerInstalledInfo.ForeColor = System.Drawing.Color.Green;
+            lblServerInstalledInfo.ForeColor = Color.Green;
             lblServerInstalledInfo.Text = "Installed";
         }
         else
         {
             btnInstallServer.Text = "Install Server";
             btnUninstallServer.Enabled = false;
-            lblServerInstalledInfo.ForeColor = System.Drawing.Color.Red;
+            lblServerInstalledInfo.ForeColor = Color.Red;
             lblServerInstalledInfo.Text = "Not Installed";
         }
     }
@@ -326,21 +304,23 @@ public partial class FormValheim : Form
     private void CheckServerRunning()
     {
         // Überprüfen, ob der Prozess läuft
-        if (IsProcessRunning(ProzessName))
+        if (IsProcessRunning(GameManager.Default.ProzessName))
         {
-            lblServerRunningInfo.ForeColor = System.Drawing.Color.Green;
+            lblServerRunningInfo.ForeColor = Color.Green;
             // Server is Running
             lblServerRunningInfo.Text = "Der Prozess läuft.";
             btnStartServer.Enabled = false;
             btnStopServer.Enabled = true;
+            lblLastUpdateInfo.Text = Settings.Default.ValheimLastUpdate;
         }
         else
         {
-            lblServerRunningInfo.ForeColor = System.Drawing.Color.Red;
+            lblServerRunningInfo.ForeColor = Color.Red;
             // Server is not Running
             lblServerRunningInfo.Text = "Der Prozess läuft nicht.";
             btnStartServer.Enabled = true;
             btnStopServer.Enabled = false;
+            lblLastUpdateInfo.Text = Settings.Default.ValheimLastUpdate;
         }
     }
     // Check Process Running 
@@ -361,7 +341,7 @@ public partial class FormValheim : Form
     // Methode für die Aktualisierung der RAM-Informationen
     private void UpdateRAMInfo()
     {
-        (var ramUsageInfoText, var progressBarValue) = Worker.RAMUsage.UpdateShortGB(ProzessName);
+        (var ramUsageInfoText, var progressBarValue) = Worker.RAMUsage.UpdateShortGB(GameManager.Default.ProzessName);
         lblRAMUsageInfo.Text = ramUsageInfoText;
         progressBarRAM.Value = progressBarValue;
     }
@@ -370,14 +350,14 @@ public partial class FormValheim : Form
     private void UninstallServer()
     {
         // Check if Server is installed
-        if (!File.Exists(Path.Combine(InstallDir, ServerExe)))
+        if (!File.Exists(Path.Combine(InstallDir, GameManager.Default.ServerExe)))
         {
             MessageBox.Show("The Server is not installed!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             return;
         }
 
         // Check if the Server is Running
-        if (IsProcessRunning(ProzessName))
+        if (IsProcessRunning(GameManager.Default.ProzessName))
         {
             MessageBox.Show("The Server is still running. Please stop the Server first!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             return;
@@ -395,15 +375,15 @@ public partial class FormValheim : Form
     // Create Server Start Bat File
     private void CreateStartBat()
     {
-        if (File.Exists(Path.Combine(InstallDir, ServerExe)))
+        if (File.Exists(Path.Combine(InstallDir, GameManager.Default.ServerExe)))
         {
-            var batFile = Path.Combine(InstallDir, BATName);
+            var batFile = Path.Combine(InstallDir, GameManager.Default.BATName);
             string batContent_Public;
             var batContent_ServerLog = "";
             string batContent_Crossplay;
 
             // Public Server
-            if (ServerPublic)
+            if (GameManager.Default.ServerPublic)
             {
                 batContent_Public = "-public 1 ";
             }
@@ -412,16 +392,16 @@ public partial class FormValheim : Form
                 batContent_Public = "-public 0 ";
             }
             // Server Log File
-            if (ServerLogFile)
+            if (GameManager.Default.ServerLogFile)
             {
-                batContent_ServerLog += $"-logfile \"{Path.Combine(InstallDir, ServerLogFileName)}\" ";
+                batContent_ServerLog += $"-logfile \"{Path.Combine(InstallDir, GameManager.Default.ServerLogFileName)}\" ";
             }
             else
             {
                 batContent_ServerLog = "";
             }
             // Crossplay
-            if (ServerCrossplay)
+            if (GameManager.Default.ServerCrossplay)
             {
                 batContent_Crossplay = "-crossplay ";
             }
@@ -433,23 +413,23 @@ public partial class FormValheim : Form
             // Inhalt der Batch-Datei
             var batContent = $"@echo off\n" +
                              $"title Valheim Gameserver\n" +
-                             $"set SteamAppId={BATAppID}\n\n" +
-                             $"{Path.Combine(InstallDir, BATExeName)} " +
+                             $"set SteamAppId={GameManager.Default.BATAppID}\n\n" +
+                             $"{Path.Combine(InstallDir, GameManager.Default.BATEXEName)} " +
                              $"-nographics " +
                              $"-batchmode " +
-                             $"-name \"{ServerName}\" " +
-                             $"-port {ServerPort} " +
-                             $"-world \"{ServerWorld}\" " +
-                             $"-password \"{ServerPassword}\" " +
-                             $"-savedir {Path.Combine(InstallDir, ServerSaveDir)} " +
+                             $"-name \"{GameManager.Default.ServerName}\" " +
+                             $"-port {GameManager.Default.ServerPort} " +
+                             $"-world \"{GameManager.Default.ServerWorld}\" " +
+                             $"-password \"{GameManager.Default.ServerPassword}\" " +
+                             $"-savedir {Path.Combine(InstallDir, GameManager.Default.ServerSaveDir)} " +
                              $"{batContent_Public}" +
                              $"{batContent_ServerLog}" +
-                             $"-saveinterval {ServerSaveInterval} " +
-                             $"-backups {ServerBackups} " +
-                             $"-backupshort {ServerBackupShort} " +
-                             $"-backuplong {ServerBackupLong} " +
+                             $"-saveinterval {GameManager.Default.ServerSaveInterval} " +
+                             $"-backups {GameManager.Default.ServerBackups} " +
+                             $"-backupshort {GameManager.Default.ServerBackupShort} " +
+                             $"-backuplong {GameManager.Default.ServerBackupLong} " +
                              $"{batContent_Crossplay}" +
-                             $"-preset {ServerPreset} ";
+                             $"-preset {GameManager.Default.ServerPreset} ";
 
             // Batch-Datei erstellen
             try
@@ -506,7 +486,6 @@ public partial class FormValheim : Form
             UninstallServer();
             return;
         }
-
     }
 
     // Start Server Button
@@ -534,13 +513,13 @@ public partial class FormValheim : Form
     private void btnOpenLogFile_Click(object sender, EventArgs e)
     {
         // Überprüfen, ob die Textdatei existiert
-        if (File.Exists(Path.Combine(InstallDir, ServerLogFileName)))
+        if (File.Exists(Path.Combine(InstallDir, GameManager.Default.ServerLogFileName)))
         {
             try
             {
                 // Öffne die Textdatei mit der Standardanwendung für Textdateien
                 ProcessStartInfo psi = new ProcessStartInfo();
-                psi.FileName = Path.Combine(InstallDir, ServerLogFileName);
+                psi.FileName = Path.Combine(InstallDir, GameManager.Default.ServerLogFileName);
                 psi.UseShellExecute = true;
                 Process.Start(psi);
             }
@@ -569,13 +548,12 @@ public partial class FormValheim : Form
         }
     }
 
-
     // 
     // Textboxes
     //
     private void tbServerNameInfo_TextChanged(object sender, EventArgs e)
     {
-        ServerName = tbServerNameInfo.Text;
+        GameManager.Default.ServerName = tbServerNameInfo.Text;
         GameManager.Default.Save();
     }
 
@@ -585,10 +563,10 @@ public partial class FormValheim : Form
         if (tbServerPasswordInfo.Text.Contains(" "))
         {
             MessageBox.Show("The password must not contain any spaces!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            tbServerPasswordInfo.Text = ServerPassword;
+            tbServerPasswordInfo.Text = GameManager.Default.ServerPassword;
             return;
         }
-        ServerPassword = tbServerPasswordInfo.Text;
+        GameManager.Default.ServerPassword = tbServerPasswordInfo.Text;
         GameManager.Default.Save();
     }
 
@@ -598,11 +576,11 @@ public partial class FormValheim : Form
         if (!int.TryParse(tbServerPortInfo.Text, out _))
         {
             MessageBox.Show("The port must be a number!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            tbServerPortInfo.Text = ServerPort;
+            tbServerPortInfo.Text = GameManager.Default.ServerPort;
             return;
         }
 
-        ServerPort = tbServerPortInfo.Text;
+        GameManager.Default.ServerPort = tbServerPortInfo.Text;
         GameManager.Default.Save();
     }
 
@@ -612,11 +590,11 @@ public partial class FormValheim : Form
         if (tbServerWorldInfo.Text.Contains(" "))
         {
             MessageBox.Show("The world name must not contain any spaces!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            tbServerWorldInfo.Text = ServerWorld;
+            tbServerWorldInfo.Text = GameManager.Default.ServerWorld;
             return;
         }
 
-        ServerWorld = tbServerWorldInfo.Text;
+        GameManager.Default.ServerWorld = tbServerWorldInfo.Text;
         GameManager.Default.Save();
     }
 
@@ -626,19 +604,11 @@ public partial class FormValheim : Form
         if (!int.TryParse(tbServerBackupsInfo.Text, out _))
         {
             MessageBox.Show("The number of backups must be a number!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            tbServerBackupsInfo.Text = ServerBackups;
+            tbServerBackupsInfo.Text = GameManager.Default.ServerBackups;
             return;
         }
 
-        // Prüfe ob der wert zwischen 1 und 10 liegt
-        if (int.Parse(tbServerBackupsInfo.Text) < 1 || int.Parse(tbServerBackupsInfo.Text) > 10)
-        {
-            MessageBox.Show("The number of backups must be between 1 and 10!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            tbServerBackupsInfo.Text = ServerBackups;
-            return;
-        }
-
-        ServerBackups = tbServerBackupsInfo.Text;
+        GameManager.Default.ServerBackups = tbServerBackupsInfo.Text;
         GameManager.Default.Save();
     }
 
@@ -648,11 +618,11 @@ public partial class FormValheim : Form
         if (tbServerSaveDirInfo.Text.Contains(" "))
         {
             MessageBox.Show("The save directory must not contain any spaces!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            tbServerSaveDirInfo.Text = ServerSaveDir;
+            tbServerSaveDirInfo.Text = GameManager.Default.ServerSaveDir;
             return;
         }
 
-        ServerSaveDir = tbServerSaveDirInfo.Text;
+        GameManager.Default.ServerSaveDir = tbServerSaveDirInfo.Text;
         GameManager.Default.Save();
     }
 
@@ -662,19 +632,11 @@ public partial class FormValheim : Form
         if (!int.TryParse(tbServerSaveIntervalInfo.Text, out _))
         {
             MessageBox.Show("The save interval must be a number!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            tbServerSaveIntervalInfo.Text = ServerSaveInterval;
+            tbServerSaveIntervalInfo.Text = GameManager.Default.ServerSaveInterval;
             return;
         }
 
-        // Prüfe ob der Wert zwischen 1800 und 10000 liegt
-        if (int.Parse(tbServerSaveIntervalInfo.Text) < 1800 || int.Parse(tbServerSaveIntervalInfo.Text) > 10000)
-        {
-            MessageBox.Show("The save interval must be between 1800 and 10000!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            tbServerSaveIntervalInfo.Text = ServerSaveInterval;
-            return;
-        }
-
-        ServerSaveInterval = tbServerSaveIntervalInfo.Text;
+        GameManager.Default.ServerSaveInterval = tbServerSaveIntervalInfo.Text;
         GameManager.Default.Save();
     }
 
@@ -684,19 +646,11 @@ public partial class FormValheim : Form
         if (!int.TryParse(tbBackupShortInfo.Text, out _))
         {
             MessageBox.Show("The short backup interval must be a number!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            tbBackupShortInfo.Text = ServerBackupShort;
+            tbBackupShortInfo.Text = GameManager.Default.ServerBackupShort;
             return;
         }
 
-        // Prüfe ob der Wert zwischen 7200 und 43200 liegt
-        if (int.Parse(tbBackupShortInfo.Text) < 7200 || int.Parse(tbBackupShortInfo.Text) > 43200)
-        {
-            MessageBox.Show("The short backup interval must be between 7200 and 43200!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            tbBackupShortInfo.Text = ServerBackupShort;
-            return;
-        }
-
-        ServerBackupShort = tbBackupShortInfo.Text;
+        GameManager.Default.ServerBackupShort = tbBackupShortInfo.Text;
         GameManager.Default.Save();
     }
 
@@ -707,19 +661,11 @@ public partial class FormValheim : Form
         {
 
             MessageBox.Show("The long backup interval must be a number!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            tbBackupLongInfo.Text = ServerBackupLong;
+            tbBackupLongInfo.Text = GameManager.Default.ServerBackupLong;
             return;
         }
 
-        // Prüfe ob der Wert zwischen 43200 und 172800 liegt
-        if (int.Parse(tbBackupLongInfo.Text) < 43200 || int.Parse(tbBackupLongInfo.Text) > 172800)
-        {
-            MessageBox.Show("The long backup interval must be between 43200 and 172800!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            tbBackupLongInfo.Text = ServerBackupLong;
-            return;
-        }
-
-        ServerBackupLong = tbBackupLongInfo.Text;
+        GameManager.Default.ServerBackupLong = tbBackupLongInfo.Text;
         GameManager.Default.Save();
     }
 
@@ -728,121 +674,84 @@ public partial class FormValheim : Form
     //
     private void cbCrossplay_CheckedChanged(object sender, EventArgs e)
     {
-        ServerCrossplay = cbCrossplay.Checked;
+        GameManager.Default.ServerCrossplay = cbCrossplay.Checked;
         GameManager.Default.Save();
     }
 
     private void cbPublic_CheckedChanged(object sender, EventArgs e)
     {
-        ServerPublic = cbPublic.Checked;
+        GameManager.Default.ServerPublic = cbPublic.Checked;
         GameManager.Default.Save();
     }
 
     private void cbLogFile_CheckedChanged(object sender, EventArgs e)
     {
-        ServerLogFile = cbLogFile.Checked;
+        GameManager.Default.ServerLogFile = cbLogFile.Checked;
         GameManager.Default.Save();
     }
 
     //
     // Preset
     //    
-    private void PresetCasual()
+    private void InitializeTrackbar()
     {
-        // Casual
-        lblPresetCasual.Font = new Font(lblPreset.Font, FontStyle.Bold);
-        lblPresetEasy.Font = new Font(lblPreset.Font, FontStyle.Regular);
-        lblPresetNormal.Font = new Font(lblPreset.Font, FontStyle.Regular);
-        lblPresetHard.Font = new Font(lblPreset.Font, FontStyle.Regular);
-        lblPresetHardcore.Font = new Font(lblPreset.Font, FontStyle.Regular);
-        lblPresetImmersive.Font = new Font(lblPreset.Font, FontStyle.Regular);
-        lblPresetHammer.Font = new Font(lblPreset.Font, FontStyle.Regular);
-        ServerPreset = "casual";
-        ServerPresetTrackbar = 1;
-        GameManager.Default.Save();
+        var defaultTrackbarValue = 1; // Setzen Sie hier den Standardwert für den Trackbar-Wert
+
+        // Laden Sie den Wert aus der Konfiguration oder verwenden Sie den Standardwert, falls nicht vorhanden
+        var savedTrackbarValue = GameManager.Default.ServerPresetTrackbarValue;
+
+        // Stellen Sie sicher, dass der gespeicherte Wert im gültigen Bereich liegt
+        if (savedTrackbarValue < trackBarPreset.Minimum || savedTrackbarValue > trackBarPreset.Maximum)
+        {
+            savedTrackbarValue = defaultTrackbarValue;
+        }
+
+        // Setzen Sie den Trackbar-Wert
+        trackBarPreset.Value = savedTrackbarValue;
+
+        // Laden Sie die Einstellungen entsprechend dem Trackbar-Wert
+        LoadPreset(savedTrackbarValue);
     }
-    private void PresetEasy()
+
+    private void ApplyPreset(string preset, FontStyle fontStyle, int trackbarValue)
     {
-        // Easy
-        lblPresetCasual.Font = new Font(lblPreset.Font, FontStyle.Regular);
-        lblPresetEasy.Font = new Font(lblPreset.Font, FontStyle.Bold);
-        lblPresetNormal.Font = new Font(lblPreset.Font, FontStyle.Regular);
-        lblPresetHard.Font = new Font(lblPreset.Font, FontStyle.Regular);
-        lblPresetHardcore.Font = new Font(lblPreset.Font, FontStyle.Regular);
-        lblPresetImmersive.Font = new Font(lblPreset.Font, FontStyle.Regular);
-        lblPresetHammer.Font = new Font(lblPreset.Font, FontStyle.Regular);
-        ServerPreset = "easy";
-        ServerPresetTrackbar = 2;
-        GameManager.Default.Save();
-    }
-    private void PresetNormal()
-    {
-        // Normal
-        lblPresetCasual.Font = new Font(lblPreset.Font, FontStyle.Regular);
-        lblPresetEasy.Font = new Font(lblPreset.Font, FontStyle.Regular);
-        lblPresetNormal.Font = new Font(lblPreset.Font, FontStyle.Bold);
-        lblPresetHard.Font = new Font(lblPreset.Font, FontStyle.Regular);
-        lblPresetHardcore.Font = new Font(lblPreset.Font, FontStyle.Regular);
-        lblPresetImmersive.Font = new Font(lblPreset.Font, FontStyle.Regular);
-        lblPresetHammer.Font = new Font(lblPreset.Font, FontStyle.Regular);
-        ServerPreset = "normal";
-        ServerPresetTrackbar = 3;
-        GameManager.Default.Save();
-    }
-    private void PresetHard()
-    {
-        // Hard
-        lblPresetCasual.Font = new Font(lblPreset.Font, FontStyle.Regular);
-        lblPresetEasy.Font = new Font(lblPreset.Font, FontStyle.Regular);
-        lblPresetNormal.Font = new Font(lblPreset.Font, FontStyle.Regular);
-        lblPresetHard.Font = new Font(lblPreset.Font, FontStyle.Bold);
-        lblPresetHardcore.Font = new Font(lblPreset.Font, FontStyle.Regular);
-        lblPresetImmersive.Font = new Font(lblPreset.Font, FontStyle.Regular);
-        lblPresetHammer.Font = new Font(lblPreset.Font, FontStyle.Regular);
-        ServerPreset = "hard";
-        ServerPresetTrackbar = 4;
-        GameManager.Default.Save();
-    }
-    private void PresetHardcore()
-    {
-        // Hardcore
-        lblPresetCasual.Font = new Font(lblPreset.Font, FontStyle.Regular);
-        lblPresetEasy.Font = new Font(lblPreset.Font, FontStyle.Regular);
-        lblPresetNormal.Font = new Font(lblPreset.Font, FontStyle.Regular);
-        lblPresetHard.Font = new Font(lblPreset.Font, FontStyle.Regular);
-        lblPresetHardcore.Font = new Font(lblPreset.Font, FontStyle.Bold);
-        lblPresetImmersive.Font = new Font(lblPreset.Font, FontStyle.Regular);
-        lblPresetHammer.Font = new Font(lblPreset.Font, FontStyle.Regular);
-        ServerPreset = "hardcore";
-        ServerPresetTrackbar = 5;
-        GameManager.Default.Save();
-    }
-    private void PresetImmersive()
-    {
-        // Immersive
-        lblPresetCasual.Font = new Font(lblPreset.Font, FontStyle.Regular);
-        lblPresetEasy.Font = new Font(lblPreset.Font, FontStyle.Regular);
-        lblPresetNormal.Font = new Font(lblPreset.Font, FontStyle.Regular);
-        lblPresetHard.Font = new Font(lblPreset.Font, FontStyle.Regular);
-        lblPresetHardcore.Font = new Font(lblPreset.Font, FontStyle.Regular);
-        lblPresetImmersive.Font = new Font(lblPreset.Font, FontStyle.Bold);
-        lblPresetHammer.Font = new Font(lblPreset.Font, FontStyle.Regular);
-        ServerPreset = "immersive";
-        ServerPresetTrackbar = 6;
-        GameManager.Default.Save();
-    }
-    private void PresetHammer()
-    {
-        // Hammer
         lblPresetCasual.Font = new Font(lblPreset.Font, FontStyle.Regular);
         lblPresetEasy.Font = new Font(lblPreset.Font, FontStyle.Regular);
         lblPresetNormal.Font = new Font(lblPreset.Font, FontStyle.Regular);
         lblPresetHard.Font = new Font(lblPreset.Font, FontStyle.Regular);
         lblPresetHardcore.Font = new Font(lblPreset.Font, FontStyle.Regular);
         lblPresetImmersive.Font = new Font(lblPreset.Font, FontStyle.Regular);
-        lblPresetHammer.Font = new Font(lblPreset.Font, FontStyle.Bold);
-        ServerPreset = "hammer";
-        ServerPresetTrackbar = 7;
+        lblPresetHammer.Font = new Font(lblPreset.Font, FontStyle.Regular);
+
+        switch (preset.ToLower())
+        {
+            case "casual":
+                lblPresetCasual.Font = new Font(lblPreset.Font, fontStyle);
+                break;
+            case "easy":
+                lblPresetEasy.Font = new Font(lblPreset.Font, fontStyle);
+                break;
+            case "normal":
+                lblPresetNormal.Font = new Font(lblPreset.Font, fontStyle);
+                break;
+            case "hard":
+                lblPresetHard.Font = new Font(lblPreset.Font, fontStyle);
+                break;
+            case "hardcore":
+                lblPresetHardcore.Font = new Font(lblPreset.Font, fontStyle);
+                break;
+            case "immersive":
+                lblPresetImmersive.Font = new Font(lblPreset.Font, fontStyle);
+                break;
+            case "hammer":
+                lblPresetHammer.Font = new Font(lblPreset.Font, fontStyle);
+                break;
+            default:
+                throw new ArgumentException("Invalid preset");
+        }
+
+        GameManager.Default.ServerPreset = preset;
+        GameManager.Default.ServerPresetTrackbarValue = trackbarValue;
         GameManager.Default.Save();
     }
 
@@ -851,74 +760,35 @@ public partial class FormValheim : Form
         switch (value)
         {
             case 1:
-                //Casual
-                PresetCasual();
+                ApplyPreset("casual", FontStyle.Bold, 1);
                 break;
             case 2:
-                // Easy
-                PresetEasy();
+                ApplyPreset("easy", FontStyle.Bold, 2);
                 break;
             case 3:
-                PresetNormal();
+                ApplyPreset("normal", FontStyle.Bold, 3);
                 break;
             case 4:
-                // Hard
-                PresetHard();
+                ApplyPreset("hard", FontStyle.Bold, 4);
                 break;
             case 5:
-                // Hardcore
-                PresetHardcore();
+                ApplyPreset("hardcore", FontStyle.Bold, 5);
                 break;
             case 6:
-                // Immersive
-                PresetImmersive();
+                ApplyPreset("immersive", FontStyle.Bold, 6);
                 break;
             case 7:
-                // Hammer
-                PresetHammer();
+                ApplyPreset("hammer", FontStyle.Bold, 7);
                 break;
             default:
-                // Hard
-                PresetHard();
+                LoadPreset(GameManager.Default.ServerPresetTrackbarValue);
                 break;
         }
     }
 
     private void trackBarPreset_Scroll(object sender, EventArgs e)
     {
-        switch (trackBarPreset.Value)
-        {
-            case 1:
-                // Casual
-                PresetCasual();
-                break;
-            case 2:
-                // Easy
-                PresetEasy();
-                break;
-            case 3:
-                PresetNormal();
-                break;
-            case 4:
-                // Hard
-                PresetHard();
-                break;
-            case 5:
-                // Hardcore
-                PresetHardcore();
-                break;
-            case 6:
-                // Immersive
-                PresetImmersive();
-                break;
-            case 7:
-                // Hammer
-                PresetHammer();
-                break;
-            default:
-                // Hard
-                PresetHard();
-                break;
-        }
+        var trackbarValue = trackBarPreset.Value;
+        LoadPreset(trackbarValue);
     }
 }

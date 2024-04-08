@@ -21,7 +21,7 @@ public partial class FormEnshrouded : Form
     private static string ServerQueryPort = GameManager.Default.ServerQueryPort;
     private static string ServerSaveDir = GameManager.Default.ServerSaveDir;
     private static string ServerLogFolder = GameManager.Default.ServerLogFolder;
-    private static string ServerCFGName = GameManager.Default.ServerCFGName;
+    private static readonly string ServerCFGName = GameManager.Default.ServerCFGName;
     private static string ServerSlots = GameManager.Default.ServerSlots;
 
     private readonly string InstallDir = Path.Combine(Settings.Default.ServerPath, ServerFolderName);
@@ -60,7 +60,7 @@ public partial class FormEnshrouded : Form
         timerShort.Start();
         // Timer 2 Sekunden
         Timer timerLong = new Timer();
-        timerLong.Interval = 2000;
+        timerLong.Interval = 1000;
         timerLong.Tick += Timer_Tick_Long;
         timerLong.Start();
     }
@@ -298,6 +298,7 @@ public partial class FormEnshrouded : Form
             lblServerRunningInfo.Text = "Der Prozess läuft.";
             btnStartServer.Enabled = false;
             btnStopServer.Enabled = true;
+            lblLastUpdateInfo.Text = Settings.Default.EnshroudedLastUpdate;
         }
         else
         {
@@ -306,6 +307,7 @@ public partial class FormEnshrouded : Form
             lblServerRunningInfo.Text = "Der Prozess läuft nicht.";
             btnStartServer.Enabled = true;
             btnStopServer.Enabled = false;
+            lblLastUpdateInfo.Text = Settings.Default.EnshroudedLastUpdate;
         }
     }
     // Check Process Running 
@@ -555,20 +557,13 @@ public partial class FormEnshrouded : Form
             tbServerLogDirInfo.Text = ServerLogFolder;
             return;
         }
+
         ServerLogFolder = tbServerLogDirInfo.Text;
         GameManager.Default.Save();
     }
 
     private void tbServerSlotsInfo_TextChanged(object sender, EventArgs e)
     {
-        // Prüfen, ob der Text in der Textbox eine Zahl ist
-        if (!int.TryParse(tbServerSlotsInfo.Text, out _))
-        {
-            MessageBox.Show("Please enter a number!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            tbServerSlotsInfo.Text = ServerSlots;
-            return;
-        }
-
         // Prüfen ob der Wert zwischen 1 und 16 liegt
         if (Convert.ToInt32(tbServerSlotsInfo.Text) < 1 || Convert.ToInt32(tbServerSlotsInfo.Text) > 16)
         {

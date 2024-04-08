@@ -247,7 +247,7 @@ namespace Game_Server_Manager.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        [global::System.Configuration.DefaultSettingValueAttribute("normal")]
         public string ServerPreset {
             get {
                 return ((string)(this["ServerPreset"]));
@@ -259,13 +259,13 @@ namespace Game_Server_Manager.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("4")]
-        public int ServerPresetTrackbar {
+        [global::System.Configuration.DefaultSettingValueAttribute("3")]
+        public int ServerPresetTrackbarValue {
             get {
-                return ((int)(this["ServerPresetTrackbar"]));
+                return ((int)(this["ServerPresetTrackbarValue"]));
             }
             set {
-                this["ServerPresetTrackbar"] = value;
+                this["ServerPresetTrackbarValue"] = value;
             }
         }
         

@@ -91,7 +91,7 @@ public partial class FormByteMaster : Form
         timerShort.Start();
         // Timer 2 Sekunden
         Timer timerLong = new Timer();
-        timerLong.Interval = 2000;
+        timerLong.Interval = 1000;
         timerLong.Tick += Timer_Tick_Long;
         timerLong.Start();
     }

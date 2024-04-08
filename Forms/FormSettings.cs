@@ -29,8 +29,6 @@ public partial class FormSettings : Form
         StartUp();
     }
 
-
-
     // Startroutine
     private void StartUp()
     {
@@ -80,6 +78,11 @@ public partial class FormSettings : Form
         btnGitHub.BackColor = ColorTheme.Default.ButtonBG;
         btnGitHub.FlatAppearance.MouseDownBackColor = ColorTheme.Default.MouseDown;
         btnGitHub.FlatAppearance.MouseOverBackColor = ColorTheme.Default.MouseHover;
+        btnThemeDesigner.IconColor = ColorTheme.Default.Icon;
+        btnThemeDesigner.ForeColor = ColorTheme.Default.Text;
+        btnThemeDesigner.BackColor = ColorTheme.Default.ButtonBG;
+        btnThemeDesigner.FlatAppearance.MouseDownBackColor = ColorTheme.Default.MouseDown;
+        btnThemeDesigner.FlatAppearance.MouseOverBackColor = ColorTheme.Default.MouseHover;
         // Textboxen
         tbServerPath.BackColor = ColorTheme.Default.TextBoxBG;
         tbServerPath.ForeColor = ColorTheme.Default.TextBoxText;
@@ -258,5 +261,12 @@ public partial class FormSettings : Form
             MessageBox.Show($"Fehler beim Öffnen der URL: {ex.Message}");
         }
 
+    }
+
+    private void btnThemeDesigner_Click(object sender, EventArgs e)
+    {
+        // Öffne FormThemeDesigner
+        FormThemeDesigner formThemeDesigner = new FormThemeDesigner();
+        formThemeDesigner.ShowDialog();
     }
 }
