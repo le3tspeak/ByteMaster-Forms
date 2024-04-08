@@ -262,8 +262,7 @@ public partial class FormValheim : Form
         // Check if Server is already installed
         if (File.Exists(Path.Combine(InstallDir, GameManager.Default.ServerExe)))
         {
-
-            DialogResult dialogResult = MessageBox.Show("Do you want to Update the Server?", "Update Server", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = MessageBox.Show("Do you want to Update the Server?", "Uninstall SteamCMD", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.No)
             {
                 return;

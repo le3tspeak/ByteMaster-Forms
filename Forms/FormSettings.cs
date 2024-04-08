@@ -224,6 +224,15 @@ public partial class FormSettings : Form
         // Uninstall SteamCMD
         if (File.Exists(Path.Combine((GameManager.Default.SteamCMDPath), "steamerrorreporter.exe")))
         {
+            DialogResult dialogResult = MessageBox.Show("Do you want to Uninstall SteamCMD?", "Uninstall SteamCMD", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.No)
+            {
+                return;
+            }
+        }
+
+        if (File.Exists(Path.Combine((GameManager.Default.SteamCMDPath), "steamerrorreporter.exe")))
+        {
             try
             {
                 Directory.Delete(GameManager.Default.SteamCMDPath, true);

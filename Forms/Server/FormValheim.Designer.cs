@@ -602,7 +602,7 @@ partial class FormValheim
         lblServerBackups.BackColor = Color.Transparent;
         lblServerBackups.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
         lblServerBackups.ForeColor = Color.White;
-        lblServerBackups.Location = new Point(291, 165);
+        lblServerBackups.Location = new Point(283, 165);
         lblServerBackups.Name = "lblServerBackups";
         lblServerBackups.Size = new Size(100, 23);
         lblServerBackups.TabIndex = 61;
