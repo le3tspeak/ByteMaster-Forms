@@ -233,9 +233,9 @@ partial class FormSettings
         btnThemeDesigner.IconChar = FontAwesome.Sharp.IconChar.Brush;
         btnThemeDesigner.IconColor = Color.White;
         btnThemeDesigner.IconFont = FontAwesome.Sharp.IconFont.Auto;
-        btnThemeDesigner.IconSize = 45;
+        btnThemeDesigner.IconSize = 35;
         btnThemeDesigner.ImageAlign = ContentAlignment.MiddleLeft;
-        btnThemeDesigner.Location = new Point(260, 408);
+        btnThemeDesigner.Location = new Point(508, 468);
         btnThemeDesigner.Name = "btnThemeDesigner";
         btnThemeDesigner.Size = new Size(127, 50);
         btnThemeDesigner.TabIndex = 14;

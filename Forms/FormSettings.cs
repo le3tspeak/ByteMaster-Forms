@@ -250,17 +250,21 @@ public partial class FormSettings : Form
 
     private void btnGitHub_Click(object sender, EventArgs e)
     {
-
         var url = GameManager.Default.GitHub; // Hier die gewünschte URL einsetzen
         try
         {
-            Process.Start(new ProcessStartInfo("cmd", $"/c start {url}"));
+            Process.Start(new ProcessStartInfo
+            {
+                FileName = "cmd",
+                Arguments = $"/c start {url}",
+                UseShellExecute = false,
+                CreateNoWindow = true
+            });
         }
         catch (Exception ex)
         {
             MessageBox.Show($"Fehler beim Öffnen der URL: {ex.Message}");
         }
-
     }
 
     private void btnThemeDesigner_Click(object sender, EventArgs e)
