@@ -281,6 +281,4 @@ public partial class FormByteMaster : Form
     {
         OpenChildForm(new FormSettings());
     }
-
-
 }

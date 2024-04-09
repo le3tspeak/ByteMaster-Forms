@@ -94,7 +94,7 @@ public partial class FormHome : Form
         }
 
         // Überprüfen, ob der Prozess läuft
-        if (IsProcessRunning(GameManager_Valheim.Default.ProzessName))
+        if (Worker.ProcessRunning.Check(GameManager_Valheim.Default.ProzessName))
         {
             lblServerValheimRunningInfo.ForeColor = Color.Green;
             // Server läuft
@@ -143,7 +143,7 @@ public partial class FormHome : Form
         }
 
         // Überprüfen, ob der Prozess läuft
-        if (IsProcessRunning(GameManager_Enshrouded.Default.ProzessName))
+        if (Worker.ProcessRunning.Check(GameManager_Enshrouded.Default.ProzessName))
         {
             lblServerRunningEnshroudedInfo.ForeColor = Color.Green;
             // Server läuft
@@ -169,24 +169,5 @@ public partial class FormHome : Form
             lblRAMUsageEnshroudedInfo.Text = ramUsageInfo.infoText;
             progressBarRAMEnshrouded.Value = ramUsageInfo.progressBarValue;
         }
-    }
-
-    //
-    // Default
-    //
-
-    // Überprüfen, ob der Prozess läuft
-    private bool IsProcessRunning(string processName)
-    {
-        // Alle Prozesse auf dem System durchgehen
-        foreach (Process process in Process.GetProcesses())
-        {
-            // Überprüfen, ob der Prozess mit dem angegebenen Namen existiert
-            if (process.ProcessName.Equals(processName, StringComparison.OrdinalIgnoreCase))
-            {
-                return true; // Prozess gefunden
-            }
-        }
-        return false; // Prozess nicht gefunden
     }
 }

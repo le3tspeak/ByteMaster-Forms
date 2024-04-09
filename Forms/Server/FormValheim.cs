@@ -157,7 +157,7 @@ public partial class FormValheim : Form
     // Disable Editing Settings if Server is Running
     private void SettingsEnabeld()
     {
-        if (IsProcessRunning(GameManager.Default.ProzessName))
+        if (Worker.ProcessRunning.Check(GameManager.Default.ProzessName))
         {
             EnableSettings(false);
             return;
@@ -247,7 +247,7 @@ public partial class FormValheim : Form
     private void InstallServer()
     {
         // Ceck if the Server is Running
-        if (IsProcessRunning(GameManager.Default.ProzessName))
+        if (Worker.ProcessRunning.Check(GameManager.Default.ProzessName))
         {
             MessageBox.Show("The Server is still running. Please stop the Server first!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             return;
@@ -305,7 +305,7 @@ public partial class FormValheim : Form
     private void CheckServerRunning()
     {
         // Überprüfen, ob der Prozess läuft
-        if (IsProcessRunning(GameManager.Default.ProzessName))
+        if (Worker.ProcessRunning.Check(GameManager.Default.ProzessName))
         {
             lblServerRunningInfo.ForeColor = Color.Green;
             // Server is Running
@@ -323,20 +323,6 @@ public partial class FormValheim : Form
             btnStopServer.Enabled = false;
             lblLastUpdateInfo.Text = Settings.Default.ValheimLastUpdate;
         }
-    }
-    // Check Process Running 
-    private bool IsProcessRunning(string processName)
-    {
-        // Alle Prozesse auf dem System durchgehen
-        foreach (Process process in Process.GetProcesses())
-        {
-            // Überprüfen, ob der Prozess mit dem angegebenen Namen existiert
-            if (process.ProcessName.Equals(processName, StringComparison.OrdinalIgnoreCase))
-            {
-                return true; // Prozess gefunden
-            }
-        }
-        return false; // Prozess nicht gefunden
     }
 
     // Methode für die Aktualisierung der RAM-Informationen
@@ -358,7 +344,7 @@ public partial class FormValheim : Form
         }
 
         // Check if the Server is Running
-        if (IsProcessRunning(GameManager.Default.ProzessName))
+        if (Worker.ProcessRunning.Check(GameManager.Default.ProzessName))
         {
             MessageBox.Show("The Server is still running. Please stop the Server first!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             return;

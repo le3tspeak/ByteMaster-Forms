@@ -214,7 +214,7 @@ partial class FormSettings
         btnGitHub.IconFont = FontAwesome.Sharp.IconFont.Auto;
         btnGitHub.IconSize = 45;
         btnGitHub.ImageAlign = ContentAlignment.MiddleLeft;
-        btnGitHub.Location = new Point(655, 468);
+        btnGitHub.Location = new Point(644, 468);
         btnGitHub.Name = "btnGitHub";
         btnGitHub.Size = new Size(109, 50);
         btnGitHub.TabIndex = 13;
@@ -236,7 +236,7 @@ partial class FormSettings
         btnThemeDesigner.IconFont = FontAwesome.Sharp.IconFont.Auto;
         btnThemeDesigner.IconSize = 35;
         btnThemeDesigner.ImageAlign = ContentAlignment.MiddleLeft;
-        btnThemeDesigner.Location = new Point(278, 468);
+        btnThemeDesigner.Location = new Point(259, 408);
         btnThemeDesigner.Name = "btnThemeDesigner";
         btnThemeDesigner.Size = new Size(127, 50);
         btnThemeDesigner.TabIndex = 14;
@@ -259,11 +259,11 @@ partial class FormSettings
         btnUpdateGMS.IconFont = FontAwesome.Sharp.IconFont.Auto;
         btnUpdateGMS.IconSize = 45;
         btnUpdateGMS.ImageAlign = ContentAlignment.MiddleLeft;
-        btnUpdateGMS.Location = new Point(460, 468);
+        btnUpdateGMS.Location = new Point(259, 468);
         btnUpdateGMS.Name = "btnUpdateGMS";
         btnUpdateGMS.Size = new Size(189, 50);
         btnUpdateGMS.TabIndex = 15;
-        btnUpdateGMS.Text = "Update ByteMaster";
+        btnUpdateGMS.Text = "Update";
         btnUpdateGMS.TextImageRelation = TextImageRelation.ImageBeforeText;
         btnUpdateGMS.UseVisualStyleBackColor = false;
         btnUpdateGMS.Click += btnUpdateGMS_Click;
