@@ -185,15 +185,18 @@ public partial class FormSettings : Form
 
         if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
         {
-            GameManager.Default.ServerPath = folderBrowserDialog.SelectedPath;
-            GameManager.Default.Save();
-            tbServerPath.Text = folderBrowserDialog.SelectedPath;
-            MessageBox.Show($"Server path saved successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (folderBrowserDialog.SelectedPath != GameManager.Default.SteamCMDPath) // Check if the selected path is not equal to SteamCMD path
+            {
+                GameManager.Default.ServerPath = folderBrowserDialog.SelectedPath;
+                GameManager.Default.Save();
+                tbServerPath.Text = folderBrowserDialog.SelectedPath;
+                MessageBox.Show($"Server path saved successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show($"Server path cannot be the same as SteamCMD path!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
-    }
-    private void btnSetServerPath_Click(object sender, EventArgs e)
-    {
-        tbServerPath_MouseClick(sender, null);
     }
 
     // Save the path to the SteamCMD
@@ -207,11 +210,24 @@ public partial class FormSettings : Form
 
         if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
         {
-            GameManager.Default.SteamCMDPath = folderBrowserDialog.SelectedPath;
-            GameManager.Default.Save();
-            tbSteamCMDPath.Text = folderBrowserDialog.SelectedPath;
-            MessageBox.Show($"SteamCMD path saved successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (folderBrowserDialog.SelectedPath != GameManager.Default.ServerPath) // Check if the selected path is not equal to Server path
+            {
+                GameManager.Default.SteamCMDPath = folderBrowserDialog.SelectedPath;
+                GameManager.Default.Save();
+                tbSteamCMDPath.Text = folderBrowserDialog.SelectedPath;
+                MessageBox.Show($"SteamCMD path saved successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show($"SteamCMD path cannot be the same as Server path!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+    }
+
+
+    private void btnSetServerPath_Click(object sender, EventArgs e)
+    {
+        tbServerPath_MouseClick(sender, null);
     }
 
     private void btnSetStemCMDPath_Click(object sender, EventArgs e)
