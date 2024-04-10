@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Game_Server_Manager.Worker;
 
-internal class ProcessRunning
+internal class ProcessManager
 {
     // Check Process Running 
     public static bool Check(string processName)
@@ -22,5 +22,25 @@ internal class ProcessRunning
             }
         }
         return false; // Prozess nicht gefunden
+    }
+
+    // Öffne Website
+    public static void OpenWebsite(string URL)
+    {        
+        var url = URL;
+        try
+        {
+            Process.Start(new ProcessStartInfo
+            {
+                FileName = "cmd",
+                Arguments = $"/c start {url}",
+                UseShellExecute = false,
+                CreateNoWindow = true
+            });
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show($"Fehler beim Öffnen der URL: {ex.Message}");
+        }
     }
 }
