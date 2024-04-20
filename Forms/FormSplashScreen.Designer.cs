@@ -81,15 +81,15 @@ partial class FormSplashScreen
         // 
         // lblVersion
         // 
-        lblVersion.AutoSize = true;
         lblVersion.BackColor = Color.Transparent;
         lblVersion.Font = new Font("Microsoft Sans Serif", 7F, FontStyle.Bold);
         lblVersion.ForeColor = Color.White;
-        lblVersion.Location = new Point(717, 276);
+        lblVersion.Location = new Point(645, 276);
         lblVersion.Name = "lblVersion";
-        lblVersion.Size = new Size(71, 13);
+        lblVersion.Size = new Size(143, 13);
         lblVersion.TabIndex = 2;
         lblVersion.Text = "Version 0.1";
+        lblVersion.TextAlign = ContentAlignment.MiddleRight;
         // 
         // FormSplashScreen
         // 

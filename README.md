@@ -6,6 +6,7 @@ This is a simple game server manager for managing game servers on a Windows serv
 
 - Start, stop, and restart game servers
 - View the status of game servers
+- Automatically Update Steam CMD
 
 ## Planned Features
 
