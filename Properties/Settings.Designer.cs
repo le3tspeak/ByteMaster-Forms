@@ -113,5 +113,17 @@ namespace Game_Server_Manager.Properties {
                 this["GitHub"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool SteamCMDAutoUpdate {
+            get {
+                return ((bool)(this["SteamCMDAutoUpdate"]));
+            }
+            set {
+                this["SteamCMDAutoUpdate"] = value;
+            }
+        }
     }
 }

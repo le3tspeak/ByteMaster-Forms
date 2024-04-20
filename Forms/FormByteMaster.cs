@@ -81,25 +81,25 @@ public partial class FormByteMaster : Form
     // Timer für die Aktualisierung der Informationen
     private void Timer()
     {
-        // Timer 0.5 Sekunden
+        // Timer 6 Hours
         Timer timerShort = new Timer();
-        timerShort.Interval = 500;
-        timerShort.Tick += Timer_Tick_Short;
+        timerShort.Interval = 1000 * 60 * 60 *6;
+        timerShort.Tick += Timer_Tick_6h;
         timerShort.Start();
         // Timer 2 Sekunden
         Timer timerLong = new Timer();
         timerLong.Interval = 1000;
-        timerLong.Tick += Timer_Tick_Long;
+        timerLong.Tick += Timer_Tick_Updates;
         timerLong.Start();
     }
 
     // Eventhandler für die Timer
-    private void Timer_Tick_Short(object sender, EventArgs e)
+    private void Timer_Tick_6h(object sender, EventArgs e)
     {
-
+        AutoUpdateSteamCMD();
     }
 
-    private void Timer_Tick_Long(object sender, EventArgs e)
+    private void Timer_Tick_Updates(object sender, EventArgs e)
     {
         SystemInfo();
         SteamCMD();
@@ -120,6 +120,27 @@ public partial class FormByteMaster : Form
     }
 
     // Methods
+
+    // Auto Update STeamCMD
+    private void AutoUpdateSteamCMD()
+    {
+        // Prüfe ob SteamCMD installiert ist
+        if (File.Exists(Path.Combine((GameManager.Default.SteamCMDPath), "steamerrorreporter.exe")))
+        {
+            // SteamCMD vorhanden
+            // Prüfe ob AutoUpdate aktiviert ist
+            if (GameManager.Default.SteamCMDAutoUpdate)
+            {
+                // Run the SteamCMD
+                FormSteamCMD formSteamCMD = new FormSteamCMD();
+                formSteamCMD.StartSteamCMD("+quit");
+                formSteamCMD.ShowDialog();
+                // Setze das Datum des letzten Updates
+                GameManager.Default.SteamCMDLastUpdate = DateTime.Now;
+                GameManager.Default.Save();
+            }
+        }
+    }
 
     // Lade RAM-Informationen
     private void SystemInfo()

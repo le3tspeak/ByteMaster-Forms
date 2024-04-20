@@ -37,6 +37,7 @@ public partial class FormSettings : Form
         tbServerPath.Text = GameManager.Default.ServerPath;
         tbSteamCMDPath.Text = GameManager.Default.SteamCMDPath;
         lblVersion.Text = $"Version: {GameManager.Default.Version}";
+        lblSteamCMDAutoUpdate.Text = $"Auto Update: {GameManager.Default.SteamCMDAutoUpdate}";
     }
 
     // Laden der Form Einstellungen
@@ -74,8 +75,14 @@ public partial class FormSettings : Form
         btnThemeDesigner.FlatAppearance.MouseOverBackColor = ColorTheme.Default.MouseHover;
         btnUpdateGMS.IconColor = ColorTheme.Default.Icon;
         btnUpdateGMS.ForeColor = ColorTheme.Default.Text;
+        btnUpdateGMS.BackColor = ColorTheme.Default.ButtonBG;
         btnUpdateGMS.FlatAppearance.MouseDownBackColor = ColorTheme.Default.MouseDown;
         btnUpdateGMS.FlatAppearance.MouseOverBackColor = ColorTheme.Default.MouseHover;
+        btnSteamCMDAutoUpdate.IconColor = ColorTheme.Default.IconSteam;
+        btnSteamCMDAutoUpdate.ForeColor = ColorTheme.Default.Text;
+        btnSteamCMDAutoUpdate.BackColor = ColorTheme.Default.ButtonBG;
+        btnSteamCMDAutoUpdate.FlatAppearance.MouseDownBackColor = ColorTheme.Default.MouseDown;
+        btnSteamCMDAutoUpdate.FlatAppearance.MouseOverBackColor = ColorTheme.Default.MouseHover;
         // Textboxen
         tbServerPath.BackColor = ColorTheme.Default.TextBoxBG;
         tbServerPath.ForeColor = ColorTheme.Default.TextBoxText;
@@ -108,13 +115,15 @@ public partial class FormSettings : Form
 
         if (File.Exists(Path.Combine((GameManager.Default.SteamCMDPath), "steamerrorreporter.exe")))
         {
-            btnSteamCMDInstall.Text = "Update SteamCMD";
+            btnSteamCMDInstall.Text = "Update";
             btnSteamCMDUninstall.Enabled = true;
+            btnSteamCMDAutoUpdate.Enabled = true;
         }
         else
         {
             btnSteamCMDInstall.Text = "Install SteamCMD";
             btnSteamCMDUninstall.Enabled = false;
+            btnSteamCMDAutoUpdate.Enabled = false;
         }
     }
 
@@ -284,5 +293,24 @@ public partial class FormSettings : Form
     {
         FormUpdaterBM formUpdaterBM = new FormUpdaterBM();
         formUpdaterBM.ShowDialog();
+    }
+
+    private void btnSteamCMDAutoUpdate_Click(object sender, EventArgs e)
+    {
+        // Set Steam CMD Auto Update
+        if (GameManager.Default.SteamCMDAutoUpdate)
+        {
+            GameManager.Default.SteamCMDAutoUpdate = false;
+            GameManager.Default.Save();
+            lblSteamCMDAutoUpdate.Text = $"Auto Update: {GameManager.Default.SteamCMDAutoUpdate}";
+            MessageBox.Show("SteamCMD Auto Update disabled!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+        else
+        {
+            GameManager.Default.SteamCMDAutoUpdate = true;
+            GameManager.Default.Save();
+            lblSteamCMDAutoUpdate.Text = $"Auto Update: {GameManager.Default.SteamCMDAutoUpdate}";
+            MessageBox.Show("SteamCMD Auto Update enabled!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }

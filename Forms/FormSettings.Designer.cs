@@ -37,11 +37,13 @@ partial class FormSettings
         btnSetServerPath = new FontAwesome.Sharp.IconButton();
         btnSetStemCMDPath = new FontAwesome.Sharp.IconButton();
         btnSteamCMDUninstall = new FontAwesome.Sharp.IconButton();
-        lblSteamCMDLatUpdate = new Label();
+        lblSteamCMD = new Label();
         lblSteamCMDLatUpdateInfo = new Label();
         btnGitHub = new FontAwesome.Sharp.IconButton();
         btnThemeDesigner = new FontAwesome.Sharp.IconButton();
         btnUpdateGMS = new FontAwesome.Sharp.IconButton();
+        btnSteamCMDAutoUpdate = new FontAwesome.Sharp.IconButton();
+        lblSteamCMDAutoUpdate = new Label();
         SuspendLayout();
         // 
         // lblServersPath
@@ -71,9 +73,9 @@ partial class FormSettings
         btnSteamCMDInstall.ImageAlign = ContentAlignment.MiddleLeft;
         btnSteamCMDInstall.Location = new Point(12, 408);
         btnSteamCMDInstall.Name = "btnSteamCMDInstall";
-        btnSteamCMDInstall.Size = new Size(199, 50);
+        btnSteamCMDInstall.Size = new Size(150, 50);
         btnSteamCMDInstall.TabIndex = 1;
-        btnSteamCMDInstall.Text = "Update Steam CMD";
+        btnSteamCMDInstall.Text = "Update";
         btnSteamCMDInstall.TextImageRelation = TextImageRelation.ImageBeforeText;
         btnSteamCMDInstall.UseVisualStyleBackColor = false;
         btnSteamCMDInstall.Click += btnSteamCMDUpdate_Click;
@@ -159,7 +161,6 @@ partial class FormSettings
         // 
         // btnSteamCMDUninstall
         // 
-        btnSteamCMDUninstall.AutoSizeMode = AutoSizeMode.GrowAndShrink;
         btnSteamCMDUninstall.BackColor = Color.Transparent;
         btnSteamCMDUninstall.BackgroundImageLayout = ImageLayout.Zoom;
         btnSteamCMDUninstall.FlatAppearance.BorderSize = 0;
@@ -170,25 +171,26 @@ partial class FormSettings
         btnSteamCMDUninstall.IconColor = Color.White;
         btnSteamCMDUninstall.IconFont = FontAwesome.Sharp.IconFont.Auto;
         btnSteamCMDUninstall.IconSize = 45;
+        btnSteamCMDUninstall.ImageAlign = ContentAlignment.MiddleLeft;
         btnSteamCMDUninstall.Location = new Point(12, 468);
         btnSteamCMDUninstall.Name = "btnSteamCMDUninstall";
-        btnSteamCMDUninstall.Size = new Size(199, 50);
+        btnSteamCMDUninstall.Size = new Size(150, 50);
         btnSteamCMDUninstall.TabIndex = 10;
-        btnSteamCMDUninstall.Text = "Uninstall Steam CMD";
+        btnSteamCMDUninstall.Text = "Uninstall";
         btnSteamCMDUninstall.TextImageRelation = TextImageRelation.ImageBeforeText;
         btnSteamCMDUninstall.UseVisualStyleBackColor = false;
         btnSteamCMDUninstall.Click += btnSteamCMDInstall_Click;
         // 
-        // lblSteamCMDLatUpdate
+        // lblSteamCMD
         // 
-        lblSteamCMDLatUpdate.AutoSize = true;
-        lblSteamCMDLatUpdate.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-        lblSteamCMDLatUpdate.ForeColor = Color.White;
-        lblSteamCMDLatUpdate.Location = new Point(31, 330);
-        lblSteamCMDLatUpdate.Name = "lblSteamCMDLatUpdate";
-        lblSteamCMDLatUpdate.Size = new Size(95, 21);
-        lblSteamCMDLatUpdate.TabIndex = 11;
-        lblSteamCMDLatUpdate.Text = "SteamCMD";
+        lblSteamCMD.AutoSize = true;
+        lblSteamCMD.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+        lblSteamCMD.ForeColor = Color.White;
+        lblSteamCMD.Location = new Point(31, 330);
+        lblSteamCMD.Name = "lblSteamCMD";
+        lblSteamCMD.Size = new Size(95, 21);
+        lblSteamCMD.TabIndex = 11;
+        lblSteamCMD.Text = "SteamCMD";
         // 
         // lblSteamCMDLatUpdateInfo
         // 
@@ -216,7 +218,7 @@ partial class FormSettings
         btnGitHub.ImageAlign = ContentAlignment.MiddleLeft;
         btnGitHub.Location = new Point(644, 468);
         btnGitHub.Name = "btnGitHub";
-        btnGitHub.Size = new Size(109, 50);
+        btnGitHub.Size = new Size(120, 50);
         btnGitHub.TabIndex = 13;
         btnGitHub.Text = "GitHub";
         btnGitHub.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -236,9 +238,9 @@ partial class FormSettings
         btnThemeDesigner.IconFont = FontAwesome.Sharp.IconFont.Auto;
         btnThemeDesigner.IconSize = 35;
         btnThemeDesigner.ImageAlign = ContentAlignment.MiddleLeft;
-        btnThemeDesigner.Location = new Point(259, 408);
+        btnThemeDesigner.Location = new Point(518, 468);
         btnThemeDesigner.Name = "btnThemeDesigner";
-        btnThemeDesigner.Size = new Size(127, 50);
+        btnThemeDesigner.Size = new Size(120, 50);
         btnThemeDesigner.TabIndex = 14;
         btnThemeDesigner.Text = "Design";
         btnThemeDesigner.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -259,14 +261,48 @@ partial class FormSettings
         btnUpdateGMS.IconFont = FontAwesome.Sharp.IconFont.Auto;
         btnUpdateGMS.IconSize = 45;
         btnUpdateGMS.ImageAlign = ContentAlignment.MiddleLeft;
-        btnUpdateGMS.Location = new Point(259, 468);
+        btnUpdateGMS.Location = new Point(644, 408);
         btnUpdateGMS.Name = "btnUpdateGMS";
-        btnUpdateGMS.Size = new Size(189, 50);
+        btnUpdateGMS.Size = new Size(120, 50);
         btnUpdateGMS.TabIndex = 15;
         btnUpdateGMS.Text = "Update";
         btnUpdateGMS.TextImageRelation = TextImageRelation.ImageBeforeText;
         btnUpdateGMS.UseVisualStyleBackColor = false;
         btnUpdateGMS.Click += btnUpdateGMS_Click;
+        // 
+        // btnSteamCMDAutoUpdate
+        // 
+        btnSteamCMDAutoUpdate.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+        btnSteamCMDAutoUpdate.BackColor = Color.Transparent;
+        btnSteamCMDAutoUpdate.BackgroundImageLayout = ImageLayout.Zoom;
+        btnSteamCMDAutoUpdate.FlatAppearance.BorderSize = 0;
+        btnSteamCMDAutoUpdate.FlatStyle = FlatStyle.Flat;
+        btnSteamCMDAutoUpdate.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+        btnSteamCMDAutoUpdate.ForeColor = Color.White;
+        btnSteamCMDAutoUpdate.IconChar = FontAwesome.Sharp.IconChar.Steam;
+        btnSteamCMDAutoUpdate.IconColor = Color.White;
+        btnSteamCMDAutoUpdate.IconFont = FontAwesome.Sharp.IconFont.Auto;
+        btnSteamCMDAutoUpdate.IconSize = 45;
+        btnSteamCMDAutoUpdate.ImageAlign = ContentAlignment.MiddleLeft;
+        btnSteamCMDAutoUpdate.Location = new Point(168, 468);
+        btnSteamCMDAutoUpdate.Name = "btnSteamCMDAutoUpdate";
+        btnSteamCMDAutoUpdate.Size = new Size(151, 50);
+        btnSteamCMDAutoUpdate.TabIndex = 16;
+        btnSteamCMDAutoUpdate.Text = "Auto Update";
+        btnSteamCMDAutoUpdate.TextAlign = ContentAlignment.MiddleRight;
+        btnSteamCMDAutoUpdate.UseVisualStyleBackColor = false;
+        btnSteamCMDAutoUpdate.Click += btnSteamCMDAutoUpdate_Click;
+        // 
+        // lblSteamCMDAutoUpdate
+        // 
+        lblSteamCMDAutoUpdate.AutoSize = true;
+        lblSteamCMDAutoUpdate.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+        lblSteamCMDAutoUpdate.ForeColor = Color.White;
+        lblSteamCMDAutoUpdate.Location = new Point(77, 372);
+        lblSteamCMDAutoUpdate.Name = "lblSteamCMDAutoUpdate";
+        lblSteamCMDAutoUpdate.Size = new Size(111, 17);
+        lblSteamCMDAutoUpdate.TabIndex = 17;
+        lblSteamCMDAutoUpdate.Text = "Auto Update: EN";
         // 
         // FormSettings
         // 
@@ -274,11 +310,13 @@ partial class FormSettings
         AutoScaleMode = AutoScaleMode.Font;
         BackColor = Color.Black;
         ClientSize = new Size(880, 530);
+        Controls.Add(lblSteamCMDAutoUpdate);
+        Controls.Add(btnSteamCMDAutoUpdate);
         Controls.Add(btnUpdateGMS);
         Controls.Add(btnThemeDesigner);
         Controls.Add(btnGitHub);
         Controls.Add(lblSteamCMDLatUpdateInfo);
-        Controls.Add(lblSteamCMDLatUpdate);
+        Controls.Add(lblSteamCMD);
         Controls.Add(btnSteamCMDUninstall);
         Controls.Add(btnSetStemCMDPath);
         Controls.Add(btnSetServerPath);
@@ -306,9 +344,11 @@ partial class FormSettings
     private FontAwesome.Sharp.IconButton btnSetServerPath;
     private FontAwesome.Sharp.IconButton btnSetStemCMDPath;
     private FontAwesome.Sharp.IconButton btnSteamCMDUninstall;
-    private Label lblSteamCMDLatUpdate;
+    private Label lblSteamCMD;
     private Label lblSteamCMDLatUpdateInfo;
     private FontAwesome.Sharp.IconButton btnGitHub;
     private FontAwesome.Sharp.IconButton btnThemeDesigner;
     private FontAwesome.Sharp.IconButton btnUpdateGMS;
+    private FontAwesome.Sharp.IconButton btnSteamCMDAutoUpdate;
+    private Label lblSteamCMDAutoUpdate;
 }
