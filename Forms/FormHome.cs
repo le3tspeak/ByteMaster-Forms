@@ -94,7 +94,7 @@ public partial class FormHome : Form
         }
 
         // Überprüfen, ob der Prozess läuft
-        if (Worker.ProcessRunning.Check(GameManager_Valheim.Default.ProzessName))
+        if (Worker.ProcessManager.Check(GameManager_Valheim.Default.ProzessName))
         {
             lblServerValheimRunningInfo.ForeColor = Color.Green;
             // Server läuft
@@ -143,7 +143,7 @@ public partial class FormHome : Form
         }
 
         // Überprüfen, ob der Prozess läuft
-        if (Worker.ProcessRunning.Check(GameManager_Enshrouded.Default.ProzessName))
+        if (Worker.ProcessManager.Check(GameManager_Enshrouded.Default.ProzessName))
         {
             lblServerRunningEnshroudedInfo.ForeColor = Color.Green;
             // Server läuft

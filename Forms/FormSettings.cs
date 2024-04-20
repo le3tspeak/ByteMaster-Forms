@@ -179,9 +179,10 @@ public partial class FormSettings : Form
     {
         // Open the FolderBrowserDialog Smal to select the path to the servers and save it to the settings
         FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog();
-        folderBrowserDialog.InitialDirectory = Properties.Settings.Default.ServerPath;
+        folderBrowserDialog.InitialDirectory = GameManager.Default.ServerPath;
         folderBrowserDialog.Description = "Select the path to the servers";
-        folderBrowserDialog.ShowNewFolderButton = false;
+        folderBrowserDialog.ShowNewFolderButton = true;
+        folderBrowserDialog.UseDescriptionForTitle = true;
 
         if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
         {
@@ -206,7 +207,8 @@ public partial class FormSettings : Form
         FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog();
         folderBrowserDialog.InitialDirectory = GameManager.Default.SteamCMDPath;
         folderBrowserDialog.Description = "Select the path to the servers";
-        folderBrowserDialog.ShowNewFolderButton = false;
+        folderBrowserDialog.ShowNewFolderButton = true;
+        folderBrowserDialog.UseDescriptionForTitle = true;
 
         if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
         {

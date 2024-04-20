@@ -157,7 +157,7 @@ public partial class FormValheim : Form
     // Disable Editing Settings if Server is Running
     private void SettingsEnabeld()
     {
-        if (Worker.ProcessRunning.Check(GameManager.Default.ProzessName))
+        if (Worker.ProcessManager.Check(GameManager.Default.ProzessName))
         {
             EnableSettings(false);
             return;
@@ -247,7 +247,7 @@ public partial class FormValheim : Form
     private void InstallServer()
     {
         // Ceck if the Server is Running
-        if (Worker.ProcessRunning.Check(GameManager.Default.ProzessName))
+        if (Worker.ProcessManager.Check(GameManager.Default.ProzessName))
         {
             MessageBox.Show("The Server is still running. Please stop the Server first!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             return;
@@ -305,7 +305,7 @@ public partial class FormValheim : Form
     private void CheckServerRunning()
     {
         // Überprüfen, ob der Prozess läuft
-        if (Worker.ProcessRunning.Check(GameManager.Default.ProzessName))
+        if (Worker.ProcessManager.Check(GameManager.Default.ProzessName))
         {
             lblServerRunningInfo.ForeColor = Color.Green;
             // Server is Running
@@ -344,7 +344,7 @@ public partial class FormValheim : Form
         }
 
         // Check if the Server is Running
-        if (Worker.ProcessRunning.Check(GameManager.Default.ProzessName))
+        if (Worker.ProcessManager.Check(GameManager.Default.ProzessName))
         {
             MessageBox.Show("The Server is still running. Please stop the Server first!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             return;

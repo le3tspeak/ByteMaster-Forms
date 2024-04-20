@@ -149,7 +149,7 @@ public partial class FormEnshrouded : Form
     // Disable Editing Settings if Server is Running
     private void SettingsEnabeld()
     {
-        if (Worker.ProcessRunning.Check(GameManager.Default.ProzessName))
+        if (Worker.ProcessManager.Check(GameManager.Default.ProzessName))
         {
             EnableSettings(false);
             return;
@@ -231,7 +231,7 @@ public partial class FormEnshrouded : Form
     private void InstallServer()
     {
         // Ceck if the Server is Running
-        if (Worker.ProcessRunning.Check(ProzessName))
+        if (Worker.ProcessManager.Check(ProzessName))
         {
             MessageBox.Show("The Server is still running. Please stop the Server first!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             return;
@@ -290,7 +290,7 @@ public partial class FormEnshrouded : Form
     private void CheckServerRunning()
     {
         // Überprüfen, ob der Prozess läuft
-        if (Worker.ProcessRunning.Check(GameManager.Default.ProzessName))
+        if (Worker.ProcessManager.Check(GameManager.Default.ProzessName))
         {
             lblServerRunningInfo.ForeColor = Color.Green;
             // Server is Running
@@ -329,7 +329,7 @@ public partial class FormEnshrouded : Form
         }
 
         // Check if the Server is Running
-        if (Worker.ProcessRunning.Check(ProzessName))
+        if (Worker.ProcessManager.Check(ProzessName))
         {
             MessageBox.Show("The Server is still running. Please stop the Server first!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             return;
